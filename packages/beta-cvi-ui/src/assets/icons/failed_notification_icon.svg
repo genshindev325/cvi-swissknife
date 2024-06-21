@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <clipPath id="fp32vtl54a">
+            <path data-name="Rectangle 3911" style="fill:none" d="M0 0h24v24H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="failed circle icon">
+        <g data-name="Group 10221" style="clip-path:url(#fp32vtl54a)">
+            <path data-name="Path 7202" d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12m0-23a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1" style="fill:#bb1e52"/>
+            <path data-name="Path 7203" d="m13.05 12.045 2.387-2.388a.711.711 0 0 0-1.006-1l-2.387 2.383-2.388-2.388a.711.711 0 0 0-1.005 1l2.388 2.388-2.388 2.392a.711.711 0 0 0 .973 1.037l.032-.032 2.388-2.387 2.387 2.387a.711.711 0 0 0 1.006-1.005z" style="fill:#bb1e52"/>
+        </g>
+    </g>
+</svg>

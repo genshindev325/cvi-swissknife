@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitoring-bot
+    app: cvi-monitoring-bot
+  name: cvi-monitoring-bot
+  namespace: {{ .Release.Namespace }}
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitoring-bot
+  serviceName: cvi-monitoring-bot
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitoring-bot
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/cvi-monitoring-bot/dist/index.js
+          env:
+          - name: APP_ENV
+            value: 'k8s'
+          - name: RPC_URL
+            value: 'https://mainnet.infura.io/v3/b454739b95444d53812c01d1b9c60549'
+          - name: POLYGON_RPC_URL
+            value: 'https://polygon-mainnet.g.alchemy.com/v2/zPiLc__mlPC1tywgZ4Oc-w0lp-Ji4xt1'
+          - name: ARBITRUM_RPC_URL
+            value: 'https://arb-mainnet.g.alchemy.com/v2/rQSxa8Tc1TrzI3AO7dMv0gjSOkwukMdG'
+          - name: BOT_TOKEN
+            value: '1596585207:AAG6UjDR3n8q5Q9kYDXtgD3qXxgsxpMdlxU'
+          - name: CHAT_ID
+            value: '-463889787'
+          - name: UPDATES_CHAT_ID
+            value: '-555717765'
+          - name: INTERVAL
+            value: '3600000'
+          - name: USERS_INTERVAL
+            value: '86400000'
+          image: coticvi/swissknife-backend:13ae578c295ae16ee9bd0827409100b6e739bcdd
+          imagePullPolicy: Always
+          name: cvi-monitoring-bot
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 1000Mi
+            limits: # max
+              cpu: 250m
+              memory: 1000Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate

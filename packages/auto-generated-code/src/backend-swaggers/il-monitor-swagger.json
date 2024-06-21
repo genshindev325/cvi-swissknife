@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The il-monitor@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}

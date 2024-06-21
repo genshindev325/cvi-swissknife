@@ -1,0 +1,33 @@
+{
+  "name": "hardhat-csm-ui",
+  "version": "0.1.0",
+  "private": true,
+  "ui": true,
+  "scripts": {
+    "start:dev": "vite",
+    "bundle": "rm -rf ui-dist && vite build",
+    "serve": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.8.0",
+    "@coti-cvi/auto-generated-code": "1.0.0",
+    "@coti-cvi/lw-sdk": "1.0.0",
+    "@ethersproject/bignumber": "5.6.2",
+    "@ethersproject/constants": "5.6.1",
+    "@ethersproject/contracts": "5.6.2",
+    "@ethersproject/providers": "5.6.2",
+    "@reach/combobox": "0.17.0",
+    "axios": "^0.27.2",
+    "buffer": "^6.0.3",
+    "date-fns": "^2.28.0",
+    "events": "^3.3.0",
+    "inversify": "^6.0.1",
+    "pretty-num": "^0.5.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-use-promise": "^0.5.0",
+    "react-widgets": "^5.8.4"
+  }
+}

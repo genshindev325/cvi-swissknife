@@ -1,0 +1,15 @@
+.icon-AL2odtws {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.icon-AL2odtws svg {
+  fill: currentColor;
+  display: block;
+  height: 4px;
+  width: 8px;
+}
+.icon-AL2odtws.dropped-AL2odtws {
+  transform: rotate(180deg);
+}

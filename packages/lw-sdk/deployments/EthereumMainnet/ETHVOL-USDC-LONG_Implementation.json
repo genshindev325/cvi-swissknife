@@ -1,0 +1,1692 @@
+{
+  "address": "0x27F57fd24f8a179f5B57586d809AFA7Cb649151F",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "burnedTokens",
+          "type": "uint256"
+        }
+      ],
+      "name": "Burn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "mintedTokens",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "mintedShortTokens",
+          "type": "uint256"
+        }
+      ],
+      "name": "CollateralizedMint",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fulfillFeesAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isAborted",
+          "type": "bool"
+        }
+      ],
+      "name": "FulfillRequest",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "requestType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "liquidator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "findersFeeAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LiquidateRequest",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "mintedTokens",
+          "type": "uint256"
+        }
+      ],
+      "name": "Mint",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "epoch",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "prevScalingFactor",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newScalingFactor",
+          "type": "uint256"
+        }
+      ],
+      "name": "Rebase",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "requestType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "submitFeesAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "targetTimestamp",
+          "type": "uint32"
+        }
+      ],
+      "name": "SubmitRequest",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "BURN_REQUEST_TYPE",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "CVI_DECIMALS_FIX",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DELTA_PRECISION_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_PERCENTAGE",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINT_REQUEST_TYPE",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PRECISION_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SCALING_FACTOR_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name_",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "symbol_",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "decimals_",
+          "type": "uint8"
+        }
+      ],
+      "name": "__ElasticToken_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "who",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "who",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOfUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cappedRebase",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cviOracle",
+      "outputs": [
+        {
+          "internalType": "contract ICVIOracle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "subtractedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreaseAllowance",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deviationPerSingleRebaseLag",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feesCalculator",
+      "outputs": [
+        {
+          "internalType": "contract IFeesCalculator",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feesCollector",
+      "outputs": [
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "fulfillBurnRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokensReceived",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "fulfillCollateralizedMintRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokensMinted",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shortTokensMinted",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_maxBuyingPremiumFeePercentage",
+          "type": "uint16"
+        }
+      ],
+      "name": "fulfillMintRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokensMinted",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "addedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseAllowance",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "initSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "initialTokenToLPTokenRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_lpTokenName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_lpTokenSymbolName",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_leverage",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_initialTokenToVolTokenRate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IPlatform",
+          "name": "_platform",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "_feesCollector",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IFeesCalculator",
+          "name": "_feesCalculator",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IRequestFeesCalculator",
+          "name": "_requestFeesCalculator",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ICVIOracle",
+          "name": "_cviOracle",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "leverage",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "liquidateRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "findersFeeAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxDeviationPercentage",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxScalingFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTotalRequestsAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minDeviationPercentage",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "platform",
+      "outputs": [
+        {
+          "internalType": "contract IPlatform",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "indexDelta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "positive",
+          "type": "bool"
+        }
+      ],
+      "name": "rebase",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebaseCVI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebaser",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "requestFeesCalculator",
+      "outputs": [
+        {
+          "internalType": "contract IRequestFeesCalculator",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "requests",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "requestType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint168",
+          "name": "tokenAmount",
+          "type": "uint168"
+        },
+        {
+          "internalType": "uint16",
+          "name": "timeDelayRequestFeesPercent",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "maxRequestFeesPercent",
+          "type": "uint16"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "requestTimestamp",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "targetTimestamp",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "scalingFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICVIOracle",
+          "name": "_newCVIOracle",
+          "type": "address"
+        }
+      ],
+      "name": "setCVIOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newCappedRebase",
+          "type": "bool"
+        }
+      ],
+      "name": "setCappedRebase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newDeviationPercentagePerSingleRebaseLag",
+          "type": "uint16"
+        }
+      ],
+      "name": "setDeviationPerSingleRebaseLag",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesCalculator",
+          "name": "_newFeesCalculator",
+          "type": "address"
+        }
+      ],
+      "name": "setFeesCalculator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "_newCollector",
+          "type": "address"
+        }
+      ],
+      "name": "setFeesCollector",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newMaxDeviationPercentage",
+          "type": "uint16"
+        }
+      ],
+      "name": "setMaxDeviation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxTotalRequestsAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxTotalRequestsAmount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newMinDeviationPercentage",
+          "type": "uint16"
+        }
+      ],
+      "name": "setMinDeviation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPlatform",
+          "name": "_newPlatform",
+          "type": "address"
+        }
+      ],
+      "name": "setPlatform",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_rebaser",
+          "type": "address"
+        }
+      ],
+      "name": "setRebaser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IRequestFeesCalculator",
+          "name": "_newRequestFeesCalculator",
+          "type": "address"
+        }
+      ],
+      "name": "setRequestFeesCalculator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_verifyTotalRequestsAmount",
+          "type": "bool"
+        }
+      ],
+      "name": "setVerifyTotalRequestsAmount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint168",
+          "name": "_tokenAmount",
+          "type": "uint168"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_timeDelay",
+          "type": "uint32"
+        }
+      ],
+      "name": "submitBurnRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint168",
+          "name": "_tokenAmount",
+          "type": "uint168"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_timeDelay",
+          "type": "uint32"
+        }
+      ],
+      "name": "submitMintRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalRequestsAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "unerlyingValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "underlyingToValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "valueToUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verifyTotalRequestsAmount",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x35561bb5275b694ca5ff825087c6939a27ef5e6e9771c76b5a3e1f5e4db3f9ff",
+  "numDeployments": 1,
+  "storageLayout": {
+    "storage": [
+      {
+        "contract": "Initializable",
+        "label": "_initialized",
+        "type": "t_bool",
+        "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:21"
+      },
+      {
+        "contract": "Initializable",
+        "label": "_initializing",
+        "type": "t_bool",
+        "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:26"
+      },
+      {
+        "contract": "ReentrancyGuardUpgradeable",
+        "label": "_status",
+        "type": "t_uint256",
+        "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:37"
+      },
+      {
+        "contract": "ReentrancyGuardUpgradeable",
+        "label": "__gap",
+        "type": "t_array(t_uint256)49_storage",
+        "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:67"
+      },
+      {
+        "contract": "ContextUpgradeable",
+        "label": "__gap",
+        "type": "t_array(t_uint256)50_storage",
+        "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:30"
+      },
+      {
+        "contract": "OwnableUpgradeable",
+        "label": "_owner",
+        "type": "t_address",
+        "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:21"
+      },
+      {
+        "contract": "OwnableUpgradeable",
+        "label": "__gap",
+        "type": "t_array(t_uint256)49_storage",
+        "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:77"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "name",
+        "type": "t_string_storage",
+        "src": "contracts\\ElasticToken.sol:15"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "symbol",
+        "type": "t_string_storage",
+        "src": "contracts\\ElasticToken.sol:16"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "decimals",
+        "type": "t_uint8",
+        "src": "contracts\\ElasticToken.sol:17"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "totalSupply",
+        "type": "t_uint256",
+        "src": "contracts\\ElasticToken.sol:18"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "scalingFactor",
+        "type": "t_uint256",
+        "src": "contracts\\ElasticToken.sol:20"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "initSupply",
+        "type": "t_uint256",
+        "src": "contracts\\ElasticToken.sol:21"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "rebaser",
+        "type": "t_address",
+        "src": "contracts\\ElasticToken.sol:22"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "_underlyingBalances",
+        "type": "t_mapping(t_address,t_uint256)",
+        "src": "contracts\\ElasticToken.sol:24"
+      },
+      {
+        "contract": "ElasticToken",
+        "label": "_allowedFragments",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+        "src": "contracts\\ElasticToken.sol:25"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "leverage",
+        "type": "t_uint8",
+        "src": "contracts\\VolatilityToken.sol:22"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "rebaseLag",
+        "type": "t_uint8",
+        "src": "contracts\\VolatilityToken.sol:23"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "minDeviationPercentage",
+        "type": "t_uint16",
+        "src": "contracts\\VolatilityToken.sol:25"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "initialTokenToLPTokenRate",
+        "type": "t_uint256",
+        "src": "contracts\\VolatilityToken.sol:27"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "token",
+        "type": "t_contract(IERC20Upgradeable)898",
+        "src": "contracts\\VolatilityToken.sol:29"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "platform",
+        "type": "t_contract(IPlatform)15816",
+        "src": "contracts\\VolatilityToken.sol:30"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "feesCollector",
+        "type": "t_contract(IFeesCollector)15423",
+        "src": "contracts\\VolatilityToken.sol:31"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "feesCalculator",
+        "type": "t_contract(IFeesCalculator)15411",
+        "src": "contracts\\VolatilityToken.sol:32"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "requestFeesCalculator",
+        "type": "t_contract(IRequestFeesCalculator)16056",
+        "src": "contracts\\VolatilityToken.sol:33"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "cviOracle",
+        "type": "t_contract(ICVIOracle)14851",
+        "src": "contracts\\VolatilityToken.sol:34"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "nextRequestId",
+        "type": "t_uint256",
+        "src": "contracts\\VolatilityToken.sol:36"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "requests",
+        "type": "t_mapping(t_uint256,t_struct(Request)16221_storage)",
+        "src": "contracts\\VolatilityToken.sol:38"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "totalRequestsAmount",
+        "type": "t_uint256",
+        "src": "contracts\\VolatilityToken.sol:40"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "maxTotalRequestsAmount",
+        "type": "t_uint256",
+        "src": "contracts\\VolatilityToken.sol:41"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "verifyTotalRequestsAmount",
+        "type": "t_bool",
+        "src": "contracts\\VolatilityToken.sol:42"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "deviationPerSingleRebaseLag",
+        "type": "t_uint16",
+        "src": "contracts\\VolatilityToken.sol:44"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "maxDeviationPercentage",
+        "type": "t_uint16",
+        "src": "contracts\\VolatilityToken.sol:45"
+      },
+      {
+        "contract": "VolatilityToken",
+        "label": "cappedRebase",
+        "type": "t_bool",
+        "src": "contracts\\VolatilityToken.sol:47"
+      }
+    ],
+    "types": {
+      "t_uint8": {
+        "label": "uint8"
+      },
+      "t_uint16": {
+        "label": "uint16"
+      },
+      "t_uint256": {
+        "label": "uint256"
+      },
+      "t_contract(IERC20Upgradeable)898": {
+        "label": "contract IERC20Upgradeable"
+      },
+      "t_contract(IPlatform)15816": {
+        "label": "contract IPlatform"
+      },
+      "t_contract(IFeesCollector)15423": {
+        "label": "contract IFeesCollector"
+      },
+      "t_contract(IFeesCalculator)15411": {
+        "label": "contract IFeesCalculator"
+      },
+      "t_contract(IRequestFeesCalculator)16056": {
+        "label": "contract IRequestFeesCalculator"
+      },
+      "t_contract(ICVIOracle)14851": {
+        "label": "contract ICVIOracle"
+      },
+      "t_mapping(t_uint256,t_struct(Request)16221_storage)": {
+        "label": "mapping(uint256 => struct IVolatilityToken.Request)"
+      },
+      "t_struct(Request)16221_storage": {
+        "label": "struct IVolatilityToken.Request",
+        "members": [
+          {
+            "label": "requestType",
+            "type": "t_uint8"
+          },
+          {
+            "label": "tokenAmount",
+            "type": "t_uint168"
+          },
+          {
+            "label": "timeDelayRequestFeesPercent",
+            "type": "t_uint16"
+          },
+          {
+            "label": "maxRequestFeesPercent",
+            "type": "t_uint16"
+          },
+          {
+            "label": "owner",
+            "type": "t_address"
+          },
+          {
+            "label": "requestTimestamp",
+            "type": "t_uint32"
+          },
+          {
+            "label": "targetTimestamp",
+            "type": "t_uint32"
+          }
+        ]
+      },
+      "t_uint168": {
+        "label": "uint168"
+      },
+      "t_address": {
+        "label": "address"
+      },
+      "t_uint32": {
+        "label": "uint32"
+      },
+      "t_bool": {
+        "label": "bool"
+      },
+      "t_string_storage": {
+        "label": "string"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "label": "mapping(address => uint256)"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "label": "mapping(address => mapping(address => uint256))"
+      },
+      "t_array(t_uint256)49_storage": {
+        "label": "uint256[49]"
+      },
+      "t_array(t_uint256)50_storage": {
+        "label": "uint256[50]"
+      }
+    }
+  }
+}

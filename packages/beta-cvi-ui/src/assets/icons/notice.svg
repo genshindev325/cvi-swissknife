@@ -1,0 +1,10 @@
+<svg data-name="notice icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path data-name="Path 4826" d="M0 0h24v24H0z" style="fill:none"/>
+    <g data-name="Group 6410">
+        <path data-name="Path 4827" d="M20.774 22H3.226a2.284 2.284 0 0 1-1.976-3.427l8.774-15.156a2.284 2.284 0 0 1 3.952 0l8.774 15.156A2.283 2.283 0 0 1 20.774 22zM12 4.278a.27.27 0 0 0-.245.141L2.98 19.575a.283.283 0 0 0 .246.425h17.548a.283.283 0 0 0 .246-.425L12.245 4.419A.27.27 0 0 0 12 4.278z" style="fill:#f8ba15"/>
+    </g>
+    <g data-name="Group 6411">
+        <path data-name="Rectangle 2397" transform="translate(11 16)" style="fill:#f8ba15" d="M0 0h2v2H0z"/>
+        <path data-name="Rectangle 2398" transform="translate(11 8.796)" style="fill:#f8ba15" d="M0 0h2v5.204H0z"/>
+    </g>
+</svg>

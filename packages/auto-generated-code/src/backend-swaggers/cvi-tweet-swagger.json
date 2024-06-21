@@ -1,0 +1,130 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/tweet/tweet-now": {
+      "get": {
+        "operationId": "TweetBotController_tweetNow",
+        "summary": "",
+        "description": "Tweet now",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Tweet now"
+          }
+        },
+        "tags": [
+          "Tweet"
+        ]
+      }
+    },
+    "/tweet/take-screenshot": {
+      "get": {
+        "operationId": "TweetBotController_isReady",
+        "summary": "",
+        "description": "Take screenshot of CVI.finance and return image",
+        "parameters": [
+          {
+            "name": "width",
+            "required": false,
+            "in": "query",
+            "description": "Screenshot width. Optional",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "height",
+            "required": false,
+            "in": "query",
+            "description": "Screenshot height. Optional",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "deviceScaleFactor",
+            "required": false,
+            "in": "query",
+            "description": "Screenshot deviceScaleFactor. Optional",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Take screenshot of CVI.finance and return image"
+          }
+        },
+        "tags": [
+          "Tweet"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The cvi-tweet@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}

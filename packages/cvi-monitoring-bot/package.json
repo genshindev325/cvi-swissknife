@@ -1,0 +1,29 @@
+{
+  "name": "cvi-monitoring-bot",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts --timeout 100000",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "serve": "tsc; node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coti-cvi/cvi-sdk": "0.2.26",
+    "@ethersproject/providers": "5.6.2",
+    "@ethersproject/solidity": "5.6.1",
+    "@uniswap/sdk": "^3.0.3",
+    "axios": "^0.27.2",
+    "bn.js": "^5.2.1",
+    "dotenv": "^16.0.1",
+    "telegraf": "^4.0.1",
+    "web3": "^1.6.0",
+    "winston": "^3.7.2"
+  }
+}

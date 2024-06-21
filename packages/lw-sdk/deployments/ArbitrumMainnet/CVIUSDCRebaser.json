@@ -1,0 +1,478 @@
+{
+  "address": "0x31cd9fa35f0A1F6bDDEbe5A6ad5F46b2f0f24E4b",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IVolatilityToken",
+          "name": "_volatilityToken",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IUniswapV2Pair[]",
+          "name": "_uniswapPairs",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "checkUpkeep",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "upkeepNeeded",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "performData",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "enableWhitelist",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUpkeepTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "pairs",
+      "outputs": [
+        {
+          "internalType": "contract IUniswapV2Pair",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "performUpkeep",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "rebasers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_enableWhitelist",
+          "type": "bool"
+        }
+      ],
+      "name": "setEnableWhitelist",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "name": "setRebaserAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IUniswapV2Pair[]",
+          "name": "_uniswapPairs",
+          "type": "address[]"
+        }
+      ],
+      "name": "setUniswapPairs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_upkeepInterval",
+          "type": "uint32"
+        }
+      ],
+      "name": "setUpkeepInterval",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_upkeepTimeWindow",
+          "type": "uint32"
+        }
+      ],
+      "name": "setUpkeepTimeWindow",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IVolatilityToken",
+          "name": "_volatilityToken",
+          "type": "address"
+        }
+      ],
+      "name": "setVolatilityToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "upkeepInterval",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "upkeepTimeWindow",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "volatilityToken",
+      "outputs": [
+        {
+          "internalType": "contract IVolatilityToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x42244d10e6820c8763594937a977c303236342306752b20204d91414291b17b3",
+  "receipt": {
+    "to": null,
+    "from": "0x0b3D7b3F149214f8f5281b5aE613B090fD39BD3F",
+    "contractAddress": "0x31cd9fa35f0A1F6bDDEbe5A6ad5F46b2f0f24E4b",
+    "transactionIndex": 1,
+    "gasUsed": "5348876",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000020000400000000002000000000000000000000000000000000000000000000000000000000000000000000200000020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xfa5a6729866a13c1db3de4c61c95be2caba3238a9596a63eeed96c69736c2622",
+    "transactionHash": "0x42244d10e6820c8763594937a977c303236342306752b20204d91414291b17b3",
+    "logs": [
+      {
+        "transactionIndex": 1,
+        "blockNumber": 29538664,
+        "transactionHash": "0x42244d10e6820c8763594937a977c303236342306752b20204d91414291b17b3",
+        "address": "0x31cd9fa35f0A1F6bDDEbe5A6ad5F46b2f0f24E4b",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000b3d7b3f149214f8f5281b5ae613b090fd39bd3f"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0xfa5a6729866a13c1db3de4c61c95be2caba3238a9596a63eeed96c69736c2622"
+      }
+    ],
+    "blockNumber": 29538664,
+    "cumulativeGasUsed": "5348876",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x8096aD3107715747361acefE685943bFB427C722",
+    [
+      "0xeDE0CE8cdc65bcF6422f3Afb9d7cDb3e59C09658"
+    ]
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "8d836039a3333aa7ff1a69dee5a5f235",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IVolatilityToken\",\"name\":\"_volatilityToken\",\"type\":\"address\"},{\"internalType\":\"contract IUniswapV2Pair[]\",\"name\":\"_uniswapPairs\",\"type\":\"address[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"checkUpkeep\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"upkeepNeeded\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"performData\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"enableWhitelist\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpkeepTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"pairs\",\"outputs\":[{\"internalType\":\"contract IUniswapV2Pair\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"performUpkeep\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rebase\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rebasers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_enableWhitelist\",\"type\":\"bool\"}],\"name\":\"setEnableWhitelist\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isAllowed\",\"type\":\"bool\"}],\"name\":\"setRebaserAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IUniswapV2Pair[]\",\"name\":\"_uniswapPairs\",\"type\":\"address[]\"}],\"name\":\"setUniswapPairs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_upkeepInterval\",\"type\":\"uint32\"}],\"name\":\"setUpkeepInterval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_upkeepTimeWindow\",\"type\":\"uint32\"}],\"name\":\"setUpkeepTimeWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IVolatilityToken\",\"name\":\"_volatilityToken\",\"type\":\"address\"}],\"name\":\"setVolatilityToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"upkeepInterval\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"upkeepTimeWindow\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"volatilityToken\",\"outputs\":[{\"internalType\":\"contract IVolatilityToken\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/volatility-token/RebaserContracts.sol\":\"CVIUSDCRebaser\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface KeeperCompatibleInterface {\\n  /**\\n   * @notice method that is simulated by the keepers to see if any work actually\\n   * needs to be performed. This method does does not actually need to be\\n   * executable, and since it is only ever simulated it can consume lots of gas.\\n   * @dev To ensure that it is never called, you may want to add the\\n   * cannotExecute modifier from KeeperBase to your implementation of this\\n   * method.\\n   * @param checkData specified in the upkeep registration so it is always the\\n   * same for a registered upkeep. This can easilly be broken down into specific\\n   * arguments using `abi.decode`, so multiple upkeeps can be registered on the\\n   * same contract and easily differentiated by the contract.\\n   * @return upkeepNeeded boolean to indicate whether the keeper should call\\n   * performUpkeep or not.\\n   * @return performData bytes that the keeper should call performUpkeep with, if\\n   * upkeep is needed. If you would like to encode data to decode later, try\\n   * `abi.encode`.\\n   */\\n  function checkUpkeep(bytes calldata checkData) external returns (bool upkeepNeeded, bytes memory performData);\\n\\n  /**\\n   * @notice method that is actually executed by the keepers, via the registry.\\n   * The data returned by the checkUpkeep simulation will be passed into\\n   * this method to actually be executed.\\n   * @dev The input to this method should not be trusted, and the caller of the\\n   * method should not even be restricted to any single registry. Anyone should\\n   * be able call it, and the input should be validated, there is no guarantee\\n   * that the data passed in is the performData returned from checkUpkeep. This\\n   * could happen due to malicious keepers, racing keepers, or simply a state\\n   * change while the performUpkeep transaction is waiting for confirmation.\\n   * Always validate the data passed in.\\n   * @param performData is the data which was passed back from the checkData\\n   * simulation. If it is encoded, it can easily be decoded into other types by\\n   * calling `abi.decode`. This data should not be trusted, and should be\\n   * validated against the contract's current state.\\n   */\\n  function performUpkeep(bytes calldata performData) external;\\n}\\n\",\"keccak256\":\"0xc4a031d4b6e3fa6d40a09bfbf99d3fdd22bbe77ba97065bc790b4cab22adee85\",\"license\":\"MIT\"},\"@coti-cvi/contracts-cvi/contracts/Rebaser.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0-or-later\\npragma solidity ^0.8;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol\\\";\\nimport \\\"./interfaces/IRebaser.sol\\\";\\n\\ncontract Rebaser is IRebaser, Ownable, KeeperCompatibleInterface {\\n    IVolatilityToken public volatilityToken;\\n    IUniswapV2Pair[] public pairs;\\n\\n    uint256 public lastUpkeepTime;\\n    uint32 public upkeepInterval = 1 days;\\n    uint32 public upkeepTimeWindow = 15 minutes;\\n\\n    bool public enableWhitelist = true;\\n    mapping (address => bool) public rebasers; // whitelist\\n\\n    constructor(IVolatilityToken _volatilityToken, IUniswapV2Pair[] memory _uniswapPairs) {\\n        volatilityToken = _volatilityToken;\\n        pairs = _uniswapPairs;\\n        lastUpkeepTime = (block.timestamp / 1 days) * 1 days; // 12 AM at the day of deployment\\n    }\\n\\n    function rebase() public override {\\n        require(!enableWhitelist || rebasers[msg.sender], \\\"Whitelisted addresses only\\\");\\n        require(address(volatilityToken) != address(0), \\\"Set volatility token\\\");\\n        require(block.timestamp % 1 days <= upkeepTimeWindow, \\\"Bad time window\\\");\\n        volatilityToken.rebaseCVI();\\n        for (uint16 i = 0; i < pairs.length; i++) {\\n            if (address(pairs[i]) != address(0)) {\\n                pairs[i].sync();\\n            }\\n        }\\n    }\\n\\n    function setVolatilityToken(IVolatilityToken _volatilityToken) external override onlyOwner {\\n        volatilityToken = _volatilityToken;\\n    }\\n\\n    function setUniswapPairs(IUniswapV2Pair[] calldata _uniswapPairs) external override onlyOwner {\\n        pairs = _uniswapPairs;\\n    }\\n\\n    function setUpkeepInterval(uint32 _upkeepInterval) external override onlyOwner {\\n        upkeepInterval = _upkeepInterval;\\n    }\\n\\n    function setUpkeepTimeWindow(uint32 _upkeepTimeWindow) external override onlyOwner {\\n        upkeepTimeWindow = _upkeepTimeWindow;\\n    }\\n\\n    function setEnableWhitelist(bool _enableWhitelist) external override onlyOwner {\\n        enableWhitelist = _enableWhitelist;\\n    }\\n\\n    function setRebaserAddress(address user, bool isAllowed) external override onlyOwner {\\n        rebasers[user] = isAllowed;\\n    }\\n\\n    function checkUpkeep(\\n        bytes calldata /* checkData */\\n    ) external view override returns (bool upkeepNeeded, bytes memory performData) {\\n        upkeepNeeded = isUpkeepNeeded();\\n        return (upkeepNeeded, performData);\\n    }\\n\\n    function performUpkeep(\\n        bytes calldata /* performData */\\n    ) external override {\\n        require(!enableWhitelist || rebasers[msg.sender], \\\"Whitelisted addresses only\\\");\\n        require(isUpkeepNeeded(), \\\"Bad time window\\\");\\n        lastUpkeepTime = (block.timestamp / 1 days) * 1 days;\\n        rebase();\\n    }\\n\\n    function isUpkeepNeeded() private view returns (bool) {\\n        return block.timestamp - lastUpkeepTime >= upkeepInterval && block.timestamp % 1 days <= upkeepTimeWindow;\\n    }\\n}\\n\",\"keccak256\":\"0x669177591de4a8a7927daaa9bb6752d783bab9b406c088a361bbdd0dc109268d\",\"license\":\"GPL-3.0-or-later\"},\"@coti-cvi/contracts-cvi/contracts/external/IUniswapV2Pair.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity >=0.5.0;\\n\\ninterface IUniswapV2Pair {\\n    event Approval(address indexed owner, address indexed spender, uint value);\\n    event Transfer(address indexed from, address indexed to, uint value);\\n\\n    function name() external pure returns (string memory);\\n    function symbol() external pure returns (string memory);\\n    function decimals() external pure returns (uint8);\\n    function totalSupply() external view returns (uint);\\n    function balanceOf(address owner) external view returns (uint);\\n    function allowance(address owner, address spender) external view returns (uint);\\n\\n    function approve(address spender, uint value) external returns (bool);\\n    function transfer(address to, uint value) external returns (bool);\\n    function transferFrom(address from, address to, uint value) external returns (bool);\\n\\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\\n    function PERMIT_TYPEHASH() external pure returns (bytes32);\\n    function nonces(address owner) external view returns (uint);\\n\\n    function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external;\\n\\n    event Mint(address indexed sender, uint amount0, uint amount1);\\n    event Burn(address indexed sender, uint amount0, uint amount1, address indexed to);\\n    event Swap(\\n        address indexed sender,\\n        uint amount0In,\\n        uint amount1In,\\n        uint amount0Out,\\n        uint amount1Out,\\n        address indexed to\\n    );\\n    event Sync(uint112 reserve0, uint112 reserve1);\\n\\n    function MINIMUM_LIQUIDITY() external pure returns (uint);\\n    function factory() external view returns (address);\\n    function token0() external view returns (address);\\n    function token1() external view returns (address);\\n    function getReserves() external view returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);\\n    function price0CumulativeLast() external view returns (uint);\\n    function price1CumulativeLast() external view returns (uint);\\n    function kLast() external view returns (uint);\\n\\n    function mint(address to) external returns (uint liquidity);\\n    function burn(address to) external returns (uint amount0, uint amount1);\\n    function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external;\\n    function skim(address to) external;\\n    function sync() external;\\n\\n    function initialize(address, address) external;\\n}\\n\",\"keccak256\":\"0x9f51a1d68f51a13fd456ba3fb73d6fbff58515f21d88f86f2a56af65a9da43af\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/ICVIOracle.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface ICVIOracle {\\n    function getCVIRoundData(uint80 roundId) external view returns (uint32 cviValue, uint256 cviTimestamp);\\n    function getCVILatestRoundData() external view returns (uint32 cviValue, uint80 cviRoundId, uint256 cviTimestamp);\\n\\n    function setDeviationCheck(bool newDeviationCheck) external;\\n    function setMaxDeviation(uint16 newMaxDeviation) external;\\n}\\n\",\"keccak256\":\"0xf1871b2e9219f7a11e63d8e3276b7a0a46d8d726d54e385a6326dbdb2bcb1bad\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IFeesCalculator.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./ICVIOracle.sol\\\";\\nimport \\\"./IThetaVaultInfo.sol\\\";\\n\\ninterface IFeesCalculator {\\n\\n    struct CVIValue {\\n        uint256 period;\\n        uint32 cviValue;\\n    }\\n\\n    struct SnapshotUpdate {\\n        uint256 latestSnapshot;\\n        uint256 singleUnitFundingFee;\\n        uint256 totalTime;\\n        uint256 totalRounds;\\n        uint256 cviValueTimestamp;\\n        uint80 newLatestRoundId;\\n        uint32 cviValue;\\n        bool updatedSnapshot;\\n        bool updatedLatestRoundId;\\n        bool updatedLatestTimestamp;\\n        bool updatedTurbulenceData;\\n    }\\n\\n    function updateTurbulenceIndicatorPercent(uint256 totalTime, uint256 newRounds, uint32 lastCVIValue, uint32 currCVIValue) external;\\n\\n    function setOracle(ICVIOracle cviOracle) external;\\n    function setThetaVault(IThetaVaultInfo thetaVault) external;\\n\\n    function setStateUpdator(address newUpdator) external;\\n\\n    function setDepositFee(uint16 newDepositFeePercentage) external;\\n    function setWithdrawFee(uint16 newWithdrawFeePercentage) external;\\n    function setOpenPositionFee(uint16 newOpenPositionFeePercentage) external;\\n    function setOpenPositionLPFee(uint16 newOpenPositionLPFeePercent) external;\\n    function setClosePositionLPFee(uint16 newClosePositionLPFeePercent) external;\\n    function setClosePositionFee(uint16 newClosePositionFeePercentage) external;\\n    function setClosePositionMaxFee(uint16 newClosePositionMaxFeePercentage) external;\\n    function setClosePositionFeeDecay(uint256 newClosePositionFeeDecayPeriod) external;\\n    \\n    function setOracleHeartbeatPeriod(uint256 newOracleHeartbeatPeriod) external;\\n    function setBuyingPremiumFeeMax(uint16 newBuyingPremiumFeeMaxPercentage) external;\\n    function setBuyingPremiumThreshold(uint16 newBuyingPremiumThreshold) external;\\n    function setClosingPremiumFeeMax(uint16 newClosingPremiumFeeMaxPercentage) external;\\n    function setCollateralToBuyingPremiumMapping(uint16[] calldata newCollateralToBuyingPremiumMapping) external;\\n    function setFundingFeeConstantRate(uint16 newfundingFeeConstantRate) external;\\n    function setCollateralToExtraFundingFeeMapping(uint32[] calldata newCollateralToExtraFundingFeeMapping) external;\\n    function setTurbulenceStep(uint16 newTurbulenceStepPercentage) external;\\n    function setMaxTurbulenceFeePercentToTrim(uint16 newMaxTurbulenceFeePercentToTrim) external;\\n    function setTurbulenceDeviationThresholdPercent(uint16 newTurbulenceDeviationThresholdPercent) external;\\n    function setTurbulenceDeviationPercent(uint16 newTurbulenceDeviationPercentage) external;\\n\\n    function calculateTurbulenceIndicatorPercent(uint256 totalTime, uint256 newRounds, uint32 _lastCVIValue, uint32 _currCVIValue) external view returns (uint16);\\n\\n    function calculateBuyingPremiumFee(uint168 tokenAmount, uint8 leverage, uint256 lastTotalLeveragedTokens, uint256 lastTotalPositionUnits, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint168 buyingPremiumFee, uint16 combinedPremiumFeePercentage);\\n    function calculateBuyingPremiumFeeWithAddendum(uint168 tokenAmount, uint8 leverage, uint256 lastTotalLeveragedTokens, uint256 lastTotalPositionUnits, uint256 totalLeveragedTokens, uint256 totalPositionUnits, uint16 _turbulenceIndicatorPercent) external view returns (uint168 buyingPremiumFee, uint16 combinedPremiumFeePercentage);\\n\\n    function calculateClosingPremiumFee() external view returns (uint16 combinedPremiumFeePercentage);\\n\\n    function calculateSingleUnitFundingFee(CVIValue[] memory cviValues, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint256 fundingFee);\\n    function calculateSingleUnitPeriodFundingFee(CVIValue memory cviValue, uint256 collateralRatio) external view returns (uint256 fundingFee, uint256 fundingFeeRatePercents);\\n    function updateSnapshots(uint256 latestTimestamp, uint256 blockTimestampSnapshot, uint256 latestTimestampSnapshot, uint80 latestOracleRoundId, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (SnapshotUpdate memory snapshotUpdate);\\n\\n    function calculateClosePositionFeePercent(uint256 creationTimestamp, bool isNoLockPositionAddress) external view returns (uint16);\\n    function calculateWithdrawFeePercent(uint256 lastDepositTimestamp) external view returns (uint16);\\n\\n    function calculateCollateralRatio(uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint256 collateralRatio);\\n\\n    function depositFeePercent() external view returns (uint16);\\n    function withdrawFeePercent() external view returns (uint16);\\n    function openPositionFeePercent() external view returns (uint16);\\n    function closePositionFeePercent() external view returns (uint16);\\n    function openPositionLPFeePercent() external view returns (uint16);\\n    function closePositionLPFeePercent() external view returns (uint16);\\n\\n    function openPositionFees() external view returns (uint16 openPositionFeePercentResult, uint16 buyingPremiumFeeMaxPercentResult);\\n\\n    function turbulenceIndicatorPercent() external view returns (uint16);\\n    function oracleLeverage() external view returns (uint8);\\n\\n    function getCollateralToBuyingPremiumMapping() external view returns(uint16[] memory);\\n    function getCollateralToExtraFundingFeeMapping() external view returns(uint32[] memory);\\n}\\n\",\"keccak256\":\"0xfba7d565b0a7d83dbe5d1abb0bf35897145a96d28e35b0b91864e321606c5734\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IFeesCollector.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ninterface IFeesCollector {\\n    function sendProfit(uint256 amount, IERC20 token) external;\\n}\\n\",\"keccak256\":\"0xb16b7c5d985657716ccacf0f1e61de587c06fe4f6591bee6fafc0a3658229b4c\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/ILiquidation.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface ILiquidation {\\t\\n\\tfunction setMinLiquidationThresholdPercents(uint16[8] calldata newMinThresholdPercents) external;\\n\\tfunction setMinLiquidationRewardPercent(uint16 newMinRewardPercent) external;\\n\\tfunction setMaxLiquidationRewardPercents(uint16[8] calldata newMaxRewardPercents) external;\\n\\tfunction isLiquidationCandidate(uint256 positionBalance, bool isPositive, uint168 positionUnitsAmount, uint32 openCVIValue, uint8 leverage) external view returns (bool);\\n\\tfunction getLiquidationReward(uint256 positionBalance, bool isPositive, uint168 positionUnitsAmount, uint32 openCVIValue, uint8 leverage) external view returns (uint256 finderFeeAmount);\\n}\\n\",\"keccak256\":\"0x0799656b324ed8d65391313156e1dfe7d99b6dadb08e71cd6a515d19731539bd\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IPlatform.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./ICVIOracle.sol\\\";\\nimport \\\"./IFeesCalculator.sol\\\";\\nimport \\\"./IRewardsCollector.sol\\\";\\nimport \\\"./IFeesCollector.sol\\\";\\nimport \\\"./ILiquidation.sol\\\";\\n\\ninterface IPlatform {\\n\\n    struct Position {\\n        uint168 positionUnitsAmount;\\n        uint8 leverage;\\n        uint32 openCVIValue;\\n        uint32 creationTimestamp;\\n        uint32 originalCreationTimestamp;\\n    }\\n\\n    event Deposit(address indexed account, uint256 tokenAmount, uint256 lpTokensAmount, uint256 feeAmount);\\n    event Withdraw(address indexed account, uint256 tokenAmount, uint256 lpTokensAmount, uint256 feeAmount);\\n    event OpenPosition(address indexed account, uint256 tokenAmount, uint8 leverage, uint256 feeAmount, uint256 positionUnitsAmount, uint256 cviValue);\\n    event ClosePosition(address indexed account, uint256 tokenAmount, uint256 feeAmount, uint256 positionUnitsAmount, uint8 leverage, uint256 cviValue);\\n    event LiquidatePosition(address indexed positionAddress, uint256 currentPositionBalance, bool isBalancePositive, uint256 positionUnitsAmount);\\n\\n    function deposit(uint256 tokenAmount, uint256 minLPTokenAmount) external returns (uint256 lpTokenAmount);\\n    function withdraw(uint256 tokenAmount, uint256 maxLPTokenBurnAmount) external returns (uint256 burntAmount, uint256 withdrawnAmount);\\n    function withdrawLPTokens(uint256 lpTokenAmount) external returns (uint256 burntAmount, uint256 withdrawnAmount);\\n\\n    function increaseSharedPool(uint256 tokenAmount) external;\\n\\n    function openPositionWithoutFee(uint168 tokenAmount, uint32 maxCVI, uint8 leverage) external returns (uint168 positionUnitsAmount, uint168 positionedTokenAmount, uint168 openPositionFee, uint168 buyingPremiumFee);\\n    function openPosition(uint168 tokenAmount, uint32 maxCVI, uint16 maxBuyingPremiumFeePercentage, uint8 leverage) external returns (uint168 positionUnitsAmount, uint168 positionedTokenAmount, uint168 openPositionFee, uint168 buyingPremiumFee);\\n    function closePositionWithoutFee(uint168 positionUnitsAmount, uint32 minCVI) external returns (uint256 tokenAmount, uint256 closePositionFee, uint256 closingPremiumFee);\\n    function closePosition(uint168 positionUnitsAmount, uint32 minCVI) external returns (uint256 tokenAmount, uint256 closePositionFee, uint256 closingPremiumFee);\\n\\n    function liquidatePositions(address[] calldata positionOwners) external returns (uint256 finderFeeAmount);\\n\\n    function setAddressSpecificParameters(address holderAddress, bool shouldLockPosition, bool noPremiumFeeAllowed, bool increaseSharedPoolAllowed, bool isLiquidityProvider) external;\\n\\n    function setRevertLockedTransfers(bool revertLockedTransfers) external;\\n\\n    function setSubContracts(IFeesCollector newCollector, ICVIOracle newOracle, IRewardsCollector newRewards, ILiquidation newLiquidation, address _newStakingContractAddress) external;\\n    function setFeesCalculator(IFeesCalculator newCalculator) external;\\n\\n    function setLatestOracleRoundId(uint80 newOracleRoundId) external;\\n    function setMaxTimeAllowedAfterLatestRound(uint32 newMaxTimeAllowedAfterLatestRound) external;\\n\\n    function setLockupPeriods(uint256 newLPLockupPeriod, uint256 newBuyersLockupPeriod) external;\\n\\n    function setEmergencyParameters(bool newEmergencyWithdrawAllowed, bool newCanPurgeSnapshots) external;\\n\\n    function setMaxAllowedLeverage(uint8 newMaxAllowedLeverage) external;\\n\\n    function calculatePositionBalance(address positionAddress) external view returns (uint256 currentPositionBalance, bool isPositive, uint168 positionUnitsAmount, uint8 leverage, uint256 fundingFees, uint256 marginDebt);\\n    function calculatePositionPendingFees(address positionAddress, uint168 positionUnitsAmount) external view returns (uint256 pendingFees);\\n\\n    function totalBalance(bool _withAddendum) external view returns (uint256 balance);\\n\\n    function calculateLatestTurbulenceIndicatorPercent() external view returns (uint16);\\n\\n    function cviOracle() external view returns (ICVIOracle);\\n    function feesCalculator() external view returns (IFeesCalculator);\\n\\n    function PRECISION_DECIMALS() external view returns (uint256);\\n\\n    function totalPositionUnitsAmount() external view returns (uint256);\\n    function totalLeveragedTokensAmount() external view returns (uint256);\\n    function totalFundingFeesAmount() external view returns (uint256);\\n    function latestFundingFees() external view returns (uint256);\\n\\n    function positions(address positionAddress) external view returns (uint168 positionUnitsAmount, uint8 leverage, uint32 openCVIValue, uint32 creationTimestamp, uint32 originalCreationTimestamp);\\n    function buyersLockupPeriod() external view returns (uint256);\\n    function maxCVIValue() external view returns (uint32);\\n}\\n\",\"keccak256\":\"0x11f55f686514975c2dd5adf87856f8df5f85b015621f01e1528addb6b7194686\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IRebaser.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"../external/IUniswapV2Pair.sol\\\";\\nimport \\\"./IVolatilityToken.sol\\\";\\n\\ninterface IRebaser {\\n    function rebase() external;\\n    function setVolatilityToken(IVolatilityToken volatilityToken) external;\\n    function setUniswapPairs(IUniswapV2Pair[] calldata uniswapPairs) external;\\n    function setRebaserAddress(address user, bool isAllowed) external;\\n    function setUpkeepInterval(uint32 upkeepInterval) external;\\n    function setUpkeepTimeWindow(uint32 upkeepTimeWindow) external;\\n    function setEnableWhitelist(bool enableWhitelist) external;\\n}\\n\",\"keccak256\":\"0x9b5b6b3f4a8d739810758d2718446bbd75ce73729237d11dbe9d669c99fe4998\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IRequestFeesCalculator.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./IVolatilityToken.sol\\\";\\n\\ninterface IRequestFeesCalculator {\\n    function calculateTimePenaltyFee(IVolatilityToken.Request calldata request) external view returns (uint16 feePercentage);\\n    function calculateTimeDelayFee(uint256 timeDelay) external view returns (uint16 feePercentage);\\n    function calculateFindersFee(uint256 tokensLeftAmount) external view returns (uint256 findersFeeAmount);\\n    function calculateKeepersFee(uint256 tokensAmount) external view returns (uint256 keepersFeeAmount);\\n\\n    function isLiquidable(IVolatilityToken.Request calldata request) external view returns (bool liquidable);\\n\\n    function minWaitTime() external view returns (uint32);\\n\\n    function setTimeWindow(uint32 minTimeWindow, uint32 maxTimeWindow) external;\\n    function setTimeDelayFeesParameters(uint16 minTimeDelayFeePercent, uint16 maxTimeDelayFeePercent) external;\\n    function setMinWaitTime(uint32 newMinWaitTime) external;\\n    function setTimePenaltyFeeParameters(uint16 beforeTargetTimeMaxPenaltyFeePercent, uint32 afterTargetMidTime, uint16 afterTargetMidTimePenaltyFeePercent, uint32 afterTargetMaxTime, uint16 afterTargetMaxTimePenaltyFeePercent) external;\\n    function setFindersFee(uint16 findersFeePercent) external;\\n    function setKeepersFeePercent(uint16 keepersFeePercent) external;\\n    function setKeepersFeeMax(uint256 keepersFeeMax) external;\\n\\n    function getMaxFees() external view returns (uint16 maxFeesPercent);\\n}\\n\",\"keccak256\":\"0xb516083aa9063482c61c12f38b960f017205f2611358dcab31c1197208841611\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IRewardsCollector.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface IRewardsCollector {\\n\\tfunction reward(address account, uint256 positionUnits, uint8 leverage) external;\\n}\\n\",\"keccak256\":\"0xaae3f1399202cccfb2e7302f69868a1f9adfbc53c968668e79201692c5724ca5\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IThetaVaultInfo.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface IThetaVaultInfo {\\n    function totalVaultLeveragedAmount() external view returns (uint256);\\n    function vaultPositionUnits() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x8077ab6dec8937112a2e2567d9b524a10ba640b7891c4bb40729bfbb648c0c1e\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IVolatilityToken.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./IPlatform.sol\\\";\\nimport \\\"./IRequestFeesCalculator.sol\\\";\\nimport \\\"./ICVIOracle.sol\\\";\\n\\ninterface IVolatilityToken {\\n\\n    struct Request {\\n        uint8 requestType; // 1 => mint, 2 => burn\\n        uint168 tokenAmount;\\n        uint16 timeDelayRequestFeesPercent;\\n        uint16 maxRequestFeesPercent;\\n        address owner;\\n        uint32 requestTimestamp;\\n        uint32 targetTimestamp;\\n        bool useKeepers;\\n        uint16 maxBuyingPremiumFeePercentage;\\n    }\\n\\n    event SubmitRequest(uint256 requestId, uint8 requestType, address indexed account, uint256 tokenAmount, uint256 submitFeesAmount, uint32 requestTimestamp, uint32 targetTimestamp, bool useKeepers, uint16 maxBuyingPremiumFeePercentage);\\n    event FulfillRequest(uint256 requestId, uint8 requestType, address indexed account, uint256 fulfillFeesAmount, bool isAborted, bool useKeepers, bool keepersCalled, address indexed fulfiller, uint32 fulfillTimestamp);\\n    event LiquidateRequest(uint256 requestId, uint8 requestType, address indexed account, address indexed liquidator, uint256 findersFeeAmount, bool useKeepers, uint32 liquidateTimestamp);\\n    event Mint(uint256 requestId, address indexed account, uint256 tokenAmount, uint256 positionedTokenAmount, uint256 mintedTokens, uint256 openPositionFee, uint256 buyingPremiumFee);\\n    event Burn(uint256 requestId, address indexed account, uint256 tokenAmountBeforeFees, uint256 tokenAmount, uint256 burnedTokens, uint256 closePositionFee, uint256 closingPremiumFee);\\n\\n    function rebaseCVI() external;\\n\\n    function submitMintRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n    function submitKeepersMintRequest(uint168 tokenAmount, uint32 timeDelay, uint16 maxBuyingPremiumFeePercentage) external returns (uint256 requestId);\\n    function submitBurnRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n    function submitKeepersBurnRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n\\n    function fulfillMintRequest(uint256 requestId, uint16 maxBuyingPremiumFeePercentage, bool keepersCalled) external returns (uint256 tokensMinted, bool success);\\n    function fulfillBurnRequest(uint256 requestId, bool keepersCalled) external returns (uint256 tokensBurned);\\n\\n    function mintTokens(uint168 tokenAmount) external returns (uint256 mintedTokens);\\n    function burnTokens(uint168 burnAmount) external returns (uint256 tokenAmount);\\n\\n    function liquidateRequest(uint256 requestId) external returns (uint256 findersFeeAmount);\\n\\n    function setMinter(address minter) external;\\n    function setPlatform(IPlatform newPlatform) external;\\n    function setFeesCalculator(IFeesCalculator newFeesCalculator) external;\\n    function setFeesCollector(IFeesCollector newCollector) external;\\n    function setRequestFeesCalculator(IRequestFeesCalculator newRequestFeesCalculator) external;\\n    function setCVIOracle(ICVIOracle newCVIOracle) external;\\n    function setDeviationParameters(uint16 newDeviationPercentagePerSingleRebaseLag, uint16 newMinDeviationPercentage, uint16 newMaxDeviationPercentage) external;\\n    function setVerifyTotalRequestsAmount(bool verifyTotalRequestsAmount) external;\\n    function setMaxTotalRequestsAmount(uint256 maxTotalRequestsAmount) external;\\n    function setCappedRebase(bool newCappedRebase) external;\\n\\n    function setMinRequestId(uint256 newMinRequestId) external;\\n    function setMaxMinRequestIncrements(uint256 newMaxMinRequestIncrements) external;\\n\\n    function setFulfiller(address fulfiller) external;\\n\\n    function setKeepersFeeVaultAddress(address newKeepersFeeVaultAddress) external;\\n\\n    function setMinKeepersAmounts(uint256 newMinKeepersMintAmount, uint256 newMinKeepersBurnAmount) external;\\n\\n    function platform() external view returns (IPlatform);\\n    function requestFeesCalculator() external view returns (IRequestFeesCalculator);\\n    function leverage() external view returns (uint8);\\n    function initialTokenToLPTokenRate() external view returns (uint256);\\n\\n    function requests(uint256 requestId) external view returns (uint8 requestType, uint168 tokenAmount, uint16 timeDelayRequestFeesPercent, uint16 maxRequestFeesPercent,\\n        address owner, uint32 requestTimestamp, uint32 targetTimestamp, bool useKeepers, uint16 maxBuyingPremiumFeePercentage);\\n}\\n\",\"keccak256\":\"0x9b195f997265f6401224845c81cba2a3ac6f2e4f2bf65d8be5027ac1ee3fa5b4\",\"license\":\"GPL-3.0\"},\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/volatility-token/RebaserContracts.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport '@coti-cvi/contracts-cvi/contracts/Rebaser.sol';\\n\\ncontract CVIUSDCRebaser is Rebaser {\\n  constructor(IVolatilityToken _volatilityToken, IUniswapV2Pair[] memory _uniswapPairs)\\n    Rebaser(_volatilityToken, _uniswapPairs)\\n  {}\\n}\\n\\ncontract CVIUSDCRebaser2X is Rebaser {\\n  constructor(IVolatilityToken _volatilityToken, IUniswapV2Pair[] memory _uniswapPairs)\\n    Rebaser(_volatilityToken, _uniswapPairs)\\n  {}\\n}\",\"keccak256\":\"0x37bb0fb19ffb75280cd9f6e12f2a4da58a736691aafe8edcb79f8d69253fc18f\",\"license\":\"GPL-3.0\"}},\"version\":1}",
+  "bytecode": "0x6080604052600480546001600160481b031916680100000384000151801790553480156200002c57600080fd5b5060405162001050380380620010508339810160408190526200004f916200019c565b81816200005c33620000b9565b600180546001600160a01b0319166001600160a01b03841617905580516200008c90600290602084019062000109565b506200009c620151804262000289565b620000ab9062015180620002aa565b600355506200030592505050565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b82805482825590600052602060002090810192821562000161579160200282015b828111156200016157825182546001600160a01b0319166001600160a01b039091161782556020909201916001909101906200012a565b506200016f92915062000173565b5090565b5b808211156200016f576000815560010162000174565b80516200019781620002ec565b919050565b60008060408385031215620001af578182fd5b8251620001bc81620002ec565b602084810151919350906001600160401b0380821115620001db578384fd5b818601915086601f830112620001ef578384fd5b815181811115620002045762000204620002d6565b8060051b604051601f19603f830116810181811085821117156200022c576200022c620002d6565b604052828152858101935084860182860187018b10156200024b578788fd5b8795505b83861015620002785762000263816200018a565b8552600195909501949386019386016200024f565b508096505050505050509250929050565b600082620002a557634e487b7160e01b81526012600452602481fd5b500490565b6000816000190483118215151615620002d157634e487b7160e01b81526011600452602481fd5b500290565b634e487b7160e01b600052604160045260246000fd5b6001600160a01b03811681146200030257600080fd5b50565b610d3b80620003156000396000f3fe608060405234801561001057600080fd5b50600436106101215760003560e01c806398dfadab116100ad578063d338680911610071578063d338680914610274578063e2dbc0e71461028b578063f2fde38b146102a3578063f372b42a146102b6578063fc3db54e146102c957600080fd5b806398dfadab146101ff578063abd5b18114610212578063af14052c14610245578063b91ac7881461024d578063cdfb2b4e1461026057600080fd5b806378f9ccf2116100f457806378f9ccf21461018e578063817d6ae2146101a157806386a2b61e146101b45780638da5cb5b146101c757806395064101146101ec57600080fd5b80634585e33b146101265780635a74373c1461013b5780636e04ff0d14610165578063715018a614610186575b600080fd5b610139610134366004610b1b565b6102dc565b005b60045461014b9063ffffffff1681565b60405163ffffffff90911681526020015b60405180910390f35b610178610173366004610b1b565b6103c4565b60405161015c929190610bb2565b6101396103d9565b61013961019c366004610b01565b61040f565b6101396101af366004610a5d565b61045c565b6101396101c2366004610b8e565b6104b1565b6000546001600160a01b03165b6040516001600160a01b03909116815260200161015c565b6001546101d4906001600160a01b031681565b61013961020d366004610a91565b6104f7565b610235610220366004610a3a565b60056020526000908152604090205460ff1681565b604051901515815260200161015c565b610139610532565b6101d461025b366004610b76565b6107b4565b60045461023590600160401b900460ff1681565b61027d60035481565b60405190815260200161015c565b60045461014b90640100000000900463ffffffff1681565b6101396102b1366004610a3a565b6107de565b6101396102c4366004610a3a565b610876565b6101396102d7366004610b8e565b6108c2565b600454600160401b900460ff16158061030457503360009081526005602052604090205460ff165b6103555760405162461bcd60e51b815260206004820152601a60248201527f57686974656c697374656420616464726573736573206f6e6c7900000000000060448201526064015b60405180910390fd5b61035d610914565b61039b5760405162461bcd60e51b815260206004820152600f60248201526e4261642074696d652077696e646f7760881b604482015260640161034c565b6103a86201518042610c44565b6103b59062015180610c58565b6003556103c0610532565b5050565b600060606103d0610914565b91509250929050565b6000546001600160a01b031633146104035760405162461bcd60e51b815260040161034c90610c0f565b61040d600061095d565b565b6000546001600160a01b031633146104395760405162461bcd60e51b815260040161034c90610c0f565b60048054911515600160401b0268ff000000000000000019909216919091179055565b6000546001600160a01b031633146104865760405162461bcd60e51b815260040161034c90610c0f565b6001600160a01b03919091166000908152600560205260409020805460ff1916911515919091179055565b6000546001600160a01b031633146104db5760405162461bcd60e51b815260040161034c90610c0f565b6004805463ffffffff191663ffffffff92909216919091179055565b6000546001600160a01b031633146105215760405162461bcd60e51b815260040161034c90610c0f565b61052d600283836109ad565b505050565b600454600160401b900460ff16158061055a57503360009081526005602052604090205460ff165b6105a65760405162461bcd60e51b815260206004820152601a60248201527f57686974656c697374656420616464726573736573206f6e6c79000000000000604482015260640161034c565b6001546001600160a01b03166105f55760405162461bcd60e51b815260206004820152601460248201527329b2ba103b37b630ba34b634ba3c903a37b5b2b760611b604482015260640161034c565b600454640100000000900463ffffffff166106136201518042610cb0565b11156106535760405162461bcd60e51b815260206004820152600f60248201526e4261642074696d652077696e646f7760881b604482015260640161034c565b600160009054906101000a90046001600160a01b03166001600160a01b031663cf6caff36040518163ffffffff1660e01b8152600401600060405180830381600087803b1580156106a357600080fd5b505af11580156106b7573d6000803e3d6000fd5b5050505060005b60025461ffff821610156107b15760006001600160a01b031660028261ffff16815481106106fc57634e487b7160e01b600052603260045260246000fd5b6000918252602090912001546001600160a01b03161461079f5760028161ffff168154811061073b57634e487b7160e01b600052603260045260246000fd5b60009182526020822001546040805160016209351760e01b0319815290516001600160a01b039092169263fff6cae99260048084019382900301818387803b15801561078657600080fd5b505af115801561079a573d6000803e3d6000fd5b505050505b806107a981610c8e565b9150506106be565b50565b600281815481106107c457600080fd5b6000918252602090912001546001600160a01b0316905081565b6000546001600160a01b031633146108085760405162461bcd60e51b815260040161034c90610c0f565b6001600160a01b03811661086d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161034c565b6107b18161095d565b6000546001600160a01b031633146108a05760405162461bcd60e51b815260040161034c90610c0f565b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b031633146108ec5760405162461bcd60e51b815260040161034c90610c0f565b6004805463ffffffff9092166401000000000267ffffffff0000000019909216919091179055565b60045460035460009163ffffffff169061092e9042610c77565b101580156109585750600454640100000000900463ffffffff166109556201518042610cb0565b11155b905090565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b828054828255906000526020600020908101928215610a00579160200282015b82811115610a005781546001600160a01b0319166001600160a01b038435161782556020909201916001909101906109cd565b50610a0c929150610a10565b5090565b5b80821115610a0c5760008155600101610a11565b80358015158114610a3557600080fd5b919050565b600060208284031215610a4b578081fd5b8135610a5681610cf0565b9392505050565b60008060408385031215610a6f578081fd5b8235610a7a81610cf0565b9150610a8860208401610a25565b90509250929050565b60008060208385031215610aa3578182fd5b823567ffffffffffffffff80821115610aba578384fd5b818501915085601f830112610acd578384fd5b813581811115610adb578485fd5b8660208260051b8501011115610aef578485fd5b60209290920196919550909350505050565b600060208284031215610b12578081fd5b610a5682610a25565b60008060208385031215610b2d578182fd5b823567ffffffffffffffff80821115610b44578384fd5b818501915085601f830112610b57578384fd5b813581811115610b65578485fd5b866020828501011115610aef578485fd5b600060208284031215610b87578081fd5b5035919050565b600060208284031215610b9f578081fd5b813563ffffffff81168114610a56578182fd5b8215158152600060206040818401528351806040850152825b81811015610be757858101830151858201606001528201610bcb565b81811115610bf85783606083870101525b50601f01601f191692909201606001949350505050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b600082610c5357610c53610cda565b500490565b6000816000190483118215151615610c7257610c72610cc4565b500290565b600082821015610c8957610c89610cc4565b500390565b600061ffff80831681811415610ca657610ca6610cc4565b6001019392505050565b600082610cbf57610cbf610cda565b500690565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052601260045260246000fd5b6001600160a01b03811681146107b157600080fdfea2646970667358221220a1901c3ee64357285274f055bc718b9ea3a90e48cb35bf10bff48eddf76837ca64736f6c63430008040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101215760003560e01c806398dfadab116100ad578063d338680911610071578063d338680914610274578063e2dbc0e71461028b578063f2fde38b146102a3578063f372b42a146102b6578063fc3db54e146102c957600080fd5b806398dfadab146101ff578063abd5b18114610212578063af14052c14610245578063b91ac7881461024d578063cdfb2b4e1461026057600080fd5b806378f9ccf2116100f457806378f9ccf21461018e578063817d6ae2146101a157806386a2b61e146101b45780638da5cb5b146101c757806395064101146101ec57600080fd5b80634585e33b146101265780635a74373c1461013b5780636e04ff0d14610165578063715018a614610186575b600080fd5b610139610134366004610b1b565b6102dc565b005b60045461014b9063ffffffff1681565b60405163ffffffff90911681526020015b60405180910390f35b610178610173366004610b1b565b6103c4565b60405161015c929190610bb2565b6101396103d9565b61013961019c366004610b01565b61040f565b6101396101af366004610a5d565b61045c565b6101396101c2366004610b8e565b6104b1565b6000546001600160a01b03165b6040516001600160a01b03909116815260200161015c565b6001546101d4906001600160a01b031681565b61013961020d366004610a91565b6104f7565b610235610220366004610a3a565b60056020526000908152604090205460ff1681565b604051901515815260200161015c565b610139610532565b6101d461025b366004610b76565b6107b4565b60045461023590600160401b900460ff1681565b61027d60035481565b60405190815260200161015c565b60045461014b90640100000000900463ffffffff1681565b6101396102b1366004610a3a565b6107de565b6101396102c4366004610a3a565b610876565b6101396102d7366004610b8e565b6108c2565b600454600160401b900460ff16158061030457503360009081526005602052604090205460ff165b6103555760405162461bcd60e51b815260206004820152601a60248201527f57686974656c697374656420616464726573736573206f6e6c7900000000000060448201526064015b60405180910390fd5b61035d610914565b61039b5760405162461bcd60e51b815260206004820152600f60248201526e4261642074696d652077696e646f7760881b604482015260640161034c565b6103a86201518042610c44565b6103b59062015180610c58565b6003556103c0610532565b5050565b600060606103d0610914565b91509250929050565b6000546001600160a01b031633146104035760405162461bcd60e51b815260040161034c90610c0f565b61040d600061095d565b565b6000546001600160a01b031633146104395760405162461bcd60e51b815260040161034c90610c0f565b60048054911515600160401b0268ff000000000000000019909216919091179055565b6000546001600160a01b031633146104865760405162461bcd60e51b815260040161034c90610c0f565b6001600160a01b03919091166000908152600560205260409020805460ff1916911515919091179055565b6000546001600160a01b031633146104db5760405162461bcd60e51b815260040161034c90610c0f565b6004805463ffffffff191663ffffffff92909216919091179055565b6000546001600160a01b031633146105215760405162461bcd60e51b815260040161034c90610c0f565b61052d600283836109ad565b505050565b600454600160401b900460ff16158061055a57503360009081526005602052604090205460ff165b6105a65760405162461bcd60e51b815260206004820152601a60248201527f57686974656c697374656420616464726573736573206f6e6c79000000000000604482015260640161034c565b6001546001600160a01b03166105f55760405162461bcd60e51b815260206004820152601460248201527329b2ba103b37b630ba34b634ba3c903a37b5b2b760611b604482015260640161034c565b600454640100000000900463ffffffff166106136201518042610cb0565b11156106535760405162461bcd60e51b815260206004820152600f60248201526e4261642074696d652077696e646f7760881b604482015260640161034c565b600160009054906101000a90046001600160a01b03166001600160a01b031663cf6caff36040518163ffffffff1660e01b8152600401600060405180830381600087803b1580156106a357600080fd5b505af11580156106b7573d6000803e3d6000fd5b5050505060005b60025461ffff821610156107b15760006001600160a01b031660028261ffff16815481106106fc57634e487b7160e01b600052603260045260246000fd5b6000918252602090912001546001600160a01b03161461079f5760028161ffff168154811061073b57634e487b7160e01b600052603260045260246000fd5b60009182526020822001546040805160016209351760e01b0319815290516001600160a01b039092169263fff6cae99260048084019382900301818387803b15801561078657600080fd5b505af115801561079a573d6000803e3d6000fd5b505050505b806107a981610c8e565b9150506106be565b50565b600281815481106107c457600080fd5b6000918252602090912001546001600160a01b0316905081565b6000546001600160a01b031633146108085760405162461bcd60e51b815260040161034c90610c0f565b6001600160a01b03811661086d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161034c565b6107b18161095d565b6000546001600160a01b031633146108a05760405162461bcd60e51b815260040161034c90610c0f565b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b031633146108ec5760405162461bcd60e51b815260040161034c90610c0f565b6004805463ffffffff9092166401000000000267ffffffff0000000019909216919091179055565b60045460035460009163ffffffff169061092e9042610c77565b101580156109585750600454640100000000900463ffffffff166109556201518042610cb0565b11155b905090565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b828054828255906000526020600020908101928215610a00579160200282015b82811115610a005781546001600160a01b0319166001600160a01b038435161782556020909201916001909101906109cd565b50610a0c929150610a10565b5090565b5b80821115610a0c5760008155600101610a11565b80358015158114610a3557600080fd5b919050565b600060208284031215610a4b578081fd5b8135610a5681610cf0565b9392505050565b60008060408385031215610a6f578081fd5b8235610a7a81610cf0565b9150610a8860208401610a25565b90509250929050565b60008060208385031215610aa3578182fd5b823567ffffffffffffffff80821115610aba578384fd5b818501915085601f830112610acd578384fd5b813581811115610adb578485fd5b8660208260051b8501011115610aef578485fd5b60209290920196919550909350505050565b600060208284031215610b12578081fd5b610a5682610a25565b60008060208385031215610b2d578182fd5b823567ffffffffffffffff80821115610b44578384fd5b818501915085601f830112610b57578384fd5b813581811115610b65578485fd5b866020828501011115610aef578485fd5b600060208284031215610b87578081fd5b5035919050565b600060208284031215610b9f578081fd5b813563ffffffff81168114610a56578182fd5b8215158152600060206040818401528351806040850152825b81811015610be757858101830151858201606001528201610bcb565b81811115610bf85783606083870101525b50601f01601f191692909201606001949350505050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b600082610c5357610c53610cda565b500490565b6000816000190483118215151615610c7257610c72610cc4565b500290565b600082821015610c8957610c89610cc4565b500390565b600061ffff80831681811415610ca657610ca6610cc4565b6001019392505050565b600082610cbf57610cbf610cda565b500690565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052601260045260246000fd5b6001600160a01b03811681146107b157600080fdfea2646970667358221220a1901c3ee64357285274f055bc718b9ea3a90e48cb35bf10bff48eddf76837ca64736f6c63430008040033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 37156,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 8685,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "volatilityToken",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(IVolatilityToken)18697"
+      },
+      {
+        "astId": 8689,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "pairs",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_array(t_contract(IUniswapV2Pair)15721)dyn_storage"
+      },
+      {
+        "astId": 8691,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "lastUpkeepTime",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 8694,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "upkeepInterval",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 8697,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "upkeepTimeWindow",
+        "offset": 4,
+        "slot": "4",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 8700,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "enableWhitelist",
+        "offset": 8,
+        "slot": "4",
+        "type": "t_bool"
+      },
+      {
+        "astId": 8704,
+        "contract": "contracts/volatility-token/RebaserContracts.sol:CVIUSDCRebaser",
+        "label": "rebasers",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_contract(IUniswapV2Pair)15721)dyn_storage": {
+        "base": "t_contract(IUniswapV2Pair)15721",
+        "encoding": "dynamic_array",
+        "label": "contract IUniswapV2Pair[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(IUniswapV2Pair)15721": {
+        "encoding": "inplace",
+        "label": "contract IUniswapV2Pair",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IVolatilityToken)18697": {
+        "encoding": "inplace",
+        "label": "contract IVolatilityToken",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint32": {
+        "encoding": "inplace",
+        "label": "uint32",
+        "numberOfBytes": "4"
+      }
+    }
+  }
+}

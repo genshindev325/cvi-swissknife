@@ -1,0 +1,712 @@
+[
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionConfig",
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "hash": "0xee1304d80f913082b772e7ab64bf6b23bf513e2f3c7057ebee599c006d8fd717",
+    "block": 32551363,
+    "timestamp": 1662026383,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionController",
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "hash": "0xee1304d80f913082b772e7ab64bf6b23bf513e2f3c7057ebee599c006d8fd717",
+    "block": 32551363,
+    "timestamp": 1662026383,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionNFT",
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "hash": "0xee1304d80f913082b772e7ab64bf6b23bf513e2f3c7057ebee599c006d8fd717",
+    "block": 32551363,
+    "timestamp": 1662026383,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0xee1304d80f913082b772e7ab64bf6b23bf513e2f3c7057ebee599c006d8fd717",
+    "block": 32551363,
+    "timestamp": 1662026383,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "TreasuryController",
+    "contractAddress": "0x4ebB6D9aAc1E3E16D41f509711403eF7ad873765",
+    "hash": "0xee1304d80f913082b772e7ab64bf6b23bf513e2f3c7057ebee599c006d8fd717",
+    "block": 32551363,
+    "timestamp": 1662026383,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Deploy",
+    "contractName": "PremiumCalculator",
+    "contractAddress": "0xA44Fd9588BFf29Ba405E428F21224b035A9f13bf",
+    "hash": "0xbec255919e5003f9d2cf5eb27b23ee4955188e3e918b85f7058fc8e1c8617be7",
+    "block": 32550866,
+    "timestamp": 1662025357,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "Deploy proxy",
+    "contractName": "ILProtectionDiscountNFTController",
+    "contractAddress": "0xe0FB860559454267a8f5792527e7A6a00f6Bd0d2",
+    "hash": "0xf0c8644a48de52a222d2d882f2504c82d03b6c7cb6cc3c2c601cfe38f02b6d2f",
+    "block": 32550861,
+    "timestamp": 1662025347,
+    "blockchain": "polygon",
+    "description": "Embed discount"
+  },
+  {
+    "topic": "PairSet: LINK-USDT",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x5e4d56eeb257243dd54bd31458ebae3b108eca7a3b4664230abe1a555422bc50",
+    "block": 31432997,
+    "timestamp": 1659443407,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "PairSet: LINK-DAI",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x5e4d56eeb257243dd54bd31458ebae3b108eca7a3b4664230abe1a555422bc50",
+    "block": 31432997,
+    "timestamp": 1659443407,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionController",
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "hash": "0xd79a50785aa4f64e4b9dfd75c98b9c197df462bf34d56a4da63ec4122696bdaa",
+    "block": 31431102,
+    "timestamp": 1659439369,
+    "blockchain": "polygon",
+    "description": "Protection NFT IPFS metadata"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionNFT",
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "hash": "0xd79a50785aa4f64e4b9dfd75c98b9c197df462bf34d56a4da63ec4122696bdaa",
+    "block": 31431102,
+    "timestamp": 1659439369,
+    "blockchain": "polygon",
+    "description": "Protection NFT IPFS metadata"
+  },
+  {
+    "topic": "PairSet: LINK-USDC",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0xd79a50785aa4f64e4b9dfd75c98b9c197df462bf34d56a4da63ec4122696bdaa",
+    "block": 31431102,
+    "timestamp": 1659439369,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionController",
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "hash": "0x96f2d48696e51ac4566dce5a936b1977cc6c68a7a4cfd7ba37c5f628dfa37d8e",
+    "block": 31195013,
+    "timestamp": 1658921476,
+    "blockchain": "polygon",
+    "description": "Collateral per pair"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x96f2d48696e51ac4566dce5a936b1977cc6c68a7a4cfd7ba37c5f628dfa37d8e",
+    "block": 31195013,
+    "timestamp": 1658921476,
+    "blockchain": "polygon",
+    "description": "Collateral per pair"
+  },
+  {
+    "topic": "Deploy",
+    "contractName": "PremiumCalculator",
+    "contractAddress": "0x3bd1d52C7b0AF71d552b573F9B59831CBC4bD351",
+    "hash": "0xad4946975e387cce30f1f6e988581daf74b0e940520d767653608c19165331cc",
+    "block": 31193872,
+    "timestamp": 1658918994,
+    "blockchain": "polygon",
+    "description": "Collateral per pair"
+  },
+  {
+    "topic": "Deploy",
+    "contractName": "ILUtils",
+    "contractAddress": "0x71b42bEef3ebEeEa766312bEfA26B5fE054d2137",
+    "hash": "0x59f44e675dcf6645e438f3c66911c39f9aa0d46a4f9d14c224695d17bfacaf78",
+    "block": 31193868,
+    "timestamp": 1658918986,
+    "blockchain": "polygon",
+    "description": "Collateral per pair"
+  },
+  {
+    "topic": "Deploy",
+    "contractName": "MathUtils",
+    "contractAddress": "0xE1db41617188103cD5E4B2EBdA9C2fb2D0f0a375",
+    "hash": "0x11e869da74940d7227f12a53371572409656da6b723c4c59db236a0ba042344b",
+    "block": 31193862,
+    "timestamp": 1658918974,
+    "blockchain": "polygon",
+    "description": "Collateral per pair"
+  },
+  {
+    "topic": "PairSet: WETH-MATIC",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x691d4dc72d2416accf906c04476a483ba026526ab7155f966c6e19b00687e003",
+    "block": 31155111,
+    "timestamp": 1658832908,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "PairSet: WETH-LINK",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x1923fbd8960ac84bd87c4bc1ff7b0beed2d1521a85dde4a6eec4a7880a43e2b7",
+    "block": 31082322,
+    "timestamp": 1658657981,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionController",
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "hash": "0x6ad81960d494a06224285f508945d61657a937ed31d33aa52e1db5e8ffd3698c",
+    "block": 31080595,
+    "timestamp": 1658653736,
+    "blockchain": "polygon",
+    "description": "Added cumulative protected sum"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionConfig",
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionController",
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "ILProtectionNFT",
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "LiquidityController",
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "Upgrade",
+    "contractName": "TreasuryController",
+    "contractAddress": "0x4ebB6D9aAc1E3E16D41f509711403eF7ad873765",
+    "hash": "0x1d1370d6b5f7f9cdc62e7f8d202ae8bdecf7f6bce1edfe665c4d7fac9df508a5",
+    "block": 30855374,
+    "timestamp": 1658135745,
+    "blockchain": "polygon",
+    "description": "Premium growth start/premium slope #1112"
+  },
+  {
+    "topic": "PairSet: WETH-WBTC",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0xa836c0e093f48b639a75d3abe95afa5668b6b7dc14707d38367f25e7adba25b3",
+    "block": 30563122,
+    "timestamp": 1657456217,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x9337fb57c36eb4b50484a2b8795fb2ac5a4eeb90ae3ea162cd197f6cf13bf5f0",
+    "topic": "Upgrade",
+    "block": 30442690,
+    "timestamp": 1657196472,
+    "blockchain": "polygon",
+    "description": "Negative premium params support"
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0x9337fb57c36eb4b50484a2b8795fb2ac5a4eeb90ae3ea162cd197f6cf13bf5f0",
+    "topic": "Upgrade",
+    "block": 30442690,
+    "timestamp": 1657196472,
+    "blockchain": "polygon",
+    "description": "Negative premium params support"
+  },
+  {
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "contractName": "ILProtectionConfig",
+    "hash": "0x9630d58710523978285b2b629a301bc6ff4f2c2a51f5557ef7bc762701f4551f",
+    "topic": "Upgrade",
+    "block": 30406696,
+    "timestamp": 1657116006,
+    "blockchain": "polygon",
+    "description": "Treasury fee added"
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x9630d58710523978285b2b629a301bc6ff4f2c2a51f5557ef7bc762701f4551f",
+    "topic": "Upgrade",
+    "block": 30406696,
+    "timestamp": 1657116006,
+    "blockchain": "polygon",
+    "description": "Treasury fee added"
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0x9630d58710523978285b2b629a301bc6ff4f2c2a51f5557ef7bc762701f4551f",
+    "topic": "Upgrade",
+    "block": 30406696,
+    "timestamp": 1657116006,
+    "blockchain": "polygon",
+    "description": "Treasury fee added"
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0x9630d58710523978285b2b629a301bc6ff4f2c2a51f5557ef7bc762701f4551f",
+    "topic": "Upgrade",
+    "block": 30406696,
+    "timestamp": 1657116006,
+    "blockchain": "polygon",
+    "description": "Treasury fee added"
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0x9630d58710523978285b2b629a301bc6ff4f2c2a51f5557ef7bc762701f4551f",
+    "topic": "Upgrade",
+    "block": 30406696,
+    "timestamp": 1657116006,
+    "blockchain": "polygon",
+    "description": "Treasury fee added"
+  },
+  {
+    "contractAddress": "0x4ebB6D9aAc1E3E16D41f509711403eF7ad873765",
+    "contractName": "TreasuryController",
+    "hash": "0x1aaf63da438d3b4f8258cf9896df248e49339fd8b9538af60560c58476adbe25",
+    "topic": "Upgrade",
+    "block": 30360223,
+    "timestamp": 1657011543,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "contractName": "ILProtectionConfig",
+    "hash": "0xf85fce1e7e965ca73aecd1e2284c11a0a22dcda49dfd1eca74fd4e1456afa531",
+    "topic": "Upgrade",
+    "block": 29794101,
+    "timestamp": 1655735707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0xf85fce1e7e965ca73aecd1e2284c11a0a22dcda49dfd1eca74fd4e1456afa531",
+    "topic": "Upgrade",
+    "block": 29794101,
+    "timestamp": 1655735707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0xf85fce1e7e965ca73aecd1e2284c11a0a22dcda49dfd1eca74fd4e1456afa531",
+    "topic": "Upgrade",
+    "block": 29794101,
+    "timestamp": 1655735707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0xf85fce1e7e965ca73aecd1e2284c11a0a22dcda49dfd1eca74fd4e1456afa531",
+    "topic": "Upgrade",
+    "block": 29794101,
+    "timestamp": 1655735707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0xf85fce1e7e965ca73aecd1e2284c11a0a22dcda49dfd1eca74fd4e1456afa531",
+    "topic": "Upgrade",
+    "block": 29794101,
+    "timestamp": 1655735707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x17616be42c12f76cf55e9dc9bd7676a1b17d30bb866654a2e2fc4c83d4f1612e",
+    "topic": "Upgrade",
+    "block": 29785317,
+    "timestamp": 1655714710,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0xab2898a99d6324fb28f2baba4d9effb9903511dca730053554d09bc7d4ae9ce9",
+    "topic": "Upgrade",
+    "block": 29556224,
+    "timestamp": 1655207920,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0xd04684290f021d10258d131562967f1cf54db956f9a394271b477da778c3fac3",
+    "topic": "Upgrade",
+    "block": 29556164,
+    "timestamp": 1655207796,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0x62c839f78301050d001476690984c7eeea8ead398a95076ef6941e1663aac025",
+    "topic": "Upgrade",
+    "block": 29556083,
+    "timestamp": 1655207626,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0x19914dad571872afc2e11d7dcd83007a8453c7980d72876ff78552f7d577626f",
+    "topic": "Upgrade",
+    "block": 29555919,
+    "timestamp": 1655207290,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "contractName": "ILProtectionConfig",
+    "hash": "0x0c7687fbceee9d37053b35a8a50b24bacfbbc0efc085d60894d2370ae4883a19",
+    "topic": "Upgrade",
+    "block": 29555740,
+    "timestamp": 1655206920,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x9023e622104f75b58a01db4ce9023f032092f751b1b320a7955ddf47671e7d3c",
+    "topic": "Upgrade",
+    "block": 29271345,
+    "timestamp": 1654596665,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0xd4191cd0a8c983bad26ad92ce249ed95790a7d0d0011ccc6d3c7d57643f99ba2",
+    "topic": "Upgrade",
+    "block": 29271334,
+    "timestamp": 1654596621,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0xf6f55ef593569ba2731238d5d2d799af1e7ae37b3aa3e89c1c33c4467133c6c9",
+    "topic": "Upgrade",
+    "block": 29271318,
+    "timestamp": 1654596557,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0x42aa3dc8d48d33cc705d1b6feaecac237c2aeb1aa84898ecf590a1e6dc20b502",
+    "topic": "Upgrade",
+    "block": 29271293,
+    "timestamp": 1654596457,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "contractName": "ILProtectionConfig",
+    "hash": "0xe4e0cd13fe68c567468abb004dd87de406d90dfea13233d482de58ff19658e07",
+    "topic": "Upgrade",
+    "block": 29269166,
+    "timestamp": 1654591559,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0xb10c723db0b865f365eb1dc4f64a44bb1ec2a453cb0453eeb28d7e00d6f6f574",
+    "topic": "Upgrade",
+    "block": 29026360,
+    "timestamp": 1654072359,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0xfa7f34b22d7d22c5dc46385bb75a4fc4bb2936d1719f9566239b146999cf36f7",
+    "topic": "Upgrade",
+    "block": 29025357,
+    "timestamp": 1654070291,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x5af9298203d71e820946dd6ff16c4530f29547a0aa8425b2a4babf2fe3ec075b",
+    "topic": "Upgrade",
+    "block": 28957340,
+    "timestamp": 1653924213,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0x78d2efccd36c69da612b50db71d8d226bde0cc6948052786e9ee619d61cce0ea",
+    "topic": "Upgrade",
+    "block": 28957101,
+    "timestamp": 1653923719,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0xeea2ac4fefe74acd034782c2d5022e7bba6e4d3b89a037d3bc9ab3f74bf77064",
+    "topic": "Upgrade",
+    "block": 28919240,
+    "timestamp": 1653842551,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "PairSet: WETH-DAI",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x8e821c5132cbac797ab80677c9a1d1c9e7deebbf6ce520b5f619d4f6bc3514d1",
+    "block": 28759191,
+    "timestamp": 1653496863,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "PairSet: WETH-USDT",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x5a7c07894f4e90189893367794dc4f04a25ec41a245c57c67a170c1a39485a64",
+    "block": 28758767,
+    "timestamp": 1653495987,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "topic": "PairSet: WETH-USDC",
+    "contractName": "TokenPairRepository",
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "hash": "0x9cf60ed7ec45aed658e81f64366d074b27af819f0418c4416237b20a6ee00255",
+    "block": 28758207,
+    "timestamp": 1653494703,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xdD6fD32434eac75FA2dDfFe8629966E43e608282",
+    "contractName": "ILProtectionController",
+    "hash": "0x40b3e5a15cf87c492c69c1d60d747edb168b7dc26e10996a81bdc4878ef7b7df",
+    "topic": "Upgrade",
+    "block": 28754415,
+    "timestamp": 1653486627,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x44F28E24694c9121E8425c614416e6DCae691744",
+    "contractName": "ILProtectionNFT",
+    "hash": "0xb89800198bb3d58a704a23d482397d6d3d0e4f6bec7cac0cc9a1282522df2c19",
+    "topic": "Upgrade",
+    "block": 28754255,
+    "timestamp": 1653486264,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x282f2EBd973a893C5C10670e2EC6b5aA0f81988A",
+    "contractName": "TokenPairRepository",
+    "hash": "0x2a40ae98151ba2d0ec8743c8ee2e01f2ed1330b415471dcdb71e31d93c7f77bf",
+    "topic": "Upgrade",
+    "block": 28754198,
+    "timestamp": 1653486146,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xA3D96a8076E5f85139ADBE9A2F00B031C2AceeAC",
+    "contractName": "LiquidityController",
+    "hash": "0xe659dc95da710ddccd5d449c34969f31e738da6444823a5420271d8a94bcac40",
+    "topic": "Upgrade",
+    "block": 28753990,
+    "timestamp": 1653485707,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x7EE45B011Aea24c8078bE0Fa15a02DcD2c142F25",
+    "contractName": "ILProtectionConfig",
+    "hash": "0x0e60b116b0c35c2f844b0e852a362bfb44e67b6dd27ce23462ef3198e8014e9d",
+    "topic": "Upgrade",
+    "block": 28753771,
+    "timestamp": 1653485251,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xE7E97cb4F82b2e4be4c24Fb5aF0769a9C65BaB5B",
+    "contractName": "CVIUSDCPositionRewards",
+    "hash": "0xcd446020ff720ad659aef2e8821d6e699eb9de91ac28cd8f2e361a12e3c4a765",
+    "topic": "Upgrade",
+    "block": 23831078,
+    "timestamp": 1642433446,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x9CD552551EC130b50c1421649C8d11E76aC821e1",
+    "contractName": "CVIUSDCVolatilityToken",
+    "hash": "0xdd4238eb6d28ff464073f9a10000ec242e74e5bfcf2b99cfb7fc7d77487ffc18",
+    "topic": "Upgrade",
+    "block": 23682721,
+    "timestamp": 1642103558,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x9CD552551EC130b50c1421649C8d11E76aC821e1",
+    "contractName": "CVIUSDCVolatilityToken",
+    "hash": "0x78263ca8167aadb1268c336a51df6fb384a30c2b29a5322e61df2e36deaa38c7",
+    "topic": "Upgrade",
+    "block": 23682411,
+    "timestamp": 1642102662,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0xD013FFC6Ed3B2c773051a3b83E763dF782D7b31f",
+    "contractName": "StakingV2",
+    "hash": "0xa23e6ef18518cf6cc4ba3e22b87521c23f9858c2b8cd104c55c470d476e989fe",
+    "topic": "Upgrade",
+    "block": 23342360,
+    "timestamp": 1641310089,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x9CD552551EC130b50c1421649C8d11E76aC821e1",
+    "contractName": "CVIUSDCVolatilityToken",
+    "hash": "0x12ac0d356178af9269111984295ac6c1f1679090fdabfbd20a099ecfab69e840",
+    "topic": "Upgrade",
+    "block": 21982072,
+    "timestamp": 1638294451,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x3863D0C9b7552cD0d0dE99fe9f08a32fED6ab72f",
+    "contractName": "CVIUSDCPlatform",
+    "hash": "0xcd49e382aff4f029f0c5a32df2f83d364c7d5343155a5b61922d3071f2fba494",
+    "topic": "Upgrade",
+    "block": 21474649,
+    "timestamp": 1637148088,
+    "blockchain": "polygon",
+    "description": ""
+  },
+  {
+    "contractAddress": "0x3863D0C9b7552cD0d0dE99fe9f08a32fED6ab72f",
+    "contractName": "CVIUSDCPlatform",
+    "hash": "0xda2dfd71aa24263afb3f3675f06cc77c09639c7bcacd7330becd3fe19c4742d1",
+    "topic": "Upgrade",
+    "block": 17002125,
+    "timestamp": 1626623755,
+    "blockchain": "polygon",
+    "description": ""
+  }
+]

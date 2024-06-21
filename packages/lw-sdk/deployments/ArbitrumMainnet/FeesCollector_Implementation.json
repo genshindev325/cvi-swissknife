@@ -1,0 +1,1063 @@
+{
+  "address": "0xB0b2AC2aF0c5954B6B0d110eEdA2CeB11A382c5e",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_PERCENTAGE",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "allowedSenders",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "arbitrumContractAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "arbitrumInbox",
+      "outputs": [
+        {
+          "internalType": "contract IInbox",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "buyBack",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "checkUpkeep",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "upkeepNeeded",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "performData",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "convertUSDC",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "enableWhitelist",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fundsSender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "goviToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_usdcToken",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_goviToken",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "_staking",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_stakingVaultAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_arbitrumContractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IUniswapV2Router02",
+          "name": "_router",
+          "type": "address"
+        },
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "_usdcETHPriceAggregator",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IInbox",
+          "name": "_arbitrumInbox",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_treasuryAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_wrappedToken",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxSlippage",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxSubmissionFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minETHForTransfer",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minUSDCForConversion",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "performUpkeep",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "router",
+      "outputs": [
+        {
+          "internalType": "contract IUniswapV2Router02",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_goviETHPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sendPercentage",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IERC20",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "sendProfit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sendToArbitrum",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isAllowed",
+          "type": "bool"
+        }
+      ],
+      "name": "setAllowedSenderAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newArbitrumContractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setArbitrumContractAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IInbox",
+          "name": "_newArbitrumInbox",
+          "type": "address"
+        }
+      ],
+      "name": "setArbitrumInbox",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newBuyBack",
+          "type": "bool"
+        }
+      ],
+      "name": "setBuyBack",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newConvertUSDC",
+          "type": "bool"
+        }
+      ],
+      "name": "setConvertUSDC",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_enableWhitelist",
+          "type": "bool"
+        }
+      ],
+      "name": "setEnableWhitelist",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newFundsSender",
+          "type": "address"
+        }
+      ],
+      "name": "setFundsSender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newMaxSlippagePercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setMaxSlippage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxSubmissionFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxSubmissionFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMinETHForTransfer",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMinETHForTransfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMinUSDCForConversion",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMinUDSCForConversion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IUniswapV2Router02",
+          "name": "_newRouter",
+          "type": "address"
+        }
+      ],
+      "name": "setRouter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newSendPercentage",
+          "type": "uint16"
+        }
+      ],
+      "name": "setSendPercentage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newSendToArbitrum",
+          "type": "bool"
+        }
+      ],
+      "name": "setSendToArbitrum",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "_newStaking",
+          "type": "address"
+        }
+      ],
+      "name": "setStaking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newStakingVaultAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setStakingVaultAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newTreasuryAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setTreasuryAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newTreasuryTransferPercentage",
+          "type": "uint16"
+        }
+      ],
+      "name": "setTreasuryTransferPercentage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "_newUSDCETHPriceAggregator",
+          "type": "address"
+        }
+      ],
+      "name": "setUSDCETHPriceAggregator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newUseNative",
+          "type": "bool"
+        }
+      ],
+      "name": "setUseNative",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_newWrappedToken",
+          "type": "address"
+        }
+      ],
+      "name": "setWrappedToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "staking",
+      "outputs": [
+        {
+          "internalType": "contract IFeesCollector",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stakingVaultAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryTransferPercentage",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "usdcETHPriceAggregator",
+      "outputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "usdcToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "useNative",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "wrappedToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x6b4e224ceb5e6bdd4209d5fa9d067a84ce1373dc3da01aef3bbe2747d557924b",
+  "numDeployments": 1,
+  "storageLayout": {
+    "storage": [
+      {
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool",
+        "contract": "Initializable",
+        "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+      },
+      {
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool",
+        "contract": "Initializable",
+        "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+      },
+      {
+        "label": "__gap",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_uint256)50_storage",
+        "contract": "ContextUpgradeable",
+        "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+      },
+      {
+        "label": "_owner",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_address",
+        "contract": "OwnableUpgradeable",
+        "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+      },
+      {
+        "label": "__gap",
+        "offset": 0,
+        "slot": "52",
+        "type": "t_array(t_uint256)49_storage",
+        "contract": "OwnableUpgradeable",
+        "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+      },
+      {
+        "label": "usdcToken",
+        "offset": 0,
+        "slot": "101",
+        "type": "t_contract(IERC20Upgradeable)966",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:18"
+      },
+      {
+        "label": "goviToken",
+        "offset": 0,
+        "slot": "102",
+        "type": "t_contract(IERC20Upgradeable)966",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:19"
+      },
+      {
+        "label": "wrappedToken",
+        "offset": 0,
+        "slot": "103",
+        "type": "t_contract(IERC20Upgradeable)966",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:20"
+      },
+      {
+        "label": "staking",
+        "offset": 0,
+        "slot": "104",
+        "type": "t_contract(IFeesCollector)16286",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:21"
+      },
+      {
+        "label": "stakingVaultAddress",
+        "offset": 0,
+        "slot": "105",
+        "type": "t_address",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:22"
+      },
+      {
+        "label": "arbitrumContractAddress",
+        "offset": 0,
+        "slot": "106",
+        "type": "t_address",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:23"
+      },
+      {
+        "label": "router",
+        "offset": 0,
+        "slot": "107",
+        "type": "t_contract(IUniswapV2Router02)15597",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:24"
+      },
+      {
+        "label": "usdcETHPriceAggregator",
+        "offset": 0,
+        "slot": "108",
+        "type": "t_contract(AggregatorV3Interface)15700",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:25"
+      },
+      {
+        "label": "arbitrumInbox",
+        "offset": 0,
+        "slot": "109",
+        "type": "t_contract(IInbox)16438",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:26"
+      },
+      {
+        "label": "treasuryAddress",
+        "offset": 0,
+        "slot": "110",
+        "type": "t_address",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:27"
+      },
+      {
+        "label": "treasuryTransferPercentage",
+        "offset": 20,
+        "slot": "110",
+        "type": "t_uint16",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:29"
+      },
+      {
+        "label": "maxSlippage",
+        "offset": 22,
+        "slot": "110",
+        "type": "t_uint16",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:30"
+      },
+      {
+        "label": "minETHForTransfer",
+        "offset": 0,
+        "slot": "111",
+        "type": "t_uint256",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:32"
+      },
+      {
+        "label": "minUSDCForConversion",
+        "offset": 0,
+        "slot": "112",
+        "type": "t_uint256",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:33"
+      },
+      {
+        "label": "maxSubmissionFee",
+        "offset": 0,
+        "slot": "113",
+        "type": "t_uint256",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:34"
+      },
+      {
+        "label": "enableWhitelist",
+        "offset": 0,
+        "slot": "114",
+        "type": "t_bool",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:36"
+      },
+      {
+        "label": "sendToArbitrum",
+        "offset": 1,
+        "slot": "114",
+        "type": "t_bool",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:37"
+      },
+      {
+        "label": "convertUSDC",
+        "offset": 2,
+        "slot": "114",
+        "type": "t_bool",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:38"
+      },
+      {
+        "label": "buyBack",
+        "offset": 3,
+        "slot": "114",
+        "type": "t_bool",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:39"
+      },
+      {
+        "label": "useNative",
+        "offset": 4,
+        "slot": "114",
+        "type": "t_bool",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:40"
+      },
+      {
+        "label": "fundsSender",
+        "offset": 5,
+        "slot": "114",
+        "type": "t_address",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:42"
+      },
+      {
+        "label": "allowedSenders",
+        "offset": 0,
+        "slot": "115",
+        "type": "t_mapping(t_address,t_bool)",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:43"
+      },
+      {
+        "label": "sendPercentage",
+        "offset": 0,
+        "slot": "116",
+        "type": "t_uint16",
+        "contract": "FeesCollector",
+        "src": "contracts/staking/FeesCollector.sol:45"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_uint256)49_storage": {
+        "label": "uint256[49]",
+        "numberOfBytes": "1568"
+      },
+      "t_array(t_uint256)50_storage": {
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(AggregatorV3Interface)15700": {
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IERC20Upgradeable)966": {
+        "label": "contract IERC20Upgradeable",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IFeesCollector)16286": {
+        "label": "contract IFeesCollector",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IInbox)16438": {
+        "label": "contract IInbox",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IUniswapV2Router02)15597": {
+        "label": "contract IUniswapV2Router02",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32"
+      },
+      "t_uint16": {
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 1433,
+  "username": "root",
+  "password": "my-secret-pw",
+  "database": "db1",
+  "entities": ["packages/common-be/src/database/entities/*.entity.ts"],
+  "migrationsTableName": "custom_migration_table",
+  "migrations": ["packages/tests-infra-be/src/resources/mysql/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "packages/tests-infra-be/src/resources/mysql/migrations"
+  },
+  "migrationsRun": true,
+  "maxQueryExecutionTime": 1000
+}

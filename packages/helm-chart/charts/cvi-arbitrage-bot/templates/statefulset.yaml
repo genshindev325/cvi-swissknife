@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: statefulSet-default-cvi-arbitrage-bot
+    app: cvi-arbitrage-bot
+  name: cvi-arbitrage-bot
+  namespace: {{ .Release.Namespace }}
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: statefulSet-default-cvi-arbitrage-bot
+  serviceName: cvi-arbitrage-bot
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: statefulSet-default-cvi-arbitrage-bot
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/cvi-arbitrage-bot/dist/index.js
+          env:
+          - name: APP_ENV
+            value: 'k8s'
+          - name: RPC_URL
+            value: 'https://mainnet.infura.io/v3/b454739b95444d53812c01d1b9c60549'
+          - name: POLYGON_RPC_URL
+            value: 'https://polygon-mainnet.g.alchemy.com/v2/zPiLc__mlPC1tywgZ4Oc-w0lp-Ji4xt1'
+          - name: GAS_STATION_URL
+            value: 'https://ethgasstation.info/json/ethgasAPI.json'
+          - name: PRIVATE_KEY
+          # pub key: 0x0BBFDa1F51807Ae2af86b76B7d224dc25BbA1F8d
+            value: '3ab2b404bcbe4de098b49609126a9ea95696cf43f2fdaffd384339fabf2e4a97'
+          - name: INTERVAL
+            value: '180000'
+          - name: MIN_PROFIT
+            value: '30'
+          - name: MIN_SWAP_PERCENT
+            value: '75'
+          - name: CHAINS
+            value: 'Ethereum'
+          - name: OPTIMAL_PERCENT
+            value: '95'
+          - name: DRY_RUN
+            value: 'false'
+          - name: LOG_LEVEL
+            value: 'debug'
+          image: coticvi/swissknife-backend:7df0ae2a6d38653032c00afd9f2d239b1f843ccc
+          imagePullPolicy: Always
+          name: cvi-arbitrage-bot
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 1000Mi
+            limits: # max
+              cpu: 250m
+              memory: 1000Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate

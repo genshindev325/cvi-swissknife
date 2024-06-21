@@ -1,0 +1,250 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/cvi-oracle/all-cvi-indexes": {
+      "post": {
+        "operationId": "CviOracleApiController_getAllCviIndexes",
+        "summary": "",
+        "description": "cvi index **events** of all time,the response is the formatted events monitored directly from the smart contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCviOracleHistoryDataQueryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MinimalCviOracleEventDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Oracle"
+        ]
+      }
+    },
+    "/cvi-oracle/all-cvi-indexes-ohlc": {
+      "post": {
+        "operationId": "CviOracleApiController_getAllCviIndexesOhlc",
+        "summary": "",
+        "description": "cvi index **events** of all time,the response is the formatted events monitored directly from the smart contract. by ohlc",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCviOracleHistoryDataQueryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MinimalCviOracleEventOhlcDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Oracle"
+        ]
+      }
+    },
+    "/cvi-oracle/latest-cvi-index": {
+      "get": {
+        "operationId": "CviOracleApiController_getLatestCviIndex",
+        "summary": "",
+        "description": "Get the latest cvi index",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CviOracleLatestDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Oracle"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The cvi-oracle-events-backend@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "GetCviOracleHistoryDataQueryDto": {
+        "type": "object",
+        "properties": {
+          "fromBlockTimestamp": {
+            "type": "number"
+          },
+          "toBlockTimestamp": {
+            "type": "number"
+          },
+          "groupBy": {
+            "type": "string",
+            "enum": [
+              "day",
+              "hour",
+              "minutes"
+            ]
+          }
+        },
+        "required": [
+          "groupBy"
+        ]
+      },
+      "CviOracleIndexValueArgsTypeDto": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "number"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "timestamp",
+          "value"
+        ]
+      },
+      "MinimalCviOracleEventDto": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CviOracleIndexValueArgsTypeDto"
+            }
+          },
+          "lastBlockTimestamp": {
+            "type": "number",
+            "nullable": true
+          }
+        },
+        "required": [
+          "events",
+          "lastBlockTimestamp"
+        ]
+      },
+      "MinimalCviOracleEventOhlcDto": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "items": {
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "lastBlockTimestamp": {
+            "type": "number",
+            "nullable": true
+          }
+        },
+        "required": [
+          "events",
+          "lastBlockTimestamp"
+        ]
+      },
+      "CviOracleLatestDto": {
+        "type": "object",
+        "properties": {
+          "cviIndex": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "cviIndex",
+          "timestamp"
+        ]
+      }
+    }
+  }
+}

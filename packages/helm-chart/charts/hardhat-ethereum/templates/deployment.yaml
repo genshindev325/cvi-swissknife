@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-hardhat-ethereum
+    app: hardhat-ethereum
+  name: hardhat-ethereum
+  namespace: {{ .Release.Namespace }}
+spec:
+  progressDeadlineSeconds: 100
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-hardhat-ethereum
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-hardhat-ethereum
+    spec:
+      containers:
+        - args:
+          - yarn
+          - contracts-deploy:start-node:in-docker
+          env:
+          - name: APP_ENV
+            value: k8s
+          - name: CHAIN_ID
+            value: '31337'
+          image: coticvi/swissknife-backend:e9793502c4b756fee010bcafd0be1bc384578562
+          imagePullPolicy: Always
+          name: hardhat-ethereum
+          livenessProbe:
+            failureThreshold: 30
+            httpGet:
+              path: /
+              port: 6999
+              scheme: HTTP
+            initialDelaySeconds: 350
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          readinessProbe:
+            failureThreshold: 30
+            httpGet:
+              path: /readiness      
+              port: 6999
+              scheme: HTTP
+            initialDelaySeconds: 350
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          ports:
+            - containerPort: 9545
+              name: tcpport01
+              protocol: TCP
+            - containerPort: 6999
+              name: tcpport02
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 500m
+              memory: 5000Mi
+            limits: # max
+              cpu: 500m
+              memory: 5000Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

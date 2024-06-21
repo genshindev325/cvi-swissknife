@@ -1,0 +1,31 @@
+{
+  "short_name": "graph-ui",
+  "name": "graph-ui",
+  "icons": [
+    {
+      "src": "favicon_64.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon_128.ico",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "favicon_256.png",
+      "type": "image/png",
+      "sizes": "256x256 192x192"
+    },
+    {
+      "src": "favicon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,45 @@
+{
+  "address": "0x1C746415D73D4cBc995E5eB80dDD07E698a32C8c",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract PositionRewardsV2",
+          "name": "_positionRewards",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_positionUnits",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_positionTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculatePositionReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "rewardAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x5ffc5424"
+    }
+  ],
+  "transactionHash": "0xf34b7528d127f2d9b59ce435da4d608423d76f5b574167530f11a73e0907dc8d",
+  "numDeployments": 1
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo_dark" width="116.994" height="32.095" viewBox="0 0 116.994 32.095">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1=".113" y2=".922" gradientUnits="objectBoundingBox">
+            <stop offset=".1" stop-color="#264fa1"/>
+            <stop offset=".484" stop-color="#288ec3"/>
+            <stop offset=".8" stop-color="#2bbede"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y1=".946" y2=".188" xlink:href="#linear-gradient"/>
+        <clipPath id="clip-path">
+            <path id="Rectangle_577" d="M0 0H83.143V32.095H0z" class="cls-1"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#fff}.cls-4{fill:#264fa1}
+        </style>
+    </defs>
+    <g id="Group_6112" transform="translate(0 .148)">
+        <g id="Group_6110">
+            <path id="Path_4038" fill="url(#linear-gradient)" d="M467.058 422.3a1.945 1.945 0 0 1-1.942-1.939v-3.981l12.262-8.021-12.178-7.936v-6.2a.8.8 0 0 1 .8-.793.771.771 0 0 1 .437.138l19.571 13.182a1.934 1.934 0 0 1 0 3.21l-17.875 12a1.892 1.892 0 0 1-1.07.333z" transform="translate(-459.478 -393.43)"/>
+            <path id="Path_4039" fill="url(#linear-gradient-2)" d="M434.372 449.888a1.893 1.893 0 0 1-1.073-.335l-17.788-11.981a1.934 1.934 0 0 1 0-3.21l19.657-13.2a.771.771 0 0 1 .436-.137.8.8 0 0 1 .8.793v6.128l-12.262 8.021 12.175 7.932v4.051a1.9 1.9 0 0 1-.59 1.394 1.982 1.982 0 0 1-1.352.545z" transform="translate(-414.658 -417.941)"/>
+        </g>
+        <g id="Group_6111" transform="translate(5.708 6.24)">
+            <path id="Path_4040" d="M471.359 565.5l5.679 3.7-5.638 3.785-5.658-3.809z" class="cls-4" transform="translate(-465.742 -552.51)"/>
+            <path id="Path_4041" d="M513.215 456.752l-5.679-3.7 5.638-3.785 5.659 3.809z" class="cls-4" transform="translate(-502.866 -449.268)"/>
+        </g>
+    </g>
+    <g id="Group_6199" clip-path="url(#clip-path)" transform="translate(33.851)">
+        <path id="Path_4093" d="M14.923 31.2C6.415 31.2 0 24.5 0 15.6S6.415 0 14.923 0a14.38 14.38 0 0 1 10.838 4.63l.149.183L23.081 7.5l-.174-.218a8.871 8.871 0 0 0-2.042-1.7 11.124 11.124 0 0 0-5.94-1.682c-6.634 0-10.6 5.949-10.6 11.7s3.966 11.7 10.598 11.7a11.523 11.523 0 0 0 8.365-3.848l.18-.222 2.778 2.826-.146.177A15.53 15.53 0 0 1 14.923 31.2" class="cls-1"/>
+        <path id="Path_4094" d="M607.392 32.1L594.376.007h4.1l9 22.867L616.531.007h3.878z" class="cls-1" transform="translate(-565.456 -.006)"/>
+        <path id="Path_4095" d="M1200.111 0h4.413v30.838h-4.458z" class="cls-1" transform="translate(-1141.039 -.001)"/>
+    </g>
+</svg>

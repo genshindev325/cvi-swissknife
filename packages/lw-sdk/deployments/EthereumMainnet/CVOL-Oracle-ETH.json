@@ -1,0 +1,76 @@
+{
+  "address": "0x4FDe21B467f6CCcfDEa1b2b51886D9D0fd05491F",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "_cviAggregator",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "cviAggregator",
+      "outputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_roundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "getCVIRoundData",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "cviValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint256",
+          "name": "cviTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "getCVILatestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "cviValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint80",
+          "name": "cviRoundId",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "transactionHash": "0x3220a5e9065d2fa0a5fbc3cb518f1bf854b6f8b2aa09939ff8c2b31b709880e2",
+  "numDeployments": 1
+}

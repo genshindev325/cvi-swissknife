@@ -1,0 +1,26 @@
+diff --git a/node_modules/@ethersproject/properties/lib.esm/index.js b/node_modules/@ethersproject/properties/lib.esm/index.js
+index 7f160b2..65ae7f2 100644
+--- a/node_modules/@ethersproject/properties/lib.esm/index.js
++++ b/node_modules/@ethersproject/properties/lib.esm/index.js
+@@ -15,7 +15,7 @@ export function defineReadOnly(object, name, value) {
+     Object.defineProperty(object, name, {
+         enumerable: true,
+         value: value,
+-        writable: false,
++        writable: true,
+     });
+ }
+ // Crawl up the constructor chain to find a static method
+diff --git a/node_modules/@ethersproject/properties/lib/index.js b/node_modules/@ethersproject/properties/lib/index.js
+index 41e0b52..72d8124 100644
+--- a/node_modules/@ethersproject/properties/lib/index.js
++++ b/node_modules/@ethersproject/properties/lib/index.js
+@@ -44,7 +44,7 @@ function defineReadOnly(object, name, value) {
+     Object.defineProperty(object, name, {
+         enumerable: true,
+         value: value,
+-        writable: false,
++        writable: true,
+     });
+ }
+ exports.defineReadOnly = defineReadOnly;

@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitor-ethereum-goerli
+    app: cvi-monitor-ethereum-goerli
+  name: cvi-monitor-ethereum-goerli
+  namespace: {{ .Release.Namespace }}
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitor-ethereum-goerli
+  serviceName: cvi-monitor-ethereum-goerli
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: statefulSet-default-cvi-monitor-ethereum-goerli
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/cvi-monitor/dist/index.js
+          env:
+          - name: APP_ENV
+            value: 'k8s'
+          - name: CHAIN_ID
+            value: '42161'
+          image: {{ .Values.global.backend_image }}
+          imagePullPolicy: Always
+          name: cvi-monitor-ethereum-goerli
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 100
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readiness
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 100
+            periodSeconds: 2
+            successThreshold: 1
+            timeoutSeconds: 10
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 1000Mi
+            limits: # max
+              cpu: 250m
+              memory: 1000Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate

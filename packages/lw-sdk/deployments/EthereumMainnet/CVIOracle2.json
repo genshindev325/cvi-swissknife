@@ -1,0 +1,104 @@
+{
+  "address": "0x0c0502cf9a6C0abD7dbbCD6A6bF450D0B0196155",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "_cviAggregator",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "cviAggregator",
+      "outputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0xe0530f42"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_roundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "getCVIRoundData",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "cviValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint256",
+          "name": "cviTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x5a7b84b1"
+    },
+    {
+      "inputs": [],
+      "name": "getCVILatestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "cviValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint80",
+          "name": "cviRoundId",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0xc1639a2b"
+    },
+    {
+      "inputs": [],
+      "name": "getCVILatestRoundDataAndTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "cviValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint80",
+          "name": "cviRoundId",
+          "type": "uint80"
+        },
+        {
+          "internalType": "uint256",
+          "name": "cviTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x02d36226"
+    }
+  ],
+  "transactionHash": "0x1860ff9d1be21282be8cec88bb27d40b4a71790ed463ddf24704e218c302203f",
+  "numDeployments": 1
+}

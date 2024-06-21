@@ -1,0 +1,205 @@
+import nock from 'nock'
+import {
+  BlockchainName,
+  CustomError,
+  IlLpTokensInfoOfAccountAddress,
+  SupportedZapperProtocolNames,
+  TokenName,
+  ZapperAPIVersions,
+} from '../../src'
+import { beforeAfterEach, createZapperResponse, createZapperResponseParams } from './utils'
+import { StatusCodes } from 'http-status-codes'
+
+const { getZapperApiInversifyService } = beforeAfterEach()
+
+test('should not return response when protocolName is unsupported', async () => {
+  const accountAddress = '0x123'
+
+  const zapperResponse: createZapperResponseParams = {
+    accountAddress,
+    dataArray: [
+      {
+        protocolName: 'blabla not supported',
+        assetType: getZapperApiInversifyService().SUPPORTED_ASSET_TYPE,
+        blockchainName: BlockchainName.POLYGON,
+        token0: {
+          name: TokenName.USDC,
+          balance: 1,
+          balanceUSD: 1,
+        },
+        token1: {
+          name: TokenName.WETH,
+          balance: 1,
+          balanceUSD: 1,
+        },
+      },
+    ],
+  }
+
+  const url = new URL(getZapperApiInversifyService().buildZapperRequestUrl([accountAddress], ZapperAPIVersions.V1))
+
+  nock(url.origin)
+    .get(url.pathname + url.search)
+    .reply(StatusCodes.OK, createZapperResponse(zapperResponse))
+
+  const result = await getZapperApiInversifyService()
+    .getLpTokensInfoForIL([accountAddress])
+    .catch(error => {
+      CustomError.printErrorToConsole(error)
+      throw error
+    })
+
+  expect(result.holdings).toHaveLength(1)
+  expect(result.holdings).toEqual(
+    expect.arrayContaining<IlLpTokensInfoOfAccountAddress>([
+      {
+        forAccountAddress: accountAddress,
+        lpTokensInfo: [],
+      },
+    ]),
+  )
+})
+
+test('should not return response when token0 is unsupported', async () => {
+  const accountAddress = '0x123'
+
+  const zapperResponse: createZapperResponseParams = {
+    accountAddress,
+    dataArray: [
+      {
+        protocolName: SupportedZapperProtocolNames.UNISWAP_V2,
+        assetType: getZapperApiInversifyService().SUPPORTED_ASSET_TYPE,
+        blockchainName: BlockchainName.POLYGON,
+        token0: {
+          name: 'blabla not supported',
+          balance: 1,
+          balanceUSD: 1,
+        },
+        token1: {
+          name: TokenName.WETH,
+          balance: 1,
+          balanceUSD: 1,
+        },
+      },
+    ],
+  }
+
+  const url = new URL(getZapperApiInversifyService().buildZapperRequestUrl([accountAddress], ZapperAPIVersions.V1))
+
+  nock(url.origin)
+    .get(url.pathname + url.search)
+    .reply(StatusCodes.OK, createZapperResponse(zapperResponse))
+
+  const result = await getZapperApiInversifyService()
+    .getLpTokensInfoForIL([accountAddress])
+    .catch(error => {
+      CustomError.printErrorToConsole(error)
+      throw error
+    })
+
+  expect(result.holdings).toHaveLength(1)
+  expect(result.holdings).toEqual(
+    expect.arrayContaining<IlLpTokensInfoOfAccountAddress>([
+      {
+        forAccountAddress: accountAddress,
+        lpTokensInfo: [],
+      },
+    ]),
+  )
+})
+
+test('should not return response when token1 is unsupported', async () => {
+  const accountAddress = '0x123'
+
+  const zapperResponse: createZapperResponseParams = {
+    accountAddress,
+    dataArray: [
+      {
+        protocolName: SupportedZapperProtocolNames.UNISWAP_V2,
+        assetType: getZapperApiInversifyService().SUPPORTED_ASSET_TYPE,
+        blockchainName: BlockchainName.POLYGON,
+        token0: {
+          name: TokenName.WETH,
+          balance: 1,
+          balanceUSD: 1,
+        },
+        token1: {
+          name: 'blabla not supported',
+          balance: 1,
+          balanceUSD: 1,
+        },
+      },
+    ],
+  }
+
+  const url = new URL(getZapperApiInversifyService().buildZapperRequestUrl([accountAddress], ZapperAPIVersions.V1))
+
+  nock(url.origin)
+    .get(url.pathname + url.search)
+    .reply(StatusCodes.OK, createZapperResponse(zapperResponse))
+
+  const result = await getZapperApiInversifyService()
+    .getLpTokensInfoForIL([accountAddress])
+    .catch(error => {
+      CustomError.printErrorToConsole(error)
+      throw error
+    })
+
+  expect(result.holdings).toHaveLength(1)
+  expect(result.holdings).toEqual(
+    expect.arrayContaining<IlLpTokensInfoOfAccountAddress>([
+      {
+        forAccountAddress: accountAddress,
+        lpTokensInfo: [],
+      },
+    ]),
+  )
+})
+
+test('should not return response when assetType is unsupported', async () => {
+  const accountAddress = '0x123'
+
+  const zapperResponse: createZapperResponseParams = {
+    accountAddress,
+    dataArray: [
+      {
+        protocolName: SupportedZapperProtocolNames.UNISWAP_V2,
+        assetType: 'blabla not supported',
+        blockchainName: BlockchainName.POLYGON,
+        token0: {
+          name: TokenName.WETH,
+          balance: 1,
+          balanceUSD: 1,
+        },
+        token1: {
+          name: TokenName.USDC,
+          balance: 1,
+          balanceUSD: 1,
+        },
+      },
+    ],
+  }
+
+  const url = new URL(getZapperApiInversifyService().buildZapperRequestUrl([accountAddress]))
+
+  nock(url.origin)
+    .get(url.pathname + url.search)
+    .reply(StatusCodes.OK, createZapperResponse(zapperResponse))
+
+  const result = await getZapperApiInversifyService()
+    .getLpTokensInfoForIL([accountAddress])
+    .catch(error => {
+      CustomError.printErrorToConsole(error)
+      throw error
+    })
+
+  expect(result.holdings).toHaveLength(1)
+  expect(result.holdings).toEqual(
+    expect.arrayContaining<IlLpTokensInfoOfAccountAddress>([
+      {
+        forAccountAddress: accountAddress,
+        lpTokensInfo: [],
+      },
+    ]),
+  )
+})

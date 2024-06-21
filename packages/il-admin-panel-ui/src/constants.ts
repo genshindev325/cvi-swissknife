@@ -1,0 +1,2 @@
+export const IL_PRODUCT_LAUNCH_DATE: Date = new Date('2022-06-01T00:00:00.000Z')
+export const PRODUCTION_MINIMUM_IL_PROTECTION_PERIOD_SECONDS: number = 14 * 24 * 60 * 60 // 14 day

@@ -1,0 +1,260 @@
+{
+  "address": "0x29844857a63b3f88AD4a9a2dAEEf08CF92AFd89B",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event",
+      "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+    },
+    {
+      "inputs": [],
+      "name": "LIQUIDATION_MAX_FEE_PERCENTAGE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0xc9dc2450"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "liquidationMaxRewardPercents",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x07b6ef92"
+    },
+    {
+      "inputs": [],
+      "name": "liquidationMinRewardPercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0xc5e686bc"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "liquidationMinThresholdPercents",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x98d3bc64"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x8da5cb5b"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x715018a6"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xf2fde38b"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16[8]",
+          "name": "_newMinThresholdPercents",
+          "type": "uint16[8]"
+        }
+      ],
+      "name": "setMinLiquidationThresholdPercents",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xaf168130"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_newMinRewardPercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setMinLiquidationRewardPercent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xe19cc3a7"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16[8]",
+          "name": "_newMaxRewardPercents",
+          "type": "uint16[8]"
+        }
+      ],
+      "name": "setMaxLiquidationRewardPercents",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xb76f61c7"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_positionBalance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isPositive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint168",
+          "name": "_positionUnitsAmount",
+          "type": "uint168"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_openCVIValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_leverage",
+          "type": "uint8"
+        }
+      ],
+      "name": "isLiquidationCandidate",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x9f65eea0"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_positionBalance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isPositive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint168",
+          "name": "_positionUnitsAmount",
+          "type": "uint168"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_openCVIValue",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_leverage",
+          "type": "uint8"
+        }
+      ],
+      "name": "getLiquidationReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "finderFeeAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x1a10def4"
+    }
+  ],
+  "transactionHash": "0xb80cbeccb43f85875e15f580b9f44a5b84ec24f3367427f379850b16a567548e",
+  "numDeployments": 1
+}

@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-use-promise/index.d.ts b/node_modules/react-use-promise/index.d.ts
+index b6fdb2d..d1b6d0a 100644
+--- a/node_modules/react-use-promise/index.d.ts
++++ b/node_modules/react-use-promise/index.d.ts
+@@ -1,6 +1,6 @@
+-type PendingState = [undefined, undefined, 'pending'];
+-type ResolvedState<Result> = [Result, undefined, 'resolved'];
+-type RejectedState = [undefined, Error, 'rejected'];
++export type PendingState = [undefined, undefined, 'pending'];
++export type ResolvedState<Result> = [Result, undefined, 'resolved'];
++export type RejectedState = [undefined, Error, 'rejected'];
+ 
+ declare function usePromise<Result = any>(
+   promise: Promise<Result> | (() => Promise<Result>) | undefined,

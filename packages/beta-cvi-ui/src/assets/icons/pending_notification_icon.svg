@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <clipPath id="clkupmiaia">
+            <path data-name="Rectangle 3911" style="fill:none" d="M0 0h24v24H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="pending circle icon">
+        <g data-name="Group 10221" style="clip-path:url(#clkupmiaia)">
+            <path data-name="Path 7202" d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12m0-23a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1" style="fill:#007acb"/>
+        </g>
+        <g data-name="Group 10222">
+            <path data-name="Rectangle 3909" style="fill:none" d="M0 0h16v16H0z" transform="translate(4 4)"/>
+            <path data-name="Path 7198" d="M8 14.857A6.857 6.857 0 1 1 14.857 8 6.865 6.865 0 0 1 8 14.857m0-12A5.143 5.143 0 1 0 13.143 8 5.149 5.149 0 0 0 8 2.857" style="opacity:.2;fill:#007acb" transform="translate(4 4)"/>
+            <path data-name="Path 7199" d="M8 1.139v1.72A5.145 5.145 0 0 1 13.143 8a4.4 4.4 0 0 1-.06.73h1.73a5.846 5.846 0 0 0 .04-.73A6.863 6.863 0 0 0 8 1.139" style="fill:#007acb" transform="translate(4 4)"/>
+        </g>
+    </g>
+</svg>

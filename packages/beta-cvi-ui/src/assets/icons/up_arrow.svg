@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="up arrow">
+        <path style="fill:none" d="M0 0h16v16H0z"/>
+        <path data-name="Path 4987" d="m497.018 497.708-3.38 3.3a.719.719 0 0 0 .5 1.233l2.868-.662a2.288 2.288 0 0 1 1.023 0l2.869.662a.719.719 0 0 0 .5-1.233l-3.38-3.3a.72.72 0 0 0-1 0z" transform="translate(-489.42 -492.102)" style="fill:#2bdec1"/>
+    </g>
+</svg>

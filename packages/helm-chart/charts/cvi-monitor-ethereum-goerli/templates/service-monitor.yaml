@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app: cvi-monitor-ethereum-goerli
+  name: cvi-monitor-ethereum-goerli
+  namespace: default
+spec:
+  endpoints:
+  - interval: 1m
+    path: /metrics
+    port: tcpport01
+    targetPort: 80
+  jobLabel: cvi-monitor-ethereum-goerli
+  namespaceSelector:
+    matchNames:
+    - default
+  selector:
+    matchLabels:
+      app: cvi-monitor-ethereum-goerli

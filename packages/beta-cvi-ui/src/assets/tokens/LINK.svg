@@ -1,0 +1,11 @@
+<svg data-name="link coin" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <clipPath id="pc32839ioa">
+            <path data-name="Rectangle 595" style="fill:none" d="M0 0h64v64H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 6215" style="clip-path:url(#pc32839ioa)">
+        <path data-name="Path 4194" d="M64 32A32 32 0 1 1 32 0a32 32 0 0 1 32 32" transform="translate(0 -.001)" style="fill:#375bd2"/>
+        <path data-name="Path 4195" d="m55.968 36.171 11.8 6.736v13.526L56 63.212l-11.8-6.725V42.96zm0-9.943-4.329 2.5-11.785 6.79-4.329 2.5v23.451l4.329 2.475 11.8 6.736 4.329 2.475 4.329-2.5 11.764-6.789 4.324-2.483V37.914l-4.329-2.475L60.275 28.7l-4.329-2.475z" transform="translate(-23.962 -17.691)" style="fill:#fff"/>
+    </g>
+</svg>

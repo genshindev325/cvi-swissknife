@@ -1,0 +1,13 @@
+fastapi
+requests
+openai
+pytest
+cachetools
+uvicorn
+simplejson
+pydantic
+prometheus_fastapi_instrumentator
+beautifulsoup4
+newspaper3k
+
+

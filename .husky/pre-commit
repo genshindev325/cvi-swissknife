@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn pretty-quick --staged
+yarn lint:versions
+yarn lint-staged
+yarn tsc # do not generate dist folder
+yarn find-any-bad-import

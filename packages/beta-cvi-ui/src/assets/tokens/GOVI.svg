@@ -1,0 +1,25 @@
+<svg data-name="GOVI coin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <linearGradient id="cwstlaqfjb" x1=".5" y1="1" x2=".5" gradientUnits="objectBoundingBox">
+            <stop offset=".1" stop-color="#26519f"/>
+            <stop offset=".484" stop-color="#298dc3"/>
+            <stop offset=".8" stop-color="#28bcdd"/>
+        </linearGradient>
+        <linearGradient id="hjzzet77ea" x1="-4.01" y1="3.873" x2="-4.01" y2="3.845" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#fff" stop-opacity=".502"/>
+        </linearGradient>
+        <linearGradient id="0zvvh9rkdc" x1=".903" y1="0" x2=".839" y2="1" xlink:href="#hjzzet77ea"/>
+    </defs>
+    <circle data-name="Ellipse 150" cx="32" cy="32" r="32" style="fill:url(#cwstlaqfjb)"/>
+    <g data-name="Group 6112">
+        <g data-name="Group 6110">
+            <path data-name="Path 4038" d="M376.948 284.209a2.2 2.2 0 0 1-2.2-2.2V277.5l13.89-9.086-13.8-8.99V252.4a.906.906 0 0 1 .906-.9.873.873 0 0 1 .5.156l22.17 14.933a2.191 2.191 0 0 1 0 3.636l-20.249 13.594a2.143 2.143 0 0 1-1.212.377z" transform="translate(-351.857 -237.577)" style="fill:url(#hjzzet77ea)"/>
+            <path data-name="Path 4039" d="M309.232 332.237a2.145 2.145 0 0 1-1.215-.379l-20.15-13.572a2.191 2.191 0 0 1 0-3.636l22.267-14.95a.874.874 0 0 1 .494-.155.906.906 0 0 1 .906.9v6.942l-13.89 9.086 13.792 8.985v4.589a2.153 2.153 0 0 1-.668 1.579 2.245 2.245 0 0 1-1.531.617z" transform="translate(-270.396 -282.119)" style="fill:url(#0zvvh9rkdc)"/>
+        </g>
+        <g data-name="Group 6111">
+            <path data-name="Path 4040" d="m382.2 551.029 6.433 4.191-6.387 4.288-6.409-4.315z" transform="translate(-352.868 -515.318)" style="fill:#fff"/>
+            <path data-name="Path 4041" d="m455.011 357.162-6.433-4.191 6.387-4.288 6.41 4.315z" transform="translate(-420.318 -327.688)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

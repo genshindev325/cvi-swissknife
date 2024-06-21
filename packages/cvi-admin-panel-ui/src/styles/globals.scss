@@ -1,0 +1,183 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.bi.bi-diagram {
+  background-color: #0f112d !important;
+  border-color: #0f112d !important;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(/fonts/Open_Sans/OpenSans-Light.ttf) format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(/fonts/Open_Sans/OpenSans-Regular.ttf) format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(/fonts/Open_Sans/OpenSans-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(/fonts/Open_Sans/OpenSans-LightItalic.ttf) format('truetype');
+  font-weight: 300;
+  font-style: italic, oblique;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'OpenSans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #0f112d;
+  color: white;
+}
+
+th {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  transition: 0.3s all;
+
+  &:active {
+    transform: scale(1.02);
+  }
+}
+
+* {
+  box-sizing: border-box;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    // background: #f1f1f1;
+    background-color: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #929292;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.apexcharts-tooltip {
+  color: black;
+  transform: translateX(10px) translateY(10px);
+  overflow: visible !important;
+  white-space: normal !important;
+
+  &span {
+    padding: 5px 10px;
+    display: inline-block;
+  }
+}
+
+.web3modal-modal-lightbox {
+  z-index: 999 !important;
+}
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% - 55px);
+  background-color: black;
+  transition: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  z-index: 5;
+  transition: 0.3s all;
+  min-width: 40px;
+  max-width: 290px;
+  text-align: center;
+  width: max-content;
+  height: fit-content;
+  display: none;
+  font-size: 12px;
+}
+
+[data-tooltip]:hover::after {
+  display: flex;
+}
+
+.rnc__notification {
+  & .rnc__notification-item {
+    &.rnc__notification-item--success,
+    &.rnc__notification-item--danger,
+    &.rnc__notification-item--info,
+    &.rnc__notification-item--warning {
+      background-color: #141741;
+    }
+
+    &.rnc__notification-item--success {
+      border-color: #2bdec1;
+    }
+
+    &.rnc__notification-item--danger {
+      border-color: #bb1e52;
+    }
+
+    &.rnc__notification-item--info {
+      border-color: #2bbede;
+    }
+
+    &.rnc__notification-item--warning {
+      border-color: #fea716;
+    }
+  }
+
+  & .rnc__notification-item {
+    border-radius: 16px;
+    border: solid 1px #182f5d;
+    padding: 8px;
+
+    .rnc__notification-close-mark {
+      background-color: transparent;
+    }
+
+    .rnc__notification-timer-filler {
+      background-color: white;
+    }
+  }
+}

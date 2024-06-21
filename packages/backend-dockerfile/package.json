@@ -1,0 +1,9 @@
+{
+  "name": "backend-dockerfile",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "private": true,
+  "scripts": {
+    "docker:build:only-for-testing": "docker build --platform=linux/amd64 --build-arg IMAGE_VERSION=fake-image-version --build-arg NPM_REGISTRY_ADDRESS=https://registry.npmjs.org --build-arg NPM_TOKEN=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 -f backend.dockerfile -t fake-checksum-123 ../.."
+  }
+}

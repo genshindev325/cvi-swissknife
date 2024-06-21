@@ -1,0 +1,762 @@
+{
+  "address": "0x44d8998FCB1f50d0C5463582d7ce9a4C27BA5671",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_FEE_PERCENTAGE",
+      "outputs": [
+        {
+          "internalType": "uint168",
+          "name": "",
+          "type": "uint168"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "afterTargetMaxTime",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "afterTargetMaxTimePenaltyFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "afterTargetMidTime",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "afterTargetMidTimePenaltyFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "beforeTargetTimeMaxPenaltyFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokensLeftAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateFindersFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "findersFeeAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokensAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateKeepersFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "keepersFeeAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_timeDelay",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateTimeDelayFee",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "feePercentage",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "requestType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint168",
+              "name": "tokenAmount",
+              "type": "uint168"
+            },
+            {
+              "internalType": "uint16",
+              "name": "timeDelayRequestFeesPercent",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxRequestFeesPercent",
+              "type": "uint16"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "requestTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "targetTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bool",
+              "name": "useKeepers",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxBuyingPremiumFeePercentage",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct IVolatilityToken.Request",
+          "name": "_request",
+          "type": "tuple"
+        }
+      ],
+      "name": "calculateTimePenaltyFee",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "feePercentage",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "findersFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getMaxFees",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "maxFeesPercent",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "requestType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint168",
+              "name": "tokenAmount",
+              "type": "uint168"
+            },
+            {
+              "internalType": "uint16",
+              "name": "timeDelayRequestFeesPercent",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxRequestFeesPercent",
+              "type": "uint16"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "requestTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "targetTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bool",
+              "name": "useKeepers",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxBuyingPremiumFeePercentage",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct IVolatilityToken.Request",
+          "name": "_request",
+          "type": "tuple"
+        }
+      ],
+      "name": "isLiquidable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "liquidable",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "keepersFeeMax",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "keepersFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTimeDelayFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTimeWindow",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minTimeDelayFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minTimeWindow",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minWaitTime",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_findersFeePercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setFindersFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_keepersFeeMax",
+          "type": "uint256"
+        }
+      ],
+      "name": "setKeepersFeeMax",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_keepersFeePercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setKeepersFeePercent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_minWaitTime",
+          "type": "uint32"
+        }
+      ],
+      "name": "setMinWaitTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_minTimeDelayFeePercent",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_maxTimeDelayFeePercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setTimeDelayFeesParameters",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_beforeTargetTimeMaxPenaltyFeePercent",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_afterTargetMidTime",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_afterTargetMidTimePenaltyFeePercent",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_afterTargetMaxTime",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_afterTargetMaxTimePenaltyFeePercent",
+          "type": "uint16"
+        }
+      ],
+      "name": "setTimePenaltyFeeParameters",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_minTimeWindow",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_maxTimeWindow",
+          "type": "uint32"
+        }
+      ],
+      "name": "setTimeWindow",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x32e102cdfcd984aa3780959ab3305529e1038650d5405cbfe7fb11586cb42f71",
+  "receipt": {
+    "to": null,
+    "from": "0x0b3D7b3F149214f8f5281b5aE613B090fD39BD3F",
+    "contractAddress": "0x44d8998FCB1f50d0C5463582d7ce9a4C27BA5671",
+    "transactionIndex": 1,
+    "gasUsed": "5896959",
+    "logsBloom": "0x80000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000400000000000000000000000000000000000000000200000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000010000000000",
+    "blockHash": "0x541bae728d0e1c87742d9e49a5f71b0276adc48288fdb8930521b01d62b7880a",
+    "transactionHash": "0x32e102cdfcd984aa3780959ab3305529e1038650d5405cbfe7fb11586cb42f71",
+    "logs": [
+      {
+        "transactionIndex": 1,
+        "blockNumber": 29537970,
+        "transactionHash": "0x32e102cdfcd984aa3780959ab3305529e1038650d5405cbfe7fb11586cb42f71",
+        "address": "0x44d8998FCB1f50d0C5463582d7ce9a4C27BA5671",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000b3d7b3f149214f8f5281b5ae613b090fd39bd3f"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x541bae728d0e1c87742d9e49a5f71b0276adc48288fdb8930521b01d62b7880a"
+      }
+    ],
+    "blockNumber": 29537970,
+    "cumulativeGasUsed": "5896959",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "8d836039a3333aa7ff1a69dee5a5f235",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"MAX_FEE_PERCENTAGE\",\"outputs\":[{\"internalType\":\"uint168\",\"name\":\"\",\"type\":\"uint168\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"afterTargetMaxTime\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"afterTargetMaxTimePenaltyFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"afterTargetMidTime\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"afterTargetMidTimePenaltyFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"beforeTargetTimeMaxPenaltyFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokensLeftAmount\",\"type\":\"uint256\"}],\"name\":\"calculateFindersFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"findersFeeAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokensAmount\",\"type\":\"uint256\"}],\"name\":\"calculateKeepersFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"keepersFeeAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_timeDelay\",\"type\":\"uint256\"}],\"name\":\"calculateTimeDelayFee\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"feePercentage\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"requestType\",\"type\":\"uint8\"},{\"internalType\":\"uint168\",\"name\":\"tokenAmount\",\"type\":\"uint168\"},{\"internalType\":\"uint16\",\"name\":\"timeDelayRequestFeesPercent\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"maxRequestFeesPercent\",\"type\":\"uint16\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"requestTimestamp\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"targetTimestamp\",\"type\":\"uint32\"},{\"internalType\":\"bool\",\"name\":\"useKeepers\",\"type\":\"bool\"},{\"internalType\":\"uint16\",\"name\":\"maxBuyingPremiumFeePercentage\",\"type\":\"uint16\"}],\"internalType\":\"struct IVolatilityToken.Request\",\"name\":\"_request\",\"type\":\"tuple\"}],\"name\":\"calculateTimePenaltyFee\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"feePercentage\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"findersFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMaxFees\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"maxFeesPercent\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"requestType\",\"type\":\"uint8\"},{\"internalType\":\"uint168\",\"name\":\"tokenAmount\",\"type\":\"uint168\"},{\"internalType\":\"uint16\",\"name\":\"timeDelayRequestFeesPercent\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"maxRequestFeesPercent\",\"type\":\"uint16\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"requestTimestamp\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"targetTimestamp\",\"type\":\"uint32\"},{\"internalType\":\"bool\",\"name\":\"useKeepers\",\"type\":\"bool\"},{\"internalType\":\"uint16\",\"name\":\"maxBuyingPremiumFeePercentage\",\"type\":\"uint16\"}],\"internalType\":\"struct IVolatilityToken.Request\",\"name\":\"_request\",\"type\":\"tuple\"}],\"name\":\"isLiquidable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"liquidable\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"keepersFeeMax\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"keepersFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxTimeDelayFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxTimeWindow\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minTimeDelayFeePercent\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minTimeWindow\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minWaitTime\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_findersFeePercent\",\"type\":\"uint16\"}],\"name\":\"setFindersFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_keepersFeeMax\",\"type\":\"uint256\"}],\"name\":\"setKeepersFeeMax\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_keepersFeePercent\",\"type\":\"uint16\"}],\"name\":\"setKeepersFeePercent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_minWaitTime\",\"type\":\"uint32\"}],\"name\":\"setMinWaitTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_minTimeDelayFeePercent\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"_maxTimeDelayFeePercent\",\"type\":\"uint16\"}],\"name\":\"setTimeDelayFeesParameters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_beforeTargetTimeMaxPenaltyFeePercent\",\"type\":\"uint16\"},{\"internalType\":\"uint32\",\"name\":\"_afterTargetMidTime\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"_afterTargetMidTimePenaltyFeePercent\",\"type\":\"uint16\"},{\"internalType\":\"uint32\",\"name\":\"_afterTargetMaxTime\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"_afterTargetMaxTimePenaltyFeePercent\",\"type\":\"uint16\"}],\"name\":\"setTimePenaltyFeeParameters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_minTimeWindow\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"_maxTimeWindow\",\"type\":\"uint32\"}],\"name\":\"setTimeWindow\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/volatility-token/RequestFeesCalculatorContracts.sol\":\"CVIUSDCRequestFeesCalculator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@coti-cvi/contracts-cvi/contracts/RequestFeesCalculator.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\nimport \\\"./interfaces/IRequestFeesCalculator.sol\\\";\\n\\ncontract RequestFeesCalculator is IRequestFeesCalculator, Ownable {\\n\\n\\tuint168 public constant MAX_FEE_PERCENTAGE = 10000;\\n\\n\\tuint32 public minTimeWindow = 1 hours;\\n\\tuint32 public maxTimeWindow = 3 hours;\\n\\n\\tuint16 public minTimeDelayFeePercent = 0;\\n\\tuint16 public maxTimeDelayFeePercent = 100;\\n\\n\\tuint32 public override minWaitTime = 15 minutes;\\n\\n\\tuint16 public beforeTargetTimeMaxPenaltyFeePercent = 300;\\n\\tuint16 public afterTargetMidTimePenaltyFeePercent = 300;\\n\\tuint16 public afterTargetMaxTimePenaltyFeePercent = 500;\\n\\n\\tuint16 public findersFeePercent = 5000;\\n\\n    uint16 public keepersFeePercent = 100;\\n    uint256 public keepersFeeMax = 4e6;\\n\\n\\tuint32 public afterTargetMidTime = 1 hours;\\n\\tuint32 public afterTargetMaxTime = 12 hours;\\n\\n\\tfunction calculateTimePenaltyFee(IVolatilityToken.Request calldata _request) external view override returns (uint16 feePercentage) {\\n\\t\\tfeePercentage = afterTargetMaxTimePenaltyFeePercent;\\n\\n\\t\\tif (block.timestamp < _request.targetTimestamp) {\\n\\t\\t\\t// Linear decreasing between beforeTargetTimeMaxPenaltyFeePercent and 0\\n            require(block.timestamp >= _request.requestTimestamp + minWaitTime, \\\"Min wait time not over\\\");\\n\\t\\t\\tfeePercentage = uint16((_request.targetTimestamp - block.timestamp) * beforeTargetTimeMaxPenaltyFeePercent / (_request.targetTimestamp - _request.requestTimestamp - minWaitTime));\\n\\t\\t} else if (block.timestamp < _request.targetTimestamp + afterTargetMidTime) {\\n\\t\\t\\t// Linear increasing between 0 and afterTargetMidTimePenaltyFeePercent\\n\\t\\t\\tfeePercentage = uint16((block.timestamp - _request.targetTimestamp) * afterTargetMidTimePenaltyFeePercent / afterTargetMidTime);\\n\\t\\t} else if (block.timestamp < _request.targetTimestamp + afterTargetMaxTime) {\\n\\t\\t\\t// Between afterTargetMidTimePenaltyFeePercent and afterTargetMaxTimePenaltyFeePercent\\n\\t\\t\\tfeePercentage = uint16(((block.timestamp - _request.targetTimestamp - afterTargetMidTime) * (afterTargetMaxTimePenaltyFeePercent - afterTargetMidTimePenaltyFeePercent) / \\n                (afterTargetMaxTime - afterTargetMidTime)) + afterTargetMidTimePenaltyFeePercent);\\n\\t\\t}\\n\\t}\\n\\n    function calculateTimeDelayFee(uint256 _timeDelay) external view override returns (uint16 feePercentage) {\\n    \\trequire(_timeDelay >= minTimeWindow, \\\"Time delay too small\\\");\\n    \\trequire(_timeDelay <= maxTimeWindow, \\\"Time delay too big\\\");\\n\\n        // Can convert to uint16 as result will mathematically never be larger, due to _timeDelay range verifications\\n    \\tfeePercentage = uint16(maxTimeDelayFeePercent - (_timeDelay - minTimeWindow) * (maxTimeDelayFeePercent - minTimeDelayFeePercent) / (maxTimeWindow - minTimeWindow));\\n    }\\n\\n    function calculateFindersFee(uint256 _tokensLeftAmount) external view override returns (uint256 findersFeeAmount) {\\n    \\treturn _tokensLeftAmount * findersFeePercent / MAX_FEE_PERCENTAGE;\\n    }\\n\\n    function calculateKeepersFee(uint256 _tokensAmount) external view override returns (uint256 keepersFeeAmount) {\\n        uint256 percentageAmount =  _tokensAmount * keepersFeePercent / MAX_FEE_PERCENTAGE;\\n\\n        if (percentageAmount >= keepersFeeMax) {\\n            return keepersFeeMax;\\n        }\\n\\n        return percentageAmount;\\n    }\\n\\n    function isLiquidable(IVolatilityToken.Request calldata _request) external view override returns (bool liquidable) {\\n    \\tif (block.timestamp > _request.targetTimestamp + afterTargetMaxTime) {\\n    \\t\\treturn true;\\n    \\t}\\n\\n    \\treturn false;\\n    }\\n\\n    function setTimeWindow(uint32 _minTimeWindow, uint32 _maxTimeWindow) external override onlyOwner {\\n    \\trequire(_minTimeWindow <= _maxTimeWindow, \\\"Max is less than min\\\");\\n\\n    \\tminTimeWindow = _minTimeWindow;\\n    \\tmaxTimeWindow = _maxTimeWindow;\\n    }\\n\\n    function setTimeDelayFeesParameters(uint16 _minTimeDelayFeePercent, uint16 _maxTimeDelayFeePercent) external override onlyOwner {\\n    \\trequire(_minTimeDelayFeePercent <= MAX_FEE_PERCENTAGE, \\\"Min fee larger than max fee\\\");\\n    \\trequire(_maxTimeDelayFeePercent <= MAX_FEE_PERCENTAGE, \\\"Max fee larger than max fee\\\");\\n    \\trequire(_minTimeDelayFeePercent <= _maxTimeDelayFeePercent, \\\"Max is less than min\\\");\\n    \\tminTimeDelayFeePercent = _minTimeDelayFeePercent;\\n    \\tmaxTimeDelayFeePercent = _maxTimeDelayFeePercent;\\n    }\\n\\n    function setMinWaitTime(uint32 _minWaitTime) external override onlyOwner {\\n    \\trequire(_minWaitTime < minTimeWindow, \\\"Min wait time in window\\\");\\n    \\tminWaitTime = _minWaitTime;\\n    }\\n\\n    function setTimePenaltyFeeParameters(uint16 _beforeTargetTimeMaxPenaltyFeePercent, uint32 _afterTargetMidTime, uint16 _afterTargetMidTimePenaltyFeePercent, uint32 _afterTargetMaxTime, uint16 _afterTargetMaxTimePenaltyFeePercent) external override onlyOwner {\\n    \\trequire(_beforeTargetTimeMaxPenaltyFeePercent <= MAX_FEE_PERCENTAGE, \\\"Min fee larger than max fee\\\");\\n    \\trequire(_afterTargetMidTimePenaltyFeePercent <= MAX_FEE_PERCENTAGE, \\\"Mid fee larger than max fee\\\");\\n    \\trequire(_afterTargetMaxTimePenaltyFeePercent <= MAX_FEE_PERCENTAGE, \\\"Max fee larger than max fee\\\");\\n    \\trequire(_afterTargetMidTime <= _afterTargetMaxTime, \\\"Max time before mid time\\\");\\n    \\trequire(_afterTargetMidTimePenaltyFeePercent <= _afterTargetMaxTimePenaltyFeePercent, \\\"Max fee less than mid fee\\\");\\n\\n    \\tbeforeTargetTimeMaxPenaltyFeePercent = _beforeTargetTimeMaxPenaltyFeePercent;\\n    \\tafterTargetMidTime = _afterTargetMidTime;\\n    \\tafterTargetMidTimePenaltyFeePercent = _afterTargetMidTimePenaltyFeePercent;\\n    \\tafterTargetMaxTime = _afterTargetMaxTime;\\n    \\tafterTargetMaxTimePenaltyFeePercent = _afterTargetMaxTimePenaltyFeePercent;\\n    }\\n\\n    function setFindersFee(uint16 _findersFeePercent) external override onlyOwner {\\n    \\trequire(_findersFeePercent <= MAX_FEE_PERCENTAGE, \\\"Fee larger than max\\\");\\n    \\tfindersFeePercent = _findersFeePercent;\\n    }\\n\\n    function setKeepersFeePercent(uint16 _keepersFeePercent) external override onlyOwner {\\n        require(_keepersFeePercent <= MAX_FEE_PERCENTAGE, \\\"Fee larger than max\\\");\\n        keepersFeePercent = _keepersFeePercent;   \\n    }\\n\\n    function setKeepersFeeMax(uint256 _keepersFeeMax) external override onlyOwner {\\n        keepersFeeMax = _keepersFeeMax;\\n    }\\n\\n    function getMaxFees() external view override returns (uint16 maxFeesPercent) {\\n\\t\\treturn afterTargetMaxTimePenaltyFeePercent;\\n    }\\n}\",\"keccak256\":\"0x9dc60b03b283d758f6122d6dd2995b06000c8434e580c4b493d7bb22ab36d5da\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/ICVIOracle.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface ICVIOracle {\\n    function getCVIRoundData(uint80 roundId) external view returns (uint32 cviValue, uint256 cviTimestamp);\\n    function getCVILatestRoundData() external view returns (uint32 cviValue, uint80 cviRoundId, uint256 cviTimestamp);\\n\\n    function setDeviationCheck(bool newDeviationCheck) external;\\n    function setMaxDeviation(uint16 newMaxDeviation) external;\\n}\\n\",\"keccak256\":\"0xf1871b2e9219f7a11e63d8e3276b7a0a46d8d726d54e385a6326dbdb2bcb1bad\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IFeesCalculator.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./ICVIOracle.sol\\\";\\nimport \\\"./IThetaVaultInfo.sol\\\";\\n\\ninterface IFeesCalculator {\\n\\n    struct CVIValue {\\n        uint256 period;\\n        uint32 cviValue;\\n    }\\n\\n    struct SnapshotUpdate {\\n        uint256 latestSnapshot;\\n        uint256 singleUnitFundingFee;\\n        uint256 totalTime;\\n        uint256 totalRounds;\\n        uint256 cviValueTimestamp;\\n        uint80 newLatestRoundId;\\n        uint32 cviValue;\\n        bool updatedSnapshot;\\n        bool updatedLatestRoundId;\\n        bool updatedLatestTimestamp;\\n        bool updatedTurbulenceData;\\n    }\\n\\n    function updateTurbulenceIndicatorPercent(uint256 totalTime, uint256 newRounds, uint32 lastCVIValue, uint32 currCVIValue) external;\\n\\n    function setOracle(ICVIOracle cviOracle) external;\\n    function setThetaVault(IThetaVaultInfo thetaVault) external;\\n\\n    function setStateUpdator(address newUpdator) external;\\n\\n    function setDepositFee(uint16 newDepositFeePercentage) external;\\n    function setWithdrawFee(uint16 newWithdrawFeePercentage) external;\\n    function setOpenPositionFee(uint16 newOpenPositionFeePercentage) external;\\n    function setOpenPositionLPFee(uint16 newOpenPositionLPFeePercent) external;\\n    function setClosePositionLPFee(uint16 newClosePositionLPFeePercent) external;\\n    function setClosePositionFee(uint16 newClosePositionFeePercentage) external;\\n    function setClosePositionMaxFee(uint16 newClosePositionMaxFeePercentage) external;\\n    function setClosePositionFeeDecay(uint256 newClosePositionFeeDecayPeriod) external;\\n    \\n    function setOracleHeartbeatPeriod(uint256 newOracleHeartbeatPeriod) external;\\n    function setBuyingPremiumFeeMax(uint16 newBuyingPremiumFeeMaxPercentage) external;\\n    function setBuyingPremiumThreshold(uint16 newBuyingPremiumThreshold) external;\\n    function setClosingPremiumFeeMax(uint16 newClosingPremiumFeeMaxPercentage) external;\\n    function setCollateralToBuyingPremiumMapping(uint16[] calldata newCollateralToBuyingPremiumMapping) external;\\n    function setFundingFeeConstantRate(uint16 newfundingFeeConstantRate) external;\\n    function setCollateralToExtraFundingFeeMapping(uint32[] calldata newCollateralToExtraFundingFeeMapping) external;\\n    function setTurbulenceStep(uint16 newTurbulenceStepPercentage) external;\\n    function setMaxTurbulenceFeePercentToTrim(uint16 newMaxTurbulenceFeePercentToTrim) external;\\n    function setTurbulenceDeviationThresholdPercent(uint16 newTurbulenceDeviationThresholdPercent) external;\\n    function setTurbulenceDeviationPercent(uint16 newTurbulenceDeviationPercentage) external;\\n\\n    function calculateTurbulenceIndicatorPercent(uint256 totalTime, uint256 newRounds, uint32 _lastCVIValue, uint32 _currCVIValue) external view returns (uint16);\\n\\n    function calculateBuyingPremiumFee(uint168 tokenAmount, uint8 leverage, uint256 lastTotalLeveragedTokens, uint256 lastTotalPositionUnits, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint168 buyingPremiumFee, uint16 combinedPremiumFeePercentage);\\n    function calculateBuyingPremiumFeeWithAddendum(uint168 tokenAmount, uint8 leverage, uint256 lastTotalLeveragedTokens, uint256 lastTotalPositionUnits, uint256 totalLeveragedTokens, uint256 totalPositionUnits, uint16 _turbulenceIndicatorPercent) external view returns (uint168 buyingPremiumFee, uint16 combinedPremiumFeePercentage);\\n\\n    function calculateClosingPremiumFee() external view returns (uint16 combinedPremiumFeePercentage);\\n\\n    function calculateSingleUnitFundingFee(CVIValue[] memory cviValues, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint256 fundingFee);\\n    function calculateSingleUnitPeriodFundingFee(CVIValue memory cviValue, uint256 collateralRatio) external view returns (uint256 fundingFee, uint256 fundingFeeRatePercents);\\n    function updateSnapshots(uint256 latestTimestamp, uint256 blockTimestampSnapshot, uint256 latestTimestampSnapshot, uint80 latestOracleRoundId, uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (SnapshotUpdate memory snapshotUpdate);\\n\\n    function calculateClosePositionFeePercent(uint256 creationTimestamp, bool isNoLockPositionAddress) external view returns (uint16);\\n    function calculateWithdrawFeePercent(uint256 lastDepositTimestamp) external view returns (uint16);\\n\\n    function calculateCollateralRatio(uint256 totalLeveragedTokens, uint256 totalPositionUnits) external view returns (uint256 collateralRatio);\\n\\n    function depositFeePercent() external view returns (uint16);\\n    function withdrawFeePercent() external view returns (uint16);\\n    function openPositionFeePercent() external view returns (uint16);\\n    function closePositionFeePercent() external view returns (uint16);\\n    function openPositionLPFeePercent() external view returns (uint16);\\n    function closePositionLPFeePercent() external view returns (uint16);\\n\\n    function openPositionFees() external view returns (uint16 openPositionFeePercentResult, uint16 buyingPremiumFeeMaxPercentResult);\\n\\n    function turbulenceIndicatorPercent() external view returns (uint16);\\n    function oracleLeverage() external view returns (uint8);\\n\\n    function getCollateralToBuyingPremiumMapping() external view returns(uint16[] memory);\\n    function getCollateralToExtraFundingFeeMapping() external view returns(uint32[] memory);\\n}\\n\",\"keccak256\":\"0xfba7d565b0a7d83dbe5d1abb0bf35897145a96d28e35b0b91864e321606c5734\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IFeesCollector.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ninterface IFeesCollector {\\n    function sendProfit(uint256 amount, IERC20 token) external;\\n}\\n\",\"keccak256\":\"0xb16b7c5d985657716ccacf0f1e61de587c06fe4f6591bee6fafc0a3658229b4c\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/ILiquidation.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface ILiquidation {\\t\\n\\tfunction setMinLiquidationThresholdPercents(uint16[8] calldata newMinThresholdPercents) external;\\n\\tfunction setMinLiquidationRewardPercent(uint16 newMinRewardPercent) external;\\n\\tfunction setMaxLiquidationRewardPercents(uint16[8] calldata newMaxRewardPercents) external;\\n\\tfunction isLiquidationCandidate(uint256 positionBalance, bool isPositive, uint168 positionUnitsAmount, uint32 openCVIValue, uint8 leverage) external view returns (bool);\\n\\tfunction getLiquidationReward(uint256 positionBalance, bool isPositive, uint168 positionUnitsAmount, uint32 openCVIValue, uint8 leverage) external view returns (uint256 finderFeeAmount);\\n}\\n\",\"keccak256\":\"0x0799656b324ed8d65391313156e1dfe7d99b6dadb08e71cd6a515d19731539bd\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IPlatform.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./ICVIOracle.sol\\\";\\nimport \\\"./IFeesCalculator.sol\\\";\\nimport \\\"./IRewardsCollector.sol\\\";\\nimport \\\"./IFeesCollector.sol\\\";\\nimport \\\"./ILiquidation.sol\\\";\\n\\ninterface IPlatform {\\n\\n    struct Position {\\n        uint168 positionUnitsAmount;\\n        uint8 leverage;\\n        uint32 openCVIValue;\\n        uint32 creationTimestamp;\\n        uint32 originalCreationTimestamp;\\n    }\\n\\n    event Deposit(address indexed account, uint256 tokenAmount, uint256 lpTokensAmount, uint256 feeAmount);\\n    event Withdraw(address indexed account, uint256 tokenAmount, uint256 lpTokensAmount, uint256 feeAmount);\\n    event OpenPosition(address indexed account, uint256 tokenAmount, uint8 leverage, uint256 feeAmount, uint256 positionUnitsAmount, uint256 cviValue);\\n    event ClosePosition(address indexed account, uint256 tokenAmount, uint256 feeAmount, uint256 positionUnitsAmount, uint8 leverage, uint256 cviValue);\\n    event LiquidatePosition(address indexed positionAddress, uint256 currentPositionBalance, bool isBalancePositive, uint256 positionUnitsAmount);\\n\\n    function deposit(uint256 tokenAmount, uint256 minLPTokenAmount) external returns (uint256 lpTokenAmount);\\n    function withdraw(uint256 tokenAmount, uint256 maxLPTokenBurnAmount) external returns (uint256 burntAmount, uint256 withdrawnAmount);\\n    function withdrawLPTokens(uint256 lpTokenAmount) external returns (uint256 burntAmount, uint256 withdrawnAmount);\\n\\n    function increaseSharedPool(uint256 tokenAmount) external;\\n\\n    function openPositionWithoutFee(uint168 tokenAmount, uint32 maxCVI, uint8 leverage) external returns (uint168 positionUnitsAmount, uint168 positionedTokenAmount, uint168 openPositionFee, uint168 buyingPremiumFee);\\n    function openPosition(uint168 tokenAmount, uint32 maxCVI, uint16 maxBuyingPremiumFeePercentage, uint8 leverage) external returns (uint168 positionUnitsAmount, uint168 positionedTokenAmount, uint168 openPositionFee, uint168 buyingPremiumFee);\\n    function closePositionWithoutFee(uint168 positionUnitsAmount, uint32 minCVI) external returns (uint256 tokenAmount, uint256 closePositionFee, uint256 closingPremiumFee);\\n    function closePosition(uint168 positionUnitsAmount, uint32 minCVI) external returns (uint256 tokenAmount, uint256 closePositionFee, uint256 closingPremiumFee);\\n\\n    function liquidatePositions(address[] calldata positionOwners) external returns (uint256 finderFeeAmount);\\n\\n    function setAddressSpecificParameters(address holderAddress, bool shouldLockPosition, bool noPremiumFeeAllowed, bool increaseSharedPoolAllowed, bool isLiquidityProvider) external;\\n\\n    function setRevertLockedTransfers(bool revertLockedTransfers) external;\\n\\n    function setSubContracts(IFeesCollector newCollector, ICVIOracle newOracle, IRewardsCollector newRewards, ILiquidation newLiquidation, address _newStakingContractAddress) external;\\n    function setFeesCalculator(IFeesCalculator newCalculator) external;\\n\\n    function setLatestOracleRoundId(uint80 newOracleRoundId) external;\\n    function setMaxTimeAllowedAfterLatestRound(uint32 newMaxTimeAllowedAfterLatestRound) external;\\n\\n    function setLockupPeriods(uint256 newLPLockupPeriod, uint256 newBuyersLockupPeriod) external;\\n\\n    function setEmergencyParameters(bool newEmergencyWithdrawAllowed, bool newCanPurgeSnapshots) external;\\n\\n    function setMaxAllowedLeverage(uint8 newMaxAllowedLeverage) external;\\n\\n    function calculatePositionBalance(address positionAddress) external view returns (uint256 currentPositionBalance, bool isPositive, uint168 positionUnitsAmount, uint8 leverage, uint256 fundingFees, uint256 marginDebt);\\n    function calculatePositionPendingFees(address positionAddress, uint168 positionUnitsAmount) external view returns (uint256 pendingFees);\\n\\n    function totalBalance(bool _withAddendum) external view returns (uint256 balance);\\n\\n    function calculateLatestTurbulenceIndicatorPercent() external view returns (uint16);\\n\\n    function cviOracle() external view returns (ICVIOracle);\\n    function feesCalculator() external view returns (IFeesCalculator);\\n\\n    function PRECISION_DECIMALS() external view returns (uint256);\\n\\n    function totalPositionUnitsAmount() external view returns (uint256);\\n    function totalLeveragedTokensAmount() external view returns (uint256);\\n    function totalFundingFeesAmount() external view returns (uint256);\\n    function latestFundingFees() external view returns (uint256);\\n\\n    function positions(address positionAddress) external view returns (uint168 positionUnitsAmount, uint8 leverage, uint32 openCVIValue, uint32 creationTimestamp, uint32 originalCreationTimestamp);\\n    function buyersLockupPeriod() external view returns (uint256);\\n    function maxCVIValue() external view returns (uint32);\\n}\\n\",\"keccak256\":\"0x11f55f686514975c2dd5adf87856f8df5f85b015621f01e1528addb6b7194686\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IRequestFeesCalculator.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./IVolatilityToken.sol\\\";\\n\\ninterface IRequestFeesCalculator {\\n    function calculateTimePenaltyFee(IVolatilityToken.Request calldata request) external view returns (uint16 feePercentage);\\n    function calculateTimeDelayFee(uint256 timeDelay) external view returns (uint16 feePercentage);\\n    function calculateFindersFee(uint256 tokensLeftAmount) external view returns (uint256 findersFeeAmount);\\n    function calculateKeepersFee(uint256 tokensAmount) external view returns (uint256 keepersFeeAmount);\\n\\n    function isLiquidable(IVolatilityToken.Request calldata request) external view returns (bool liquidable);\\n\\n    function minWaitTime() external view returns (uint32);\\n\\n    function setTimeWindow(uint32 minTimeWindow, uint32 maxTimeWindow) external;\\n    function setTimeDelayFeesParameters(uint16 minTimeDelayFeePercent, uint16 maxTimeDelayFeePercent) external;\\n    function setMinWaitTime(uint32 newMinWaitTime) external;\\n    function setTimePenaltyFeeParameters(uint16 beforeTargetTimeMaxPenaltyFeePercent, uint32 afterTargetMidTime, uint16 afterTargetMidTimePenaltyFeePercent, uint32 afterTargetMaxTime, uint16 afterTargetMaxTimePenaltyFeePercent) external;\\n    function setFindersFee(uint16 findersFeePercent) external;\\n    function setKeepersFeePercent(uint16 keepersFeePercent) external;\\n    function setKeepersFeeMax(uint256 keepersFeeMax) external;\\n\\n    function getMaxFees() external view returns (uint16 maxFeesPercent);\\n}\\n\",\"keccak256\":\"0xb516083aa9063482c61c12f38b960f017205f2611358dcab31c1197208841611\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IRewardsCollector.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface IRewardsCollector {\\n\\tfunction reward(address account, uint256 positionUnits, uint8 leverage) external;\\n}\\n\",\"keccak256\":\"0xaae3f1399202cccfb2e7302f69868a1f9adfbc53c968668e79201692c5724ca5\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IThetaVaultInfo.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\ninterface IThetaVaultInfo {\\n    function totalVaultLeveragedAmount() external view returns (uint256);\\n    function vaultPositionUnits() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x8077ab6dec8937112a2e2567d9b524a10ba640b7891c4bb40729bfbb648c0c1e\",\"license\":\"GPL-3.0\"},\"@coti-cvi/contracts-cvi/contracts/interfaces/IVolatilityToken.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport \\\"./IPlatform.sol\\\";\\nimport \\\"./IRequestFeesCalculator.sol\\\";\\nimport \\\"./ICVIOracle.sol\\\";\\n\\ninterface IVolatilityToken {\\n\\n    struct Request {\\n        uint8 requestType; // 1 => mint, 2 => burn\\n        uint168 tokenAmount;\\n        uint16 timeDelayRequestFeesPercent;\\n        uint16 maxRequestFeesPercent;\\n        address owner;\\n        uint32 requestTimestamp;\\n        uint32 targetTimestamp;\\n        bool useKeepers;\\n        uint16 maxBuyingPremiumFeePercentage;\\n    }\\n\\n    event SubmitRequest(uint256 requestId, uint8 requestType, address indexed account, uint256 tokenAmount, uint256 submitFeesAmount, uint32 requestTimestamp, uint32 targetTimestamp, bool useKeepers, uint16 maxBuyingPremiumFeePercentage);\\n    event FulfillRequest(uint256 requestId, uint8 requestType, address indexed account, uint256 fulfillFeesAmount, bool isAborted, bool useKeepers, bool keepersCalled, address indexed fulfiller, uint32 fulfillTimestamp);\\n    event LiquidateRequest(uint256 requestId, uint8 requestType, address indexed account, address indexed liquidator, uint256 findersFeeAmount, bool useKeepers, uint32 liquidateTimestamp);\\n    event Mint(uint256 requestId, address indexed account, uint256 tokenAmount, uint256 positionedTokenAmount, uint256 mintedTokens, uint256 openPositionFee, uint256 buyingPremiumFee);\\n    event Burn(uint256 requestId, address indexed account, uint256 tokenAmountBeforeFees, uint256 tokenAmount, uint256 burnedTokens, uint256 closePositionFee, uint256 closingPremiumFee);\\n\\n    function rebaseCVI() external;\\n\\n    function submitMintRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n    function submitKeepersMintRequest(uint168 tokenAmount, uint32 timeDelay, uint16 maxBuyingPremiumFeePercentage) external returns (uint256 requestId);\\n    function submitBurnRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n    function submitKeepersBurnRequest(uint168 tokenAmount, uint32 timeDelay) external returns (uint256 requestId);\\n\\n    function fulfillMintRequest(uint256 requestId, uint16 maxBuyingPremiumFeePercentage, bool keepersCalled) external returns (uint256 tokensMinted, bool success);\\n    function fulfillBurnRequest(uint256 requestId, bool keepersCalled) external returns (uint256 tokensBurned);\\n\\n    function mintTokens(uint168 tokenAmount) external returns (uint256 mintedTokens);\\n    function burnTokens(uint168 burnAmount) external returns (uint256 tokenAmount);\\n\\n    function liquidateRequest(uint256 requestId) external returns (uint256 findersFeeAmount);\\n\\n    function setMinter(address minter) external;\\n    function setPlatform(IPlatform newPlatform) external;\\n    function setFeesCalculator(IFeesCalculator newFeesCalculator) external;\\n    function setFeesCollector(IFeesCollector newCollector) external;\\n    function setRequestFeesCalculator(IRequestFeesCalculator newRequestFeesCalculator) external;\\n    function setCVIOracle(ICVIOracle newCVIOracle) external;\\n    function setDeviationParameters(uint16 newDeviationPercentagePerSingleRebaseLag, uint16 newMinDeviationPercentage, uint16 newMaxDeviationPercentage) external;\\n    function setVerifyTotalRequestsAmount(bool verifyTotalRequestsAmount) external;\\n    function setMaxTotalRequestsAmount(uint256 maxTotalRequestsAmount) external;\\n    function setCappedRebase(bool newCappedRebase) external;\\n\\n    function setMinRequestId(uint256 newMinRequestId) external;\\n    function setMaxMinRequestIncrements(uint256 newMaxMinRequestIncrements) external;\\n\\n    function setFulfiller(address fulfiller) external;\\n\\n    function setKeepersFeeVaultAddress(address newKeepersFeeVaultAddress) external;\\n\\n    function setMinKeepersAmounts(uint256 newMinKeepersMintAmount, uint256 newMinKeepersBurnAmount) external;\\n\\n    function platform() external view returns (IPlatform);\\n    function requestFeesCalculator() external view returns (IRequestFeesCalculator);\\n    function leverage() external view returns (uint8);\\n    function initialTokenToLPTokenRate() external view returns (uint256);\\n\\n    function requests(uint256 requestId) external view returns (uint8 requestType, uint168 tokenAmount, uint16 timeDelayRequestFeesPercent, uint16 maxRequestFeesPercent,\\n        address owner, uint32 requestTimestamp, uint32 targetTimestamp, bool useKeepers, uint16 maxBuyingPremiumFeePercentage);\\n}\\n\",\"keccak256\":\"0x9b195f997265f6401224845c81cba2a3ac6f2e4f2bf65d8be5027ac1ee3fa5b4\",\"license\":\"GPL-3.0\"},\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/volatility-token/RequestFeesCalculatorContracts.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity ^0.8;\\n\\nimport '@coti-cvi/contracts-cvi/contracts/RequestFeesCalculator.sol';\\n\\ncontract CVIUSDCRequestFeesCalculator is RequestFeesCalculator {\\n  constructor() RequestFeesCalculator() {}\\n}\\n\\ncontract CVIUSDCRequestFeesCalculator2X is RequestFeesCalculator {\\n  constructor() RequestFeesCalculator() {}\\n}\\n\",\"keccak256\":\"0x61e4442431d7c6778de9194eeb5d926465574d2236fec11a388be1625d9c4cac\",\"license\":\"GPL-3.0\"}},\"version\":1}",
+  "bytecode": "0x6080604052600080546001600160a01b03167e64000000002a3000000e100000000000000000000000000000000000000000179055600180546001600160701b0319166c64138801f4012c012c00000384179055623d0900600255600380546001600160401b03191665a8c000000e1017905534801561007e57600080fd5b506100883361008d565b6100dd565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b611363806100ec6000396000f3fe608060405234801561001057600080fd5b50600436106101da5760003560e01c8063738b553f11610104578063a5759c93116100a2578063ce521f2611610071578063ce521f261461042e578063ce6457621461043e578063d0b6865214610451578063f2fde38b1461046857600080fd5b8063a5759c93146103df578063a8859ed1146103f4578063bb8870a91461040b578063bf0ded661461041e57600080fd5b806386734080116100de57806386734080146103895780638da5cb5b1461039e5780639188a6e6146103b9578063956872ca146103cc57600080fd5b8063738b553f1461034e5780637693aa611461036357806377c46f801461037657600080fd5b80634f592a501161017c57806363d7f4c41161014b57806363d7f4c41461030d5780636417b0e0146103205780636f15d7b014610333578063715018a61461034657600080fd5b80634f592a50146102af578063530fd7af146102c4578063558e44d3146102d9578063591b36f7146102fa57600080fd5b806322470032116101b8578063224700321461025957806326db8a311461026e5780632e5ad60514610283578063334a88c81461029857600080fd5b8063051a497b146101df5780630d7310091461020a57806315b3b87314610236575b600080fd5b6101f26101ed3660046111b5565b61047b565b60405161ffff90911681526020015b60405180910390f35b60035461022190600160201b900463ffffffff1681565b60405163ffffffff9091168152602001610201565b6102496102443660046110ed565b6105cd565b6040519015158152602001610201565b6001546101f290600160401b900461ffff1681565b61028161027c3660046111b5565b610617565b005b6001546101f290600160301b900461ffff1681565b6102a160025481565b604051908152602001610201565b6001546101f290600160201b900461ffff1681565b6001546101f290600160501b900461ffff1681565b6102e261271081565b6040516001600160a81b039091168152602001610201565b6102a16103083660046111b5565b610646565b61028161031b366004611105565b610686565b61028161032e3660046111cd565b61071e565b6102816103413660046111e7565b6107c6565b610281610883565b6000546101f290600160f01b900461ffff1681565b6102a16103713660046111b5565b6108b9565b600154600160401b900461ffff166101f2565b6001546101f290600160601b900461ffff1681565b6000546040516001600160a01b039091168152602001610201565b6102816103c7366004611151565b6108e2565b6101f26103da3660046110ed565b610b46565b6000546101f290600160e01b900461ffff1681565b60005461022190600160a01b900463ffffffff1681565b61028161041936600461111f565b610db9565b6003546102219063ffffffff1681565b6001546102219063ffffffff1681565b61028161044c366004611105565b610f16565b60005461022190600160c01b900463ffffffff1681565b6102816104763660046110bf565b610fae565b60008054600160a01b900463ffffffff168210156104d75760405162461bcd60e51b8152602060048201526014602482015273151a5b594819195b185e481d1bdbc81cdb585b1b60621b60448201526064015b60405180910390fd5b600054600160c01b900463ffffffff1682111561052b5760405162461bcd60e51b815260206004820152601260248201527154696d652064656c617920746f6f2062696760701b60448201526064016104ce565b60005461054e9063ffffffff600160a01b8204811691600160c01b9004166112fe565b60005463ffffffff91909116906105799061ffff600160e01b8204811691600160f01b9004166112c4565b60005461ffff919091169061059b90600160a01b900463ffffffff16856112e7565b6105a591906112a5565b6105af9190611285565b6000546105c79190600160f01b900461ffff166112e7565b92915050565b600354600090600160201b900463ffffffff166105f060e0840160c085016111cd565b6105fa919061125d565b63ffffffff1642111561060f57506001919050565b506000919050565b6000546001600160a01b031633146106415760405162461bcd60e51b81526004016104ce90611210565b600255565b60015460009081906127109061066790600160601b900461ffff16856112a5565b6106719190611285565b905060025481106105c7575050600254919050565b6000546001600160a01b031633146106b05760405162461bcd60e51b81526004016104ce90611210565b61271061ffff821611156106fc5760405162461bcd60e51b815260206004820152601360248201527208ccaca40d8c2e4cecae440e8d0c2dc40dac2f606b1b60448201526064016104ce565b6001805461ffff909216600160601b0261ffff60601b19909216919091179055565b6000546001600160a01b031633146107485760405162461bcd60e51b81526004016104ce90611210565b60005463ffffffff600160a01b9091048116908216106107aa5760405162461bcd60e51b815260206004820152601760248201527f4d696e20776169742074696d6520696e2077696e646f7700000000000000000060448201526064016104ce565b6001805463ffffffff191663ffffffff92909216919091179055565b6000546001600160a01b031633146107f05760405162461bcd60e51b81526004016104ce90611210565b8063ffffffff168263ffffffff1611156108435760405162461bcd60e51b815260206004820152601460248201527326b0bc1034b9903632b9b9903a3430b71036b4b760611b60448201526064016104ce565b6000805467ffffffffffffffff60a01b1916600160a01b63ffffffff9485160263ffffffff60c01b191617600160c01b9290931691909102919091179055565b6000546001600160a01b031633146108ad5760405162461bcd60e51b81526004016104ce90611210565b6108b76000611049565b565b600154600090612710906108d890600160501b900461ffff16846112a5565b6105c79190611285565b6000546001600160a01b0316331461090c5760405162461bcd60e51b81526004016104ce90611210565b61271061ffff861611156109625760405162461bcd60e51b815260206004820152601b60248201527f4d696e20666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff841611156109b85760405162461bcd60e51b815260206004820152601b60248201527f4d696420666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff82161115610a0e5760405162461bcd60e51b815260206004820152601b60248201527f4d617820666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b8163ffffffff168463ffffffff161115610a6a5760405162461bcd60e51b815260206004820152601860248201527f4d61782074696d65206265666f7265206d69642074696d65000000000000000060448201526064016104ce565b8061ffff168361ffff161115610ac25760405162461bcd60e51b815260206004820152601960248201527f4d617820666565206c657373207468616e206d6964206665650000000000000060448201526064016104ce565b600180546003805463ffffffff97881667ffffffffffffffff1990911617600160201b9590971685029690961790955567ffffffff000000001990941661ffff95861690920267ffff000000000000191691909117600160301b928516929092029190911769ffff00000000000000001916600160401b9190931602919091179055565b600154600160401b900461ffff16610b6460e0830160c084016111cd565b63ffffffff16421015610c625760015463ffffffff16610b8a60c0840160a085016111cd565b610b94919061125d565b63ffffffff16421015610be25760405162461bcd60e51b815260206004820152601660248201527526b4b7103bb0b4ba103a34b6b2903737ba1037bb32b960511b60448201526064016104ce565b60015463ffffffff16610bfb60c0840160a085016111cd565b610c0b60e0850160c086016111cd565b610c1591906112fe565b610c1f91906112fe565b60015463ffffffff9190911690600160201b900461ffff1642610c4860e0860160c087016111cd565b63ffffffff16610c5891906112e7565b6108d891906112a5565b60035463ffffffff16610c7b60e0840160c085016111cd565b610c85919061125d565b63ffffffff16421015610ccc5760035460015463ffffffff90911690600160301b900461ffff16610cbc60e0850160c086016111cd565b610c589063ffffffff16426112e7565b600354600160201b900463ffffffff16610cec60e0840160c085016111cd565b610cf6919061125d565b63ffffffff16421015610db457600154600354600160301b90910461ffff1690610d309063ffffffff80821691600160201b9004166112fe565b60015463ffffffff9190911690610d5b9061ffff600160301b8204811691600160401b9004166112c4565b60035461ffff919091169063ffffffff16610d7c60e0870160c088016111cd565b610d8c9063ffffffff16426112e7565b610d9691906112e7565b610da091906112a5565b610daa9190611285565b6105c79190611245565b919050565b6000546001600160a01b03163314610de35760405162461bcd60e51b81526004016104ce90611210565b61271061ffff83161115610e395760405162461bcd60e51b815260206004820152601b60248201527f4d696e20666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff82161115610e8f5760405162461bcd60e51b815260206004820152601b60248201527f4d617820666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b8061ffff168261ffff161115610ede5760405162461bcd60e51b815260206004820152601460248201527326b0bc1034b9903632b9b9903a3430b71036b4b760611b60448201526064016104ce565b600080546001600160e01b0316600160e01b61ffff948516026001600160f01b031617600160f01b9290931691909102919091179055565b6000546001600160a01b03163314610f405760405162461bcd60e51b81526004016104ce90611210565b61271061ffff82161115610f8c5760405162461bcd60e51b815260206004820152601360248201527208ccaca40d8c2e4cecae440e8d0c2dc40dac2f606b1b60448201526064016104ce565b6001805461ffff909216600160501b0261ffff60501b19909216919091179055565b6000546001600160a01b03163314610fd85760405162461bcd60e51b81526004016104ce90611210565b6001600160a01b03811661103d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016104ce565b61104681611049565b50565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b803561ffff81168114610db457600080fd5b803563ffffffff81168114610db457600080fd5b6000602082840312156110d0578081fd5b81356001600160a01b03811681146110e6578182fd5b9392505050565b600061012082840312156110ff578081fd5b50919050565b600060208284031215611116578081fd5b6110e682611099565b60008060408385031215611131578081fd5b61113a83611099565b915061114860208401611099565b90509250929050565b600080600080600060a08688031215611168578081fd5b61117186611099565b945061117f602087016110ab565b935061118d60408701611099565b925061119b606087016110ab565b91506111a960808701611099565b90509295509295909350565b6000602082840312156111c6578081fd5b5035919050565b6000602082840312156111de578081fd5b6110e6826110ab565b600080604083850312156111f9578182fd5b611202836110ab565b9150611148602084016110ab565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b6000821982111561125857611258611317565b500190565b600063ffffffff80831681851680830382111561127c5761127c611317565b01949350505050565b6000826112a057634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156112bf576112bf611317565b500290565b600061ffff838116908316818110156112df576112df611317565b039392505050565b6000828210156112f9576112f9611317565b500390565b600063ffffffff838116908316818110156112df576112df5b634e487b7160e01b600052601160045260246000fdfea2646970667358221220d8e84946906a1eaf64c59ecf80e1ed5e25f0b8d925a88c863350a50a3a5474ab64736f6c63430008040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101da5760003560e01c8063738b553f11610104578063a5759c93116100a2578063ce521f2611610071578063ce521f261461042e578063ce6457621461043e578063d0b6865214610451578063f2fde38b1461046857600080fd5b8063a5759c93146103df578063a8859ed1146103f4578063bb8870a91461040b578063bf0ded661461041e57600080fd5b806386734080116100de57806386734080146103895780638da5cb5b1461039e5780639188a6e6146103b9578063956872ca146103cc57600080fd5b8063738b553f1461034e5780637693aa611461036357806377c46f801461037657600080fd5b80634f592a501161017c57806363d7f4c41161014b57806363d7f4c41461030d5780636417b0e0146103205780636f15d7b014610333578063715018a61461034657600080fd5b80634f592a50146102af578063530fd7af146102c4578063558e44d3146102d9578063591b36f7146102fa57600080fd5b806322470032116101b8578063224700321461025957806326db8a311461026e5780632e5ad60514610283578063334a88c81461029857600080fd5b8063051a497b146101df5780630d7310091461020a57806315b3b87314610236575b600080fd5b6101f26101ed3660046111b5565b61047b565b60405161ffff90911681526020015b60405180910390f35b60035461022190600160201b900463ffffffff1681565b60405163ffffffff9091168152602001610201565b6102496102443660046110ed565b6105cd565b6040519015158152602001610201565b6001546101f290600160401b900461ffff1681565b61028161027c3660046111b5565b610617565b005b6001546101f290600160301b900461ffff1681565b6102a160025481565b604051908152602001610201565b6001546101f290600160201b900461ffff1681565b6001546101f290600160501b900461ffff1681565b6102e261271081565b6040516001600160a81b039091168152602001610201565b6102a16103083660046111b5565b610646565b61028161031b366004611105565b610686565b61028161032e3660046111cd565b61071e565b6102816103413660046111e7565b6107c6565b610281610883565b6000546101f290600160f01b900461ffff1681565b6102a16103713660046111b5565b6108b9565b600154600160401b900461ffff166101f2565b6001546101f290600160601b900461ffff1681565b6000546040516001600160a01b039091168152602001610201565b6102816103c7366004611151565b6108e2565b6101f26103da3660046110ed565b610b46565b6000546101f290600160e01b900461ffff1681565b60005461022190600160a01b900463ffffffff1681565b61028161041936600461111f565b610db9565b6003546102219063ffffffff1681565b6001546102219063ffffffff1681565b61028161044c366004611105565b610f16565b60005461022190600160c01b900463ffffffff1681565b6102816104763660046110bf565b610fae565b60008054600160a01b900463ffffffff168210156104d75760405162461bcd60e51b8152602060048201526014602482015273151a5b594819195b185e481d1bdbc81cdb585b1b60621b60448201526064015b60405180910390fd5b600054600160c01b900463ffffffff1682111561052b5760405162461bcd60e51b815260206004820152601260248201527154696d652064656c617920746f6f2062696760701b60448201526064016104ce565b60005461054e9063ffffffff600160a01b8204811691600160c01b9004166112fe565b60005463ffffffff91909116906105799061ffff600160e01b8204811691600160f01b9004166112c4565b60005461ffff919091169061059b90600160a01b900463ffffffff16856112e7565b6105a591906112a5565b6105af9190611285565b6000546105c79190600160f01b900461ffff166112e7565b92915050565b600354600090600160201b900463ffffffff166105f060e0840160c085016111cd565b6105fa919061125d565b63ffffffff1642111561060f57506001919050565b506000919050565b6000546001600160a01b031633146106415760405162461bcd60e51b81526004016104ce90611210565b600255565b60015460009081906127109061066790600160601b900461ffff16856112a5565b6106719190611285565b905060025481106105c7575050600254919050565b6000546001600160a01b031633146106b05760405162461bcd60e51b81526004016104ce90611210565b61271061ffff821611156106fc5760405162461bcd60e51b815260206004820152601360248201527208ccaca40d8c2e4cecae440e8d0c2dc40dac2f606b1b60448201526064016104ce565b6001805461ffff909216600160601b0261ffff60601b19909216919091179055565b6000546001600160a01b031633146107485760405162461bcd60e51b81526004016104ce90611210565b60005463ffffffff600160a01b9091048116908216106107aa5760405162461bcd60e51b815260206004820152601760248201527f4d696e20776169742074696d6520696e2077696e646f7700000000000000000060448201526064016104ce565b6001805463ffffffff191663ffffffff92909216919091179055565b6000546001600160a01b031633146107f05760405162461bcd60e51b81526004016104ce90611210565b8063ffffffff168263ffffffff1611156108435760405162461bcd60e51b815260206004820152601460248201527326b0bc1034b9903632b9b9903a3430b71036b4b760611b60448201526064016104ce565b6000805467ffffffffffffffff60a01b1916600160a01b63ffffffff9485160263ffffffff60c01b191617600160c01b9290931691909102919091179055565b6000546001600160a01b031633146108ad5760405162461bcd60e51b81526004016104ce90611210565b6108b76000611049565b565b600154600090612710906108d890600160501b900461ffff16846112a5565b6105c79190611285565b6000546001600160a01b0316331461090c5760405162461bcd60e51b81526004016104ce90611210565b61271061ffff861611156109625760405162461bcd60e51b815260206004820152601b60248201527f4d696e20666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff841611156109b85760405162461bcd60e51b815260206004820152601b60248201527f4d696420666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff82161115610a0e5760405162461bcd60e51b815260206004820152601b60248201527f4d617820666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b8163ffffffff168463ffffffff161115610a6a5760405162461bcd60e51b815260206004820152601860248201527f4d61782074696d65206265666f7265206d69642074696d65000000000000000060448201526064016104ce565b8061ffff168361ffff161115610ac25760405162461bcd60e51b815260206004820152601960248201527f4d617820666565206c657373207468616e206d6964206665650000000000000060448201526064016104ce565b600180546003805463ffffffff97881667ffffffffffffffff1990911617600160201b9590971685029690961790955567ffffffff000000001990941661ffff95861690920267ffff000000000000191691909117600160301b928516929092029190911769ffff00000000000000001916600160401b9190931602919091179055565b600154600160401b900461ffff16610b6460e0830160c084016111cd565b63ffffffff16421015610c625760015463ffffffff16610b8a60c0840160a085016111cd565b610b94919061125d565b63ffffffff16421015610be25760405162461bcd60e51b815260206004820152601660248201527526b4b7103bb0b4ba103a34b6b2903737ba1037bb32b960511b60448201526064016104ce565b60015463ffffffff16610bfb60c0840160a085016111cd565b610c0b60e0850160c086016111cd565b610c1591906112fe565b610c1f91906112fe565b60015463ffffffff9190911690600160201b900461ffff1642610c4860e0860160c087016111cd565b63ffffffff16610c5891906112e7565b6108d891906112a5565b60035463ffffffff16610c7b60e0840160c085016111cd565b610c85919061125d565b63ffffffff16421015610ccc5760035460015463ffffffff90911690600160301b900461ffff16610cbc60e0850160c086016111cd565b610c589063ffffffff16426112e7565b600354600160201b900463ffffffff16610cec60e0840160c085016111cd565b610cf6919061125d565b63ffffffff16421015610db457600154600354600160301b90910461ffff1690610d309063ffffffff80821691600160201b9004166112fe565b60015463ffffffff9190911690610d5b9061ffff600160301b8204811691600160401b9004166112c4565b60035461ffff919091169063ffffffff16610d7c60e0870160c088016111cd565b610d8c9063ffffffff16426112e7565b610d9691906112e7565b610da091906112a5565b610daa9190611285565b6105c79190611245565b919050565b6000546001600160a01b03163314610de35760405162461bcd60e51b81526004016104ce90611210565b61271061ffff83161115610e395760405162461bcd60e51b815260206004820152601b60248201527f4d696e20666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b61271061ffff82161115610e8f5760405162461bcd60e51b815260206004820152601b60248201527f4d617820666565206c6172676572207468616e206d617820666565000000000060448201526064016104ce565b8061ffff168261ffff161115610ede5760405162461bcd60e51b815260206004820152601460248201527326b0bc1034b9903632b9b9903a3430b71036b4b760611b60448201526064016104ce565b600080546001600160e01b0316600160e01b61ffff948516026001600160f01b031617600160f01b9290931691909102919091179055565b6000546001600160a01b03163314610f405760405162461bcd60e51b81526004016104ce90611210565b61271061ffff82161115610f8c5760405162461bcd60e51b815260206004820152601360248201527208ccaca40d8c2e4cecae440e8d0c2dc40dac2f606b1b60448201526064016104ce565b6001805461ffff909216600160501b0261ffff60501b19909216919091179055565b6000546001600160a01b03163314610fd85760405162461bcd60e51b81526004016104ce90611210565b6001600160a01b03811661103d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016104ce565b61104681611049565b50565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b803561ffff81168114610db457600080fd5b803563ffffffff81168114610db457600080fd5b6000602082840312156110d0578081fd5b81356001600160a01b03811681146110e6578182fd5b9392505050565b600061012082840312156110ff578081fd5b50919050565b600060208284031215611116578081fd5b6110e682611099565b60008060408385031215611131578081fd5b61113a83611099565b915061114860208401611099565b90509250929050565b600080600080600060a08688031215611168578081fd5b61117186611099565b945061117f602087016110ab565b935061118d60408701611099565b925061119b606087016110ab565b91506111a960808701611099565b90509295509295909350565b6000602082840312156111c6578081fd5b5035919050565b6000602082840312156111de578081fd5b6110e6826110ab565b600080604083850312156111f9578182fd5b611202836110ab565b9150611148602084016110ab565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b6000821982111561125857611258611317565b500190565b600063ffffffff80831681851680830382111561127c5761127c611317565b01949350505050565b6000826112a057634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156112bf576112bf611317565b500290565b600061ffff838116908316818110156112df576112df611317565b039392505050565b6000828210156112f9576112f9611317565b500390565b600063ffffffff838116908316818110156112df576112df5b634e487b7160e01b600052601160045260246000fdfea2646970667358221220d8e84946906a1eaf64c59ecf80e1ed5e25f0b8d925a88c863350a50a3a5474ab64736f6c63430008040033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 37156,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 8986,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "minTimeWindow",
+        "offset": 20,
+        "slot": "0",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 8989,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "maxTimeWindow",
+        "offset": 24,
+        "slot": "0",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 8992,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "minTimeDelayFeePercent",
+        "offset": 28,
+        "slot": "0",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 8995,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "maxTimeDelayFeePercent",
+        "offset": 30,
+        "slot": "0",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 8999,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "minWaitTime",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 9002,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "beforeTargetTimeMaxPenaltyFeePercent",
+        "offset": 4,
+        "slot": "1",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 9005,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "afterTargetMidTimePenaltyFeePercent",
+        "offset": 6,
+        "slot": "1",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 9008,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "afterTargetMaxTimePenaltyFeePercent",
+        "offset": 8,
+        "slot": "1",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 9011,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "findersFeePercent",
+        "offset": 10,
+        "slot": "1",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 9014,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "keepersFeePercent",
+        "offset": 12,
+        "slot": "1",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 9017,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "keepersFeeMax",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 9020,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "afterTargetMidTime",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 9023,
+        "contract": "contracts/volatility-token/RequestFeesCalculatorContracts.sol:CVIUSDCRequestFeesCalculator",
+        "label": "afterTargetMaxTime",
+        "offset": 4,
+        "slot": "3",
+        "type": "t_uint32"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint32": {
+        "encoding": "inplace",
+        "label": "uint32",
+        "numberOfBytes": "4"
+      }
+    }
+  }
+}

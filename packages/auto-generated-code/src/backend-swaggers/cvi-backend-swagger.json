@@ -1,0 +1,2216 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness-description": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_readinessDescription",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/accounts/all-tv-events-asc": {
+      "get": {
+        "operationId": "AdminApiController_getAllTvEventsAsc",
+        "summary": "",
+        "description": "Get all TV events",
+        "parameters": [
+          {
+            "name": "fromTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "fromBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "requestId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/TvSubmitEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TvFulfillDepositEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TvFulfillWithdrawEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TvLiquidateEventDto"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/all-vt-events-asc": {
+      "get": {
+        "operationId": "AdminApiController_getAllVtEventsAsc",
+        "summary": "",
+        "description": "Get all VT events",
+        "parameters": [
+          {
+            "name": "fromTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "fromBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "requestId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/VtSubmitRequestEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtLiquidateRequestEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtFulfillRequestEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtMintEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtBurnEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtCviTransferEventDto"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VtUniswapSwapEventDto"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/updated-general-info-Of-event-and-addresses": {
+      "get": {
+        "operationId": "AdminApiController_getUpdateGeneralInfoOfEventAndAddressesDto",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateGeneralInfoOfEventAndAddressesDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/vt-trading-competition": {
+      "get": {
+        "operationId": "AdminApiController_getVtTradingCompetition",
+        "summary": "",
+        "description": "Get trading competition info",
+        "parameters": [
+          {
+            "name": "from-timestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "debug",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TradingCompetitionInfoAddressDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/events-in-range": {
+      "get": {
+        "operationId": "AdminApiController_eventsInRange",
+        "summary": "",
+        "description": "return amount of events in the specified from-to range",
+        "parameters": [
+          {
+            "name": "resource",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "vt",
+                "tv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toTimestamp",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "fromBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "toBlockNumber",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The cvi-backend@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "GeneralInfoOfEventByAddressDto": {
+        "type": "object",
+        "properties": {
+          "vtCviUsdcLpTokensInCvi": {
+            "type": "number"
+          },
+          "vtCviUsdcLpTokensInUsdc": {
+            "type": "number"
+          },
+          "vtCviUsdcLpTokens": {
+            "type": "number"
+          },
+          "usdcBalance": {
+            "type": "number"
+          },
+          "vtCviBalance": {
+            "type": "number"
+          },
+          "vtCvix1BalanceInUsdc": {
+            "type": "number"
+          },
+          "vtCvix1BalanceInUsdcInDex": {
+            "type": "number"
+          },
+          "tvCvix1Balance": {
+            "type": "number"
+          },
+          "tvCvix1BalanceInUsdc": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "vtCviUsdcLpTokensInCvi",
+          "vtCviUsdcLpTokensInUsdc",
+          "vtCviUsdcLpTokens",
+          "usdcBalance",
+          "vtCviBalance",
+          "vtCvix1BalanceInUsdc",
+          "vtCvix1BalanceInUsdcInDex",
+          "tvCvix1Balance",
+          "tvCvix1BalanceInUsdc"
+        ]
+      },
+      "TvInfoDto": {
+        "type": "object",
+        "properties": {
+          "tvLockedUsdc": {
+            "type": "number"
+          },
+          "tvLockedPercentageOfTvCurrentBalance": {
+            "type": "number"
+          },
+          "dexCviBalanceUsdcByPlatformPrice": {
+            "type": "number"
+          },
+          "dexCviBalanceUsdc": {
+            "type": "number"
+          },
+          "currentThetaVaultUsdcBalance": {
+            "type": "number"
+          },
+          "platformUSDCLiquidity": {
+            "type": "number"
+          },
+          "platformVtBalanceUsdcByPlatformPrice": {
+            "type": "number"
+          },
+          "dexCviBalance": {
+            "type": "number"
+          },
+          "tvCollateralRatio": {
+            "type": "number"
+          },
+          "tvUtilizationPercentage": {
+            "type": "number"
+          },
+          "tvPlatformPnl": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "tvLockedUsdc",
+          "tvLockedPercentageOfTvCurrentBalance",
+          "dexCviBalanceUsdcByPlatformPrice",
+          "dexCviBalanceUsdc",
+          "currentThetaVaultUsdcBalance",
+          "platformUSDCLiquidity",
+          "platformVtBalanceUsdcByPlatformPrice",
+          "dexCviBalance",
+          "tvCollateralRatio",
+          "tvUtilizationPercentage",
+          "tvPlatformPnl"
+        ]
+      },
+      "GeneralInfoOfEventDto": {
+        "type": "object",
+        "properties": {
+          "totalSupplyOfCviUsdcLpTokens": {
+            "type": "number"
+          },
+          "vtCviUsdcLpTokenWorthInUsdc": {
+            "type": "number"
+          },
+          "tvAprByLast30Days": {
+            "type": "number"
+          },
+          "cviIndex": {
+            "type": "number"
+          },
+          "vtCviPriceInUsdc": {
+            "type": "number"
+          },
+          "vtCviPriceDexInUsdc": {
+            "type": "number"
+          },
+          "tvCvix1PriceInUsdc": {
+            "type": "number"
+          },
+          "tvInfo": {
+            "$ref": "#/components/schemas/TvInfoDto"
+          }
+        },
+        "required": [
+          "totalSupplyOfCviUsdcLpTokens",
+          "vtCviUsdcLpTokenWorthInUsdc",
+          "tvAprByLast30Days",
+          "cviIndex",
+          "vtCviPriceInUsdc",
+          "vtCviPriceDexInUsdc",
+          "tvCvix1PriceInUsdc",
+          "tvInfo"
+        ]
+      },
+      "TvSubmitEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenAmountInUsdcTokenName": {
+            "type": "string"
+          },
+          "tokenAmountName": {
+            "type": "string"
+          },
+          "tokenAmount": {
+            "type": "number"
+          },
+          "account": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "requestType": {
+            "type": "number"
+          },
+          "tokenAmountInUsdc": {
+            "type": "number"
+          },
+          "targetTimestamp": {
+            "type": "number"
+          },
+          "currentThetaVaultUsdcBalance": {
+            "type": "number"
+          },
+          "totalSupply": {
+            "type": "number"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Deposit",
+              "Withdraw"
+            ]
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "tokenAmountInUsdcTokenName",
+          "tokenAmountName",
+          "tokenAmount",
+          "account",
+          "requestId",
+          "requestType",
+          "tokenAmountInUsdc",
+          "targetTimestamp",
+          "currentThetaVaultUsdcBalance",
+          "totalSupply",
+          "action"
+        ]
+      },
+      "TvSubmitEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "TvSubmitEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/TvSubmitEventArgsDto"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "TvFulfillDepositEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Deposit"
+            ]
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenName": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "submitRequestTokenAmountUsdc": {
+            "type": "number"
+          },
+          "platformLiquidityAmountUsdc": {
+            "type": "number"
+          },
+          "dexVolTokenUSDCAmount": {
+            "type": "number"
+          },
+          "dexVolTokenAmount": {
+            "type": "number"
+          },
+          "dexUSDCAmount": {
+            "type": "number"
+          },
+          "mintedThetaTokens": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "action",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "tokenName",
+          "account",
+          "requestId",
+          "submitRequestTokenAmountUsdc",
+          "platformLiquidityAmountUsdc",
+          "dexVolTokenUSDCAmount",
+          "dexVolTokenAmount",
+          "dexUSDCAmount",
+          "mintedThetaTokens"
+        ]
+      },
+      "TvFulfillDepositEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "TvFulfillDepositEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/TvFulfillDepositEventArgsDto"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "TvFulfillWithdrawEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Withdraw"
+            ]
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenName": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "usdcAmountReceived": {
+            "type": "number"
+          },
+          "platformLiquidityAmountUsdc": {
+            "type": "number"
+          },
+          "dexVolTokenAmount": {
+            "type": "number"
+          },
+          "dexUSDCviTokenAmount": {
+            "type": "number"
+          },
+          "dexUSDCAmount": {
+            "type": "number"
+          },
+          "burnedThetaTokens": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "action",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "tokenName",
+          "account",
+          "requestId",
+          "usdcAmountReceived",
+          "platformLiquidityAmountUsdc",
+          "dexVolTokenAmount",
+          "dexUSDCviTokenAmount",
+          "dexUSDCAmount",
+          "burnedThetaTokens"
+        ]
+      },
+      "TvFulfillWithdrawEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "TvFulfillWithdrawEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/TvFulfillWithdrawEventArgsDto"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "TvLiquidateEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Deposit",
+              "Withdraw"
+            ]
+          },
+          "tokenAmountName": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "requestType": {
+            "type": "number"
+          },
+          "liquidator": {
+            "type": "string"
+          },
+          "tokenAmount": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "action",
+          "tokenAmountName",
+          "account",
+          "requestId",
+          "requestType",
+          "liquidator",
+          "tokenAmount"
+        ]
+      },
+      "TvLiquidateEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "TvLiquidateEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/TvLiquidateEventArgsDto"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "SubmitRequestEventDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenNameSubmitFeesAmount": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "tokenNameAmountPaid": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "account": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "requestType": {
+            "type": "number"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Mint",
+              "Burn"
+            ]
+          },
+          "submitFeesAmount": {
+            "type": "number"
+          },
+          "requestTimestamp": {
+            "type": "number"
+          },
+          "targetTimestamp": {
+            "type": "number"
+          },
+          "tokenAmountPaid": {
+            "type": "number"
+          },
+          "useKeepers": {
+            "type": "boolean"
+          },
+          "maxBuyingPremiumFeePercentage": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "tokenNameSubmitFeesAmount",
+          "tokenNameAmountPaid",
+          "cviTokenName",
+          "account",
+          "requestId",
+          "requestType",
+          "action",
+          "submitFeesAmount",
+          "requestTimestamp",
+          "targetTimestamp",
+          "tokenAmountPaid",
+          "useKeepers",
+          "maxBuyingPremiumFeePercentage"
+        ]
+      },
+      "VtSubmitRequestEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtSubmitEvent"
+            ]
+          },
+          "args": {
+            "description": "Submit request event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubmitRequestEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "LiquidateEventDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "findersFeeAmountTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "requestType": {
+            "type": "number"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Mint",
+              "Burn"
+            ]
+          },
+          "account": {
+            "type": "string"
+          },
+          "liquidator": {
+            "type": "string"
+          },
+          "findersFeeAmount": {
+            "type": "number"
+          },
+          "useKeepers": {
+            "type": "boolean"
+          },
+          "liquidateTimestamp": {
+            "type": "number"
+          },
+          "liquidateTimestampString": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "findersFeeAmountTokenName",
+          "cviTokenName",
+          "requestId",
+          "requestType",
+          "action",
+          "account",
+          "liquidator",
+          "findersFeeAmount",
+          "useKeepers",
+          "liquidateTimestamp",
+          "liquidateTimestampString"
+        ]
+      },
+      "VtLiquidateRequestEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtLiquidateEvent"
+            ]
+          },
+          "args": {
+            "description": "Liquidate event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LiquidateEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "FulfillRequestEventDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Mint",
+              "Burn"
+            ]
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenNameFulfillFeesAmount": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "requestType": {
+            "type": "number"
+          },
+          "account": {
+            "type": "string"
+          },
+          "fulfillFeesAmount": {
+            "type": "number"
+          },
+          "isAborted": {
+            "type": "boolean"
+          },
+          "useKeepers": {
+            "type": "boolean"
+          },
+          "keepersCalled": {
+            "type": "boolean"
+          },
+          "fulfiller": {
+            "type": "string"
+          },
+          "fulfillTimestamp": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "action",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "tokenNameFulfillFeesAmount",
+          "cviTokenName",
+          "requestId",
+          "requestType",
+          "account",
+          "fulfillFeesAmount",
+          "isAborted",
+          "useKeepers",
+          "keepersCalled",
+          "fulfiller",
+          "fulfillTimestamp"
+        ]
+      },
+      "VtFulfillRequestEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtFulfillEvent"
+            ]
+          },
+          "args": {
+            "description": "Fulfill request event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FulfillRequestEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "MintEventDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Mint"
+            ]
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "positionedTokenNameAmount": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "mintedTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "openPositionFeeTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "buyingPremiumFeeTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "account": {
+            "type": "string"
+          },
+          "usdcPaidAfterTimeDelayFee": {
+            "type": "number"
+          },
+          "positionedTokenAmount": {
+            "type": "number"
+          },
+          "mintedTokens": {
+            "type": "number"
+          },
+          "openPositionFee": {
+            "type": "number"
+          },
+          "buyingPremiumFee": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "action",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "positionedTokenNameAmount",
+          "mintedTokenName",
+          "openPositionFeeTokenName",
+          "buyingPremiumFeeTokenName",
+          "cviTokenName",
+          "requestId",
+          "account",
+          "usdcPaidAfterTimeDelayFee",
+          "positionedTokenAmount",
+          "mintedTokens",
+          "openPositionFee",
+          "buyingPremiumFee"
+        ]
+      },
+      "VtMintEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtMintEvent"
+            ]
+          },
+          "args": {
+            "description": "Mint event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MintEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "BurnEventDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Burn"
+            ]
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "burnedTokenscviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "closingPremiumFeeTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "tokenNameClosePositionFee": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "usdcAmountReceived": {
+            "type": "number"
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ],
+            "description": "the event can be in the context of cvi or cvix2, etc... this property tells us the correct context"
+          },
+          "requestId": {
+            "type": "number"
+          },
+          "account": {
+            "type": "string"
+          },
+          "usdcReceivedBeforeFees": {
+            "type": "number"
+          },
+          "burnedTokensCvi": {
+            "type": "number"
+          },
+          "closePositionFee": {
+            "type": "number"
+          },
+          "closingPremiumFee": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "action",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "burnedTokenscviTokenName",
+          "closingPremiumFeeTokenName",
+          "tokenNameClosePositionFee",
+          "usdcAmountReceived",
+          "cviTokenName",
+          "requestId",
+          "account",
+          "usdcReceivedBeforeFees",
+          "burnedTokensCvi",
+          "closePositionFee",
+          "closingPremiumFee"
+        ]
+      },
+      "VtBurnEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtBurnEvent"
+            ]
+          },
+          "args": {
+            "description": "Burn event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BurnEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "VtCviTransferEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventBySender": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEventByReceiver": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEventBySenderOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "generalInfoOfEventByReceiverOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "cviTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "fromAccount": {
+            "type": "string"
+          },
+          "toAccount": {
+            "type": "string"
+          },
+          "cviAmount": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventBySender",
+          "generalInfoOfEventByReceiver",
+          "generalInfoOfEventBySenderOneBlockBefore",
+          "generalInfoOfEventByReceiverOneBlockBefore",
+          "cviTokenName",
+          "fromAccount",
+          "toAccount",
+          "cviAmount"
+        ]
+      },
+      "VtCviTransferEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtCviTransferEvent"
+            ]
+          },
+          "args": {
+            "description": "CVI Transfer event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VtCviTransferEventArgsDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "VtUniswapSwapEventArgsDto": {
+        "type": "object",
+        "properties": {
+          "generalInfoOfEventByAddressFromOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "tokenNameAmountIn": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "tokenAmountIn": {
+            "type": "number"
+          },
+          "tokenNameAmountOut": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "ETH",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "WMATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB",
+              "CVI",
+              "CVOL",
+              "T-CVI-LP",
+              "T-CVOL-LP"
+            ]
+          },
+          "tokenAmountOut": {
+            "type": "number"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventOneBlockBefore": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          },
+          "account": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "generalInfoOfEventByAddressFromOneBlockBefore",
+          "tokenNameAmountIn",
+          "tokenAmountIn",
+          "tokenNameAmountOut",
+          "tokenAmountOut",
+          "generalInfoOfEvent",
+          "generalInfoOfEventOneBlockBefore",
+          "generalInfoOfEventByAddress",
+          "account"
+        ]
+      },
+      "VtUniswapSwapEventDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "logIndex": {
+            "type": "number"
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VtUniswapSwapEvent"
+            ]
+          },
+          "args": {
+            "description": "CVI Swap event dto",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VtUniswapSwapEventArgsDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "blockNumber",
+          "logIndex",
+          "transactionHash",
+          "transactionIndex",
+          "blockTimestamp",
+          "type",
+          "args"
+        ]
+      },
+      "BlockDto": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "number",
+          "timestamp"
+        ]
+      },
+      "UpdateGeneralInfoOfEventOfAddressDto": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "generalInfoOfEventByAddress": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventByAddressDto"
+          }
+        },
+        "required": [
+          "address",
+          "generalInfoOfEventByAddress"
+        ]
+      },
+      "UpdateGeneralInfoOfEventAndAddressesDto": {
+        "type": "object",
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockDto"
+          },
+          "generalInfoOfEvent": {
+            "$ref": "#/components/schemas/GeneralInfoOfEventDto"
+          },
+          "updatedGeneralInfoOfEventByAddress": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateGeneralInfoOfEventOfAddressDto"
+            }
+          }
+        },
+        "required": [
+          "block",
+          "generalInfoOfEvent",
+          "updatedGeneralInfoOfEventByAddress"
+        ]
+      },
+      "TradingCompetitionInfoAddressDto": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "pnlUsdc": {
+            "type": "number"
+          },
+          "maxTradeUsdc": {
+            "type": "number"
+          },
+          "trades": {
+            "type": "number"
+          },
+          "tvCvix1BalanceInUsdc": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "address",
+          "pnlUsdc",
+          "maxTradeUsdc",
+          "trades",
+          "tvCvix1BalanceInUsdc"
+        ]
+      }
+    }
+  }
+}

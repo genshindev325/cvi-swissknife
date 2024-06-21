@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <circle data-name="Ellipse 53" cx="32" cy="32" r="32" style="fill:#0a1647"/>
+    <g data-name="Group 6740">
+        <path data-name="Path 4989" d="m15.7 13.012 3.958 8.777 5.89-3.4v-6.8z" transform="translate(12.438 16.685)" style="fill-rule:evenodd;fill:#2bbdf7"/>
+        <path data-name="Path 4990" d="m34.421 5.629-3.677-1.385-3.929-.317v21.121l5.895 3.4 4.653-9.522-2.935-9.21z" transform="translate(11.178 17.555)" style="fill:#2891f9;fill-rule:evenodd"/>
+        <path data-name="Path 4991" d="m34.83 3.929-1.365 3.4v21.115l5.9-3.4V3.929z" transform="translate(10.424 17.554)" style="fill-rule:evenodd;fill:#2bbdf7"/>
+        <path data-name="Path 4992" d="m32.71.1-5.9 3.4 5.9 3.4 5.9-3.4z" transform="translate(11.178 17.989)" style="fill:#2b6def;fill-rule:evenodd"/>
+        <path data-name="Path 4993" d="m17.905 14.12-5.895-6.6L.22 3.926v21.118l5.894 3.4L7.8 16.756l4.212.765 5.9 3.4V14.12z" transform="translate(14.194 17.555)" style="fill:#2891f9;fill-rule:evenodd"/>
+        <path data-name="Path 4994" d="m6.116.094-5.9 3.4L17.9 13.69l2.672-1.54 3.228-1.859z" transform="translate(14.194 17.989)" style="fill:#2b6def;fill-rule:evenodd"/>
+        <path data-name="Path 4995" d="M6.87 15.425v14.322l5.9-3.4v-7.524z" transform="translate(13.44 16.25)" style="fill-rule:evenodd;fill:#2bbdf7"/>
+    </g>
+</svg>

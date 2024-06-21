@@ -1,0 +1,35 @@
+{
+  "name": "@coti-cvi/contracts-cvi",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "COTI CVI Smart Contracts",
+  "license": "UNLICENSED",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "TS_NODE_TRANSPILE_ONLY=1 hardhat test --show-stack-traces",
+    "clean": "cross-env rm -rf cache artifacts > /dev/null 2>&1 || exit 0",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=1 hardhat compile --show-stack-traces"
+  },
+  "dependencies": {
+    "@coti-cvi/lw-sdk": "1.0.0",
+    "@chainlink/contracts": "^0.2.2",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@0.3.0-beta.13",
+    "@nomiclabs/hardhat-truffle5": "2.0.2",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/contracts": "^4.3.2",
+    "@openzeppelin/contracts-upgradeable": "^4.3.2",
+    "@openzeppelin/hardhat-upgrades": "^1.10.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "chai": "^4.3.6",
+    "ethers": "5.6.9",
+    "find-up": "5.0.0",
+    "hardhat": "2.9.2",
+    "hardhat-contract-sizer": "^2.1.1",
+    "web3": "^1.6.0"
+  }
+}

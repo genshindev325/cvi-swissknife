@@ -1,0 +1,496 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/history/basic/per-day": {
+      "get": {
+        "operationId": "CviIndexesHistoryController_getAllCviIndexesPerDayBasic",
+        "summary": "",
+        "description": "get cvi-indexes per day from the last 3 years. each day contain is a single point",
+        "parameters": [
+          {
+            "name": "index",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "cvi-index",
+                "ethvol"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "ethereum",
+                "polygon",
+                "arbitrum"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromTimestampMs",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryCviIndexResultBasicDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Index History"
+        ]
+      }
+    },
+    "/history/basic/per-hour": {
+      "get": {
+        "operationId": "CviIndexesHistoryController_getAllCviIndexesPerHourBasic",
+        "summary": "",
+        "description": "get cvi-indexes per hour in the last <N> days. each hour contain is a single point",
+        "parameters": [
+          {
+            "name": "index",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "cvi-index",
+                "ethvol"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "ethereum",
+                "polygon",
+                "arbitrum"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromTimestampMs",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryCviIndexResultBasicDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Index History"
+        ]
+      }
+    },
+    "/history/candlestick/per-day": {
+      "get": {
+        "operationId": "CviIndexesHistoryController_getAllCviIndexesPerDayCandlestick",
+        "summary": "",
+        "description": "get cvi-indexes per day from the last 3 years. each day contain: min,max,start,end",
+        "parameters": [
+          {
+            "name": "index",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "cvi-index",
+                "ethvol"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "ethereum",
+                "polygon",
+                "arbitrum"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromTimestampMs",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PointsSummaryResultDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Index History"
+        ]
+      }
+    },
+    "/history/candlestick/per-hour": {
+      "get": {
+        "operationId": "CviIndexesHistoryController_getAllCviIndexesPerHourCandlestick",
+        "summary": "",
+        "description": "get cvi-indexes per hour in the last <N> days. each hour contain: min,max,start,end",
+        "parameters": [
+          {
+            "name": "index",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "cvi-index",
+                "ethvol"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "ethereum",
+                "polygon",
+                "arbitrum"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromTimestampMs",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PointsSummaryResultDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cvi Index History"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    },
+    "/tokens/daily-price-history": {
+      "get": {
+        "operationId": "TokensController_tokenDailyPriceHistory",
+        "summary": "",
+        "description": "get all prices daily from coingecko of a token",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "oldPolygonCvi",
+                "WBTC",
+                "ETH"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PointDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tokens"
+        ]
+      }
+    },
+    "/k8s/hardhats-pods-started": {
+      "get": {
+        "operationId": "K8sController_getWhenHardhatPodsStarted",
+        "summary": "",
+        "description": "get time of when hardhat pods started",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HardhatPodStartedDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "K8S"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The data-feed@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "SummaryCviIndexUsdcBasicDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          },
+          "time": {
+            "type": "number",
+            "description": "epoch in seconds"
+          },
+          "timeUtc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "time",
+          "timeUtc"
+        ]
+      },
+      "SummaryCviIndexResultBasicDto": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "data is sorted in asc order by time property",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SummaryCviIndexUsdcBasicDto"
+            }
+          },
+          "highestTimestampMs": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "highestTimestampMs"
+        ]
+      },
+      "PointSummaryDto": {
+        "type": "object",
+        "properties": {
+          "low": {
+            "type": "number",
+            "description": "lowest point in a time-range (day/hour)"
+          },
+          "high": {
+            "type": "number",
+            "description": "highest point in a time-range (day/hour)"
+          },
+          "open": {
+            "type": "number",
+            "description": "start of the time-range (day/hour)"
+          },
+          "close": {
+            "type": "number",
+            "description": "end of the time-range (day/hour)"
+          },
+          "time": {
+            "type": "number",
+            "description": "epoch in seconds"
+          },
+          "timeUtc": {
+            "type": "string",
+            "description": "epoch in seconds"
+          }
+        },
+        "required": [
+          "low",
+          "high",
+          "open",
+          "close",
+          "time",
+          "timeUtc"
+        ]
+      },
+      "PointsSummaryResultDto": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "data is sorted in asc order by time property",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PointSummaryDto"
+            }
+          },
+          "highestTimestampMs": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "highestTimestampMs"
+        ]
+      },
+      "PointDto": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "description": "epoch in seconds"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "x",
+          "y"
+        ]
+      },
+      "HardhatPodStartedDto": {
+        "type": "object",
+        "properties": {
+          "BlockchainName": {
+            "type": "string",
+            "enum": [
+              "ethereum",
+              "polygon",
+              "arbitrum"
+            ]
+          },
+          "dateUtc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "BlockchainName",
+          "dateUtc"
+        ]
+      }
+    }
+  }
+}

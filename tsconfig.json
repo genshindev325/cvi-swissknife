@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "disableReferencedProjectLoad": true,
+    "disableSolutionSearching": true,
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "useUnknownInCatchVariables": false,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2019",
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "packages",
+    "paths": {
+      "@coti-cvi/beta-cvi-ui/public": ["charting_library/charting_library.cjs.js"],
+      "@coti-cvi/lw-sdk": ["lw-sdk/src/index.ts"],
+      "@coti-cvi/contracts-il": ["contracts-il/contracts"],
+      "@coti-cvi/contracts-cvi": ["contracts-cvi/contracts"],
+      "contracts-deploy": ["contracts-deploy/src/index.ts"],
+      "@coti-cvi/tests-infra-be": ["tests-infra-be/src/index.ts"],
+      "@coti-cvi/auto-generated-code": ["auto-generated-code/src/index.ts"],
+      "@coti-cvi/auto-generated-code/contracts": ["auto-generated-code/src/git-contract-types/index.ts"],
+      "@coti-cvi/common-be": ["common-be/src/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "isolatedModules": true
+  },
+  "files": [
+    "aws-code-build.ts",
+    "split-root-dist-to-packages.ts",
+    "find-any-bad-import.ts",
+    "jest.config.ts",
+    "jest.setup.ts",
+    "tsconfig.json",
+    "declarations.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "packages/lw-sdk/src/coin-gecko/coin-gecko-tokens.ts",
+    "packages/auto-generated-code",
+    "packages/**/dist",
+    "packages/beta-cvi-ui/public/charting_librar"
+  ],
+  "include": [
+    "packages/*/tailwind.config.js",
+    "packages/*/vite.config.ts",
+    "packages/*/hardhat.config.ts",
+    "packages/**/src",
+    "packages/**/test",
+    "packages/**/__tests__"
+  ]
+}

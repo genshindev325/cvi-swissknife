@@ -1,0 +1,14 @@
+{
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "json.format.enable": false,
+  "files.associations": {
+    ".prettierrc": "json"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsserver.log": "off",
+  "terminal.integrated.scrollback": 10000000
+}

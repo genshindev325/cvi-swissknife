@@ -1,0 +1,49 @@
+version: '3.7'
+services:
+  hardhat-eth:
+    container_name: hardhat-eth
+    command: sh -c "yarn contracts-deploy:start-node:in-docker"
+    build:
+      context: ../..
+      dockerfile: packages/backend-dockerfile/backend.dockerfile
+      args:
+        IMAGE_VERSION: local-build-hardhat-eth
+        NPM_REGISTRY_ADDRESS: registry.npmjs.org
+        NPM_TOKEN: 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
+    ports:
+      - 8545:9545
+      - 7001:6999
+    environment:
+      - CHAIN_ID=31137
+
+  hardhat-polygon:
+    container_name: hardhat-polygon
+    command: sh -c "yarn contracts-deploy:start-node:in-docker"
+    build:
+      context: ../..
+      dockerfile: packages/backend-dockerfile/backend.dockerfile
+      args:
+        IMAGE_VERSION: local-build-hardhat-polygon
+        NPM_REGISTRY_ADDRESS: registry.npmjs.org
+        NPM_TOKEN: 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
+    ports:
+      - 8546:9545
+      - 7002:6999
+    environment:
+      - CHAIN_ID=31138
+
+  hardhat-arbitrum:
+    container_name: hardhat-arbitrum
+    command: sh -c "yarn contracts-deploy:start-node:in-docker"
+    build:
+      context: ../..
+      dockerfile: packages/backend-dockerfile/backend.dockerfile
+      args:
+        IMAGE_VERSION: local-build-hardhat-arbitrum
+        NPM_REGISTRY_ADDRESS: registry.npmjs.org
+        NPM_TOKEN: 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
+    ports:
+      - 8547:9545
+      - 7003:6999
+    environment:
+      - CHAIN_ID=31139

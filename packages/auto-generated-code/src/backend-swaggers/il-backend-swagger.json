@@ -1,0 +1,967 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/check": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_test",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/discount/first-campaign/is-eligible": {
+      "get": {
+        "operationId": "ArmadilloEligibleDiscountController_isEligible",
+        "summary": "",
+        "description": "is address eligible for a discount in armadillo",
+        "parameters": [
+          {
+            "name": "address",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Discount"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/accounts/protections": {
+      "get": {
+        "operationId": "AdminApiController_protections",
+        "summary": "",
+        "description": "Get all protections exist in the smart contract",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WalletProtectionsDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/due-payouts-for-a-protection-id": {
+      "get": {
+        "operationId": "AdminApiController_getDuePayoutsForProtectionId",
+        "summary": "",
+        "description": "For a protection-id, get all its due-payouts and il-percentage lifecycle per protection (inc. specifying number of points in lifecycle)",
+        "parameters": [
+          {
+            "name": "protection-id",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "points-to-calculate",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProtectionDuePayoutPointsDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/accounts/protection-status": {
+      "get": {
+        "operationId": "AdminApiController_getProtectionStatusById",
+        "summary": "",
+        "description": "get protection status",
+        "parameters": [
+          {
+            "name": "protection-id",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "use-cache",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "block-number",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProtectionStatusDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Accounts"
+        ]
+      }
+    },
+    "/max-il/all-pairs": {
+      "get": {
+        "operationId": "CalcMaxIlController_getWorstIlPerPair",
+        "summary": "",
+        "description": "For all supported il-product token pairs, return the worst IL seen per each in the last configured time",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WorstIlOfTokenByCoinGekoDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Max IL"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    },
+    "/zapper-api/accounts-lps": {
+      "get": {
+        "operationId": "ZapperApiController_accountsLps",
+        "summary": "",
+        "description": "For given EVM addresses, return all supported il-product pairs and their liquidity providing balances. To get an EVM address that that supplies Liquidity in defi go to one of the CONTRACT_ADDRESSES for the supported pairs, e.g: https://etherscan.io/address/0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852 and pick any EVM address in the transactions list",
+        "parameters": [
+          {
+            "name": "account-addresses",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IlLpTokensInfoOfAccountAddressDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Zapper-Api"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The il-backend@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "UsedEmbedDiscountForAddressDto": {
+        "type": "object",
+        "properties": {
+          "discountTypeId": {
+            "type": "number"
+          },
+          "discountTypeName": {
+            "type": "string",
+            "enum": [
+              "Gold",
+              "Diamond"
+            ]
+          },
+          "discountUsdc": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "discountTypeId",
+          "discountTypeName",
+          "discountUsdc"
+        ]
+      },
+      "ProtectionInfoMetadataDto": {
+        "type": "object",
+        "properties": {
+          "lpTokensWorthAtBuyTimeUsdc": {
+            "type": "number"
+          },
+          "maxAmountToBePaidUsdc": {
+            "type": "number"
+          },
+          "feeUsdc": {
+            "type": "number",
+            "nullable": true
+          },
+          "feePercentage": {
+            "type": "number",
+            "nullable": true
+          },
+          "embedDiscount": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UsedEmbedDiscountForAddressDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "lpTokensWorthAtBuyTimeUsdc",
+          "maxAmountToBePaidUsdc",
+          "feeUsdc",
+          "feePercentage",
+          "embedDiscount"
+        ]
+      },
+      "ProtectionStatusProfitDto": {
+        "type": "object",
+        "properties": {
+          "payoutOrDuePayoutUsdc": {
+            "type": "number"
+          },
+          "lpRevenueUsdc": {
+            "type": "number"
+          },
+          "lpProfitPercentage": {
+            "type": "number"
+          },
+          "userRevenueUsdc": {
+            "type": "number"
+          },
+          "userProfitPercentage": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "payoutOrDuePayoutUsdc",
+          "lpRevenueUsdc",
+          "lpProfitPercentage",
+          "userRevenueUsdc",
+          "userProfitPercentage"
+        ]
+      },
+      "ProtectionStatusDto": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "number"
+          },
+          "blockTimestamp": {
+            "type": "number"
+          },
+          "blockTimestampUtc": {
+            "type": "string"
+          },
+          "withoutMinPayout": {
+            "$ref": "#/components/schemas/ProtectionStatusProfitDto"
+          },
+          "lpRevenueUsdc": {
+            "type": "number"
+          },
+          "lpProfitPercentage": {
+            "type": "number"
+          },
+          "userRevenueUsdc": {
+            "type": "number"
+          },
+          "userProfitPercentage": {
+            "type": "number"
+          },
+          "payoutOrDuePayoutUsdc": {
+            "type": "number"
+          },
+          "ilPercentage": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "blockTimestamp",
+          "blockTimestampUtc",
+          "withoutMinPayout",
+          "lpRevenueUsdc",
+          "lpProfitPercentage",
+          "userRevenueUsdc",
+          "userProfitPercentage",
+          "payoutOrDuePayoutUsdc",
+          "ilPercentage"
+        ]
+      },
+      "ArmadilloSupportedTokenNameDto": {
+        "type": "object",
+        "properties": {
+          "ArmadilloSupportedTokenName": {
+            "type": "string",
+            "enum": [
+              "USDC",
+              "USDT",
+              "WETH",
+              "DAI",
+              "LINK",
+              "WBTC",
+              "MATIC",
+              "UNI",
+              "SAND",
+              "DOGE",
+              "SHIB",
+              "BAT",
+              "GOVI",
+              "ADA",
+              "BNB"
+            ]
+          }
+        },
+        "required": [
+          "ArmadilloSupportedTokenName"
+        ]
+      },
+      "FormatterProtectionBoughtEventObjectDto": {
+        "type": "object",
+        "properties": {
+          "protectionStartTimestampUtc": {
+            "type": "string"
+          },
+          "protectionEndTimestampUtc": {
+            "type": "string"
+          },
+          "policyPeriodSeconds": {
+            "type": "number"
+          },
+          "policyPeriodDays": {
+            "type": "number"
+          },
+          "id": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "protectionStartTimestamp": {
+            "type": "number"
+          },
+          "protectionEndTimestamp": {
+            "type": "number"
+          },
+          "premiumCostUSD": {
+            "type": "number"
+          },
+          "tokenName1": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "tokenName2": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "token1EntryPriceUSD": {
+            "type": "number"
+          },
+          "token2EntryPriceUSD": {
+            "type": "number"
+          },
+          "collateral": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "protectionStartTimestampUtc",
+          "protectionEndTimestampUtc",
+          "policyPeriodSeconds",
+          "policyPeriodDays",
+          "id",
+          "owner",
+          "protectionStartTimestamp",
+          "protectionEndTimestamp",
+          "premiumCostUSD",
+          "tokenName1",
+          "tokenName2",
+          "token1EntryPriceUSD",
+          "token2EntryPriceUSD",
+          "collateral"
+        ]
+      },
+      "FormattedProtectionBoughtEventDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "ProtectionBoughtEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/FormatterProtectionBoughtEventObjectDto"
+          },
+          "event": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventSignature": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockNumber": {
+            "type": "number"
+          },
+          "blockHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "address": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "logIndex": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "type",
+          "args",
+          "event",
+          "eventSignature",
+          "blockNumber",
+          "blockHash",
+          "transactionIndex",
+          "removed",
+          "address",
+          "data",
+          "topics",
+          "transactionHash",
+          "logIndex"
+        ]
+      },
+      "FormatterProtectionClosedEventObjectDto": {
+        "type": "object",
+        "properties": {
+          "protectionStartTimestampUtc": {
+            "type": "string"
+          },
+          "protectionEndTimestampUtc": {
+            "type": "string"
+          },
+          "policyPeriodSeconds": {
+            "type": "number"
+          },
+          "policyPeriodDays": {
+            "type": "number"
+          },
+          "id": {
+            "type": "string"
+          },
+          "token1EndPriceUSD": {
+            "type": "number"
+          },
+          "token2EndPriceUSD": {
+            "type": "number"
+          },
+          "amountPaidUSD": {
+            "type": "number"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "protectionStartTimestamp": {
+            "type": "number"
+          },
+          "protectionEndTimestamp": {
+            "type": "number"
+          },
+          "premiumCostUSD": {
+            "type": "number"
+          },
+          "tokenName1": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "tokenName2": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "collateral": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "protectionStartTimestampUtc",
+          "protectionEndTimestampUtc",
+          "policyPeriodSeconds",
+          "policyPeriodDays",
+          "id",
+          "token1EndPriceUSD",
+          "token2EndPriceUSD",
+          "amountPaidUSD",
+          "owner",
+          "protectionStartTimestamp",
+          "protectionEndTimestamp",
+          "premiumCostUSD",
+          "tokenName1",
+          "tokenName2",
+          "collateral"
+        ]
+      },
+      "FormattedProtectionClosedEventDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "ProtectionClosedEvent"
+            ]
+          },
+          "args": {
+            "$ref": "#/components/schemas/FormatterProtectionClosedEventObjectDto"
+          },
+          "event": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventSignature": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockNumber": {
+            "type": "number"
+          },
+          "blockHash": {
+            "type": "string"
+          },
+          "transactionIndex": {
+            "type": "number"
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "address": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transactionHash": {
+            "type": "string"
+          },
+          "logIndex": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "type",
+          "args",
+          "event",
+          "eventSignature",
+          "blockNumber",
+          "blockHash",
+          "transactionIndex",
+          "removed",
+          "address",
+          "data",
+          "topics",
+          "transactionHash",
+          "logIndex"
+        ]
+      },
+      "ProtectionInfoDto": {
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/ProtectionInfoMetadataDto"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ProtectionStatusDto"
+          },
+          "boughtEvent": {
+            "$ref": "#/components/schemas/FormattedProtectionBoughtEventDto"
+          },
+          "expiredEvent": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FormattedProtectionClosedEventDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "metadata",
+          "status",
+          "boughtEvent",
+          "expiredEvent"
+        ]
+      },
+      "ProtectionIdWithInfoDto": {
+        "type": "object",
+        "properties": {
+          "protectionId": {
+            "type": "string"
+          },
+          "protectionInfo": {
+            "$ref": "#/components/schemas/ProtectionInfoDto"
+          }
+        },
+        "required": [
+          "protectionId",
+          "protectionInfo"
+        ]
+      },
+      "WalletProtectionsDto": {
+        "type": "object",
+        "properties": {
+          "wallet": {
+            "type": "string"
+          },
+          "isInternalWallet": {
+            "type": "boolean"
+          },
+          "protections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProtectionIdWithInfoDto"
+            }
+          }
+        },
+        "required": [
+          "wallet",
+          "isInternalWallet",
+          "protections"
+        ]
+      },
+      "DuePayoutPointDto": {
+        "type": "object",
+        "properties": {
+          "pointIndex": {
+            "type": "number",
+            "description": "epoch timestamp in seconds"
+          },
+          "protectionStatus": {
+            "$ref": "#/components/schemas/ProtectionStatusDto"
+          }
+        },
+        "required": [
+          "pointIndex",
+          "protectionStatus"
+        ]
+      },
+      "ProtectionDuePayoutsInfoDto": {
+        "type": "object",
+        "properties": {
+          "protectionInfo": {
+            "$ref": "#/components/schemas/ProtectionInfoDto"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DuePayoutPointDto"
+            }
+          }
+        },
+        "required": [
+          "protectionInfo",
+          "points"
+        ]
+      },
+      "ProtectionDuePayoutPointsDto": {
+        "type": "object",
+        "properties": {
+          "protectionId": {
+            "type": "string"
+          },
+          "protectionDuePayoutsInfo": {
+            "$ref": "#/components/schemas/ProtectionDuePayoutsInfoDto"
+          }
+        },
+        "required": [
+          "protectionId",
+          "protectionDuePayoutsInfo"
+        ]
+      },
+      "WorstIlPointInTimeDto": {
+        "type": "object",
+        "properties": {
+          "dateUtc": {
+            "type": "string"
+          },
+          "dateMs": {
+            "type": "number"
+          },
+          "token1PriceUsd": {
+            "type": "number"
+          },
+          "token2PriceUsd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "dateUtc",
+          "dateMs",
+          "token1PriceUsd",
+          "token2PriceUsd"
+        ]
+      },
+      "WorstIlOfTokenByCoinGekoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "token1Name": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "token2Name": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "coinGeckoToken1Id": {
+            "type": "string"
+          },
+          "coinGeckoToken2Id": {
+            "type": "string"
+          },
+          "start": {
+            "$ref": "#/components/schemas/WorstIlPointInTimeDto"
+          },
+          "end": {
+            "$ref": "#/components/schemas/WorstIlPointInTimeDto"
+          },
+          "worstIlPercentage": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "token1Name",
+          "token2Name",
+          "coinGeckoToken1Id",
+          "coinGeckoToken2Id",
+          "start",
+          "end",
+          "worstIlPercentage"
+        ]
+      },
+      "LpTokensInfoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "symbol0": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "symbol1": {
+            "$ref": "#/components/schemas/ArmadilloSupportedTokenNameDto"
+          },
+          "balanceUSD0": {
+            "type": "number"
+          },
+          "balanceUSD1": {
+            "type": "number"
+          },
+          "balanceUnits0": {
+            "type": "number"
+          },
+          "balanceUnits1": {
+            "type": "number"
+          },
+          "balanceUSDTotal": {
+            "type": "number"
+          },
+          "BlockchainName": {
+            "type": "string",
+            "enum": [
+              "ethereum",
+              "polygon",
+              "arbitrum"
+            ]
+          },
+          "SupportedZapperProtocolNames": {
+            "type": "string",
+            "enum": [
+              "uniswap-v2",
+              "dodo",
+              "sushiswap",
+              "quickswap"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "symbol0",
+          "symbol1",
+          "balanceUSD0",
+          "balanceUSD1",
+          "balanceUnits0",
+          "balanceUnits1",
+          "balanceUSDTotal",
+          "BlockchainName",
+          "SupportedZapperProtocolNames"
+        ]
+      },
+      "IlLpTokensInfoOfAccountAddressDto": {
+        "type": "object",
+        "properties": {
+          "forAccountAddress": {
+            "type": "string"
+          },
+          "lpTokensInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LpTokensInfoDto"
+            }
+          }
+        },
+        "required": [
+          "forAccountAddress",
+          "lpTokensInfo"
+        ]
+      }
+    }
+  }
+}

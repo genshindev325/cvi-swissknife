@@ -1,0 +1,51 @@
+{
+  "name": "@coti-cvi/lw-sdk",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.131.0",
+    "@coti-cvi/auto-generated-code": "1.0.0",
+    "@ethersproject/bignumber": "5.6.2",
+    "@ethersproject/constants": "5.6.1",
+    "@ethersproject/contracts": "5.6.2",
+    "@ethersproject/providers": "5.6.2",
+    "@openzeppelin/contracts": "^4.3.2",
+    "@uniswap/v2-core": "^1.0.1",
+    "async": "^3.2.4",
+    "axios": "^0.27.2",
+    "axios-retry": "^3.2.5",
+    "browser-hrtime": "^1.1.8",
+    "class-validator": "0.13.2",
+    "coingecko-api": "^1.0.10",
+    "date-fns": "^2.28.0",
+    "ethers": "5.6.9",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "http-status-codes": "2.1.4",
+    "humanize-duration": "^3.27.2",
+    "inversify": "^6.0.1",
+    "isomorphic-ws": "^5.0.0",
+    "k-convert": "^1.0.6",
+    "lodash": "^4.17.21",
+    "p-limit": "3.1.0",
+    "react-notifications-component": "^4.0.0",
+    "rxjs": "^7.5.4",
+    "strict-event-emitter": "0.2.4",
+    "type-fest": "^2.11.1",
+    "uuid4": "^2.0.2",
+    "web3-core-subscriptions": "^1.7.4",
+    "web3-eth": "^1.7.4",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4"
+  }
+}

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+      meta.helm.sh/release-name: {{ .Release.Name }}
+      meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+      field.cattle.io/targetWorkloadIds: '["statefulset:default:il-monitor-arbitrum-mainnet"]'
+      workload.cattle.io/targetWorkloadIdNoop: "true"
+      workload.cattle.io/workloadPortBased: "true"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    app: il-monitor-arbitrum-mainnet
+  name: il-monitor-arbitrum-mainnet
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - name: tcpport01
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    workload.user.cattle.io/workloadselector: statefulSet-default-il-monitor-arbitrum-mainnet
+  sessionAffinity: None
+  type: ClusterIP

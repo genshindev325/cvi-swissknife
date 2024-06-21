@@ -1,0 +1,191 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "py-parabola-coefficients API",
+        "description": " API served by fastapi/python that does quadratic approximation for the parabola coefficients of IL Protection premium values for different periods based on history of CVI and relevant pairs historical IL.\n\n              The API is based on the following assumptions:\n\n              (a) For POST method below - daily data from 01-01-2020 is supplied as history. denoted by \"timestamp\" and \"rate\", e.g:\n\n                    a list of the below items (at least 360 items, one item per day with milliseconds timestamp at 0:00 UTC midnight)....\n\n                    DailyRate(timestamp=1650585600000, rate=2967.085285238213)\n\n                    NOTE: Use https://www.epochconverter.com/ to make sure each timestamp is a milliseconds timestamp at 0:00 UTC midnight.\n\n              (b) API fetches daily CVI values from 29 Aug 2019 till now from http://defi.r-synergy.com/V004/cvijson1000day on its own.\n\n              The API outputs for 3 different periods: 14, 30 and 60 days, the approximate coefficients for the parabola\n              that based on the history of CVI and relevant pairs historical IL, describes the expected IL per period.\n\n              ",
+        "contact": {
+            "name": "CVI"
+        },
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/metrics": {
+            "get": {
+                "summary": "Metrics",
+                "description": "Endpoint that serves Prometheus metrics.",
+                "operationId": "metrics_metrics_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "summary": "Home",
+                "operationId": "home__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/readiness": {
+            "get": {
+                "summary": "Readiness",
+                "operationId": "readiness_readiness_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/calculate_coefficients_all_pairs": {
+            "get": {
+                "summary": "Calc Coefficients All Pairs",
+                "operationId": "calc_coefficients_all_pairs_calculate_coefficients_all_pairs_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CalcResponseAllPairs"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CalcResponseAllPairs": {
+                "title": "CalcResponseAllPairs",
+                "required": [
+                    "results"
+                ],
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "title": "Results",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CalcResponseOnePair"
+                        }
+                    }
+                }
+            },
+            "CalcResponseOnePair": {
+                "title": "CalcResponseOnePair",
+                "required": [
+                    "info",
+                    "results"
+                ],
+                "type": "object",
+                "properties": {
+                    "info": {
+                        "$ref": "#/components/schemas/ResultInfo"
+                    },
+                    "results": {
+                        "title": "Results",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Result"
+                        }
+                    }
+                }
+            },
+            "Result": {
+                "title": "Result",
+                "required": [
+                    "period",
+                    "a",
+                    "X0",
+                    "c",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "period": {
+                        "title": "Period",
+                        "type": "integer"
+                    },
+                    "a": {
+                        "title": "A",
+                        "type": "number"
+                    },
+                    "X0": {
+                        "title": "X0",
+                        "type": "number"
+                    },
+                    "c": {
+                        "title": "C",
+                        "type": "number"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string"
+                    }
+                }
+            },
+            "ResultInfo": {
+                "title": "ResultInfo",
+                "required": [
+                    "datetime",
+                    "first_date",
+                    "last_date",
+                    "days_count",
+                    "symbol0",
+                    "symbol1"
+                ],
+                "type": "object",
+                "properties": {
+                    "datetime": {
+                        "title": "Datetime",
+                        "type": "string"
+                    },
+                    "first_date": {
+                        "title": "First Date",
+                        "type": "string"
+                    },
+                    "last_date": {
+                        "title": "Last Date",
+                        "type": "string"
+                    },
+                    "days_count": {
+                        "title": "Days Count",
+                        "type": "integer"
+                    },
+                    "symbol0": {
+                        "title": "Symbol0",
+                        "type": "string"
+                    },
+                    "symbol1": {
+                        "title": "Symbol1",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "cvi-arbitrage-bot",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts --timeout 100000",
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "serve": "tsc; npm run start",
+    "dev": "export NODE_ENV=dev; ts-node src/index.ts",
+    "staging": "export NODE_ENV=staging; ts-node src/index.ts",
+    "live": "export NODE_ENV=; ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coti-cvi/cvi-sdk": "0.2.26",
+    "bn.js": "^5.2.1",
+    "dotenv": "^16.0.1"
+  }
+}

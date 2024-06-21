@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-cvi-oracle-events-backend-polygon-staging
+    app: cvi-oracle-events-backend-polygon-staging
+  name: cvi-oracle-events-backend-polygon-staging
+  namespace: {{ .Release.Namespace }}
+spec:
+  progressDeadlineSeconds: 100
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-cvi-oracle-events-backend-polygon-staging
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-cvi-oracle-events-backend-polygon-staging
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/cvi-oracle-events-backend/dist/index.js
+          env:
+          - name: APP_ENV
+            value: k8s
+          - name: CHAIN_ID
+            value: '31338'
+          image: {{ .Values.global.backend_image }}
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 10
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 50
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readiness
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 50
+            periodSeconds: 2
+            successThreshold: 1
+            timeoutSeconds: 2
+          name: cvi-oracle-events-backend-polygon-staging
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readiness      
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 40
+            periodSeconds: 2
+            successThreshold: 2
+            timeoutSeconds: 10
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 500Mi
+            limits: # max
+              cpu: 250m
+              memory: 500Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

@@ -1,0 +1,28 @@
+{
+  "name": "il-cli-ui",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "private": true,
+  "ui": true,
+  "scripts": {
+    "start:dev": "vite",
+    "bundle": "rm -rf ui-dist && vite build"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.8.0",
+    "@coti-cvi/auto-generated-code": "1.0.0",
+    "@coti-cvi/lw-sdk": "1.0.0",
+    "@ethersproject/providers": "5.6.2",
+    "axios": "^0.27.2",
+    "buffer": "^6.0.3",
+    "date-fns": "^2.28.0",
+    "ethers": "5.6.9",
+    "events": "^3.3.0",
+    "inversify": "^6.0.1",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-terminal-ui": "^0.1.17",
+    "react-use-promise": "^0.5.0",
+    "wagmi": "^0.8.6"
+  }
+}

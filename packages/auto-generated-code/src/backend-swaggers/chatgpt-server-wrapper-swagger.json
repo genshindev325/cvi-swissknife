@@ -1,0 +1,190 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "K8SLivenessCheckController_schedule",
+        "summary": "",
+        "description": "is-alive",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alive"
+          }
+        }
+      }
+    },
+    "/readiness": {
+      "get": {
+        "operationId": "K8SReadinessCheckController_isReady",
+        "summary": "",
+        "description": "k8s readiness check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "readiness"
+          }
+        }
+      }
+    },
+    "/chatgpt-query": {
+      "post": {
+        "operationId": "WrapperController_queryChatGpt",
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Chatgpt Query"
+        ]
+      }
+    },
+    "/sentry/errors": {
+      "get": {
+        "operationId": "SentryController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sentry"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "PrometheusController_root",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "prometheus"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "description": "The chatgpt-server-wrapper@local API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "QueryDto": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "longText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "longText"
+        ]
+      },
+      "TextReducedInfoDto": {
+        "type": "object",
+        "properties": {
+          "requestLength": {
+            "type": "number"
+          },
+          "responseLength": {
+            "type": "number"
+          },
+          "textReducedPercentage": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "requestLength",
+          "responseLength",
+          "textReducedPercentage"
+        ]
+      },
+      "QueryResultDebugChunkDto": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "type": "string"
+          },
+          "response": {
+            "type": "string"
+          },
+          "textReducedInfoDto": {
+            "$ref": "#/components/schemas/TextReducedInfoDto"
+          }
+        },
+        "required": [
+          "request",
+          "response",
+          "textReducedInfoDto"
+        ]
+      },
+      "QueryResultDebugDto": {
+        "type": "object",
+        "properties": {
+          "chunks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QueryResultDebugChunkDto"
+            }
+          },
+          "textReducedInfoDto": {
+            "$ref": "#/components/schemas/TextReducedInfoDto"
+          }
+        },
+        "required": [
+          "chunks",
+          "textReducedInfoDto"
+        ]
+      },
+      "QueryResultDto": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "string"
+          },
+          "debug": {
+            "$ref": "#/components/schemas/QueryResultDebugDto"
+          }
+        },
+        "required": [
+          "result",
+          "debug"
+        ]
+      }
+    }
+  }
+}

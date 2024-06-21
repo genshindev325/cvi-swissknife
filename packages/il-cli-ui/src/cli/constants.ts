@@ -1,0 +1,61 @@
+import type { Reject } from '../types'
+
+export const BACK: Reject = { equal: 'b', error: 'back' }
+export const QUIT: Reject = { equal: 'q', error: 'quit' }
+export const DONE: Reject = { equal: 'd', error: 'done' }
+export const NONE: Reject = { equal: 'n', error: 'none' }
+export const DEFAULT_REJECTS = [BACK]
+export const CLI_CLOSED_ERROR_MESSAGE = 'cli is closed'
+
+export const DEV_ACCOUNTS: { name: string; address: string }[] = [
+  { name: 'Account0', address: '0x0A6096eB768c696D437BB26ff6890ee8Ca17cAb9' },
+  { name: 'Yaniv', address: '0xf8d74c0CF0AEBbD58401f18a1382368EB00EFc2d' },
+  { name: 'Yovel', address: '0xF96D287C32e3A084f58DF853A60C4453e4803951' },
+  { name: 'Vladi', address: '0x0b3D7b3F149214f8f5281b5aE613B090fD39BD3F' },
+  { name: 'Costa', address: '0x5F83c88B09557E2BB6c6113A77750A709Be94573' },
+  { name: 'QA5', address: '0x54036f5190a4499c8B02147639442233Df26f049' },
+  { name: 'Arazi', address: '0x977Cf01ABAa56880E6D13569834587f6B887f2e4' },
+  { name: 'Testa', address: '0xCF873380a46B4a85519E7F0c7e85D676EFa462Ab' },
+  { name: 'Tamir', address: '0x58aF860eD232fd3e9b525E599ca59b329B7F5dF8' },
+  { name: 'Efrat', address: '0x1279dBb468AAD9d178Ad45377C5E7ec8C13B9d6A' },
+  { name: 'Ami', address: '0x705D65c9f1d4B8a46049Bfe3b3410cF7e5EC9f02' },
+  { name: 'Stav', address: '0x3F64bA5E52B881233961f64c1503CDa77404b3Dc' },
+  { name: 'Shai', address: '0x590A84A9b0ba511B83b4De5903cfB726F317a246' },
+  { name: 'Bar', address: '0xeD891F909e9e67f24e81356fC348350CBbA3cC0A' },
+  { name: 'Gal', address: '0xb63D2772E0306BB827567f5e25DD40074bE266A2' },
+  { name: 'QA1', address: '0x3e85947F986C57391147CDf7812b6001039298F3' },
+  { name: 'QA2', address: '0x783a6aA7F941a8708ce7DfdCD6Ef3Dd766c3E7CB' },
+  { name: 'QA3', address: '0xF31ad16035645d29BFc4C34013E5FBc037997222' },
+  { name: 'QA4', address: '0x73d665DcF8d7c9A9C8797b201fe6191842e04065' },
+  { name: 'david', address: '0x9fe5217A535185C164A3e6274C917Ced15843fcF' },
+  { name: 'Lout (Community)', address: '0x743aC4CAEeb2596230EBE9035081f1dcB1c966AC' },
+  { name: 'ilMonitoringPerformUpKeep', address: '0xC44Bd81a08C1E8afcaAa959212FF1887Dd8C572f' },
+  { name: 'hardhat-cvi-ui', address: '0x1505FB0435dc83e3a0A1f5780a991008382E8262' },
+  { name: 'Yoni', address: '0x4098340b0a5Afee21c65854a799ecb534Abb9429' },
+  { name: 'Omri Perl', address: '0x5329D6e64C51999B95BEd9EAfFF35d9866DF4167' },
+  { name: 'Account25', address: '0xF24eD4335f0a17B5188B6f43FCaCb7f518E4dbD6' },
+  { name: 'Account26', address: '0xD0D03246cd4d292a194bd6170bA3112cDA284EfB' },
+  { name: 'Account27', address: '0x6A0e41eD632EeFFCF073d9E9962a81ca0658e56c' },
+  { name: 'Account28', address: '0x26100Ba520D890f8f912A65e14758E24a0aed988' },
+  { name: 'Account29', address: '0x6b8Ec1ae6C4615c51206CE53CCAf87a17c850f1C' },
+  { name: 'Account30', address: '0xFf81905faeBADe4E503BA51C2D951ed615b8f265' },
+  { name: 'Account31', address: '0x571ff89d1299a1e94B25A3373Aa3DF1df0fB50A9' },
+  { name: 'Account32', address: '0x61d6c3bFA831030335f6735845E98BF49F071800' },
+  { name: 'Account33', address: '0x18e5f4583F03e5eED270e298b9460dc2B9D58E33' },
+  { name: 'Account34', address: '0x2D38D175eB8aE89e25f82AD2dc956789e858b644' },
+  { name: 'Account35', address: '0xF0C9800072a5704889F225d53E356e788E22866F' },
+  { name: 'Account36', address: '0xc82a70F67D0de75BCafB5Ccd40Ca9E28357D06e8' },
+  { name: 'Account37', address: '0xdA1915c54Ad8A50EB7B63342ab2cf35E653686e2' },
+  { name: 'Account38', address: '0x9f854951564542d11e1AA7740577E4fA5FBC3503' },
+  { name: 'Account39', address: '0xCF2C4D984f22dfF34c712fac83e57582332bBa82' },
+  { name: 'Account40', address: '0x1d8A85d4125868745BB9b589d0B918203BFE217C' },
+  { name: 'Account41', address: '0x14D74b214f6b98A2E119d8E4bE5BFdb5BAb43890' },
+  { name: 'Account42', address: '0xcCf7fA0a5991EF49de8B02bcB421a33d7d11C4f5' },
+  { name: 'Account43', address: '0xbb3231bD72417355438b997f180A1De0F9D86981' },
+  { name: 'Account44', address: '0xC627A1de61a758560dA136347E546c028b6f6a39' },
+  { name: 'Account45', address: '0x40C50A80B499E9367A7360789981dB36D9A67a04' },
+  { name: 'Account46', address: '0xDF9622A7CF0E5F08DFB74B39741F774cE7655033' },
+  { name: 'Account47', address: '0x187a12F82BCaa8E6f29a950B99BC3B164A5C278C' },
+  { name: 'Account48', address: '0x2f02E5B098863E2C5386c16ebcDf7ab847Cfa49f' },
+  { name: 'Account49', address: '0x5f71b4007C279F026660Bc473100A9fC80412b80' },
+]

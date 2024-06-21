@@ -1,0 +1,110 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-api
+    app: api
+  name: api
+  namespace: {{ .Release.Namespace }}
+spec:
+  progressDeadlineSeconds: 100
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-api
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-api
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/api/dist/index.js
+          env:
+          - name: APP_ENV
+            value: k8s
+          - name: PORT
+            value: '80'
+          - name: CUTOFF
+            value: '1633591860'
+          - name: USE_CHAINLINK_IN_LATEST
+            value: 'true'
+          - name: DB_HOST
+            value: prd-01-db-cvi.cbeazsamcoyd.eu-west-1.rds.amazonaws.com
+          - name: DB_USER
+            value: cviprod
+          - name: DB_PASS
+            value: e84416b875dd0d7f7c78fbdd16712f59
+          - name: DB_TABLE
+            value: cvi_prod
+          - name: ETHEREUM_RPC_URL
+            value: https://mainnet.infura.io/v3/b454739b95444d53812c01d1b9c60549
+          - name: POLYGON_RPC_URL
+            value: https://polygon-mainnet.infura.io/v3/b454739b95444d53812c01d1b9c60549
+          - name: ARBITRUM_RPC_URL
+            value: https://arbitrum-mainnet.infura.io/v3/b454739b95444d53812c01d1b9c60549
+          - name: DELAY_INTERVAL
+            value: '20'
+          - name: WHITELISTED_IPS
+            # 188.120.130.116 is the current alon-1 22nd floor
+            value: 62.90.236.5,82.80.191.120,109.67.74.103,188.120.130.116
+          - name: WHITELISTED_ORIGINS
+            value: silent-cvi.surge.sh,staging-cvi.surge.sh
+          image:  coticvi/swissknife-backend:e63ee88c71d7685126d206905b892917fa215924
+          imagePullPolicy: Always
+          name: api
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 2
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /      
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 2
+            successThreshold: 2
+            timeoutSeconds: 10
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 500Mi
+            limits: # max
+              cpu: 250m
+              memory: 500Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

@@ -1,0 +1,8 @@
+.react-terminal-wrapper {
+  height: 100vh !important;
+  border-radius: 0;
+}
+
+.react-terminal {
+  height: 90vh !important;
+}

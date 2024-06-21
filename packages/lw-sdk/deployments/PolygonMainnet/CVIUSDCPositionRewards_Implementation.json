@@ -1,0 +1,643 @@
+{
+  "address": "0x164EC55E783f8Ff6F77B9578f726efD88e32027F",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rewardAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Claimed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "PRECISION_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_positionUnits",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_positionTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculatePositionReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "rewardAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimReward",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "name": "claimedPositionUnits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cviToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "extractRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20Upgradeable",
+          "name": "_cviToken",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastClaimedDay",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastMaxSingleReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastRewardMaxLinearGOVI",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastRewardMaxLinearPositionUnits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxClaimPeriod",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxDailyReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxRewardTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxRewardTimePercentageGain",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxSingleReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "platform",
+      "outputs": [
+        {
+          "internalType": "contract IPlatform",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardCalculationValidTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardMaxLinearGOVI",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardMaxLinearPositionUnits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxClaimPeriod",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxClaimPeriod",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxDailyReward",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxDailyReward",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxRewardTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxRewardTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxRewardTimePercentageGain",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxRewardTimePercentageGain",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPlatform",
+          "name": "_newPlatform",
+          "type": "address"
+        }
+      ],
+      "name": "setPlatform",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxSingleReward",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rewardMaxLinearPositionUnits",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rewardMaxLinearGOVI",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRewardCalculationParameters",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newRewardFactor",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRewardFactor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "todayClaimedRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa00b69462b1e61b83b3e514bb55ddb4507d95465e0b90a86b76c4da52177018c",
+  "numDeployments": 1,
+  "storageLayout": {
+    "storage": [
+      {
+        "contract": "Initializable",
+        "label": "_initialized",
+        "type": "t_bool",
+        "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+      },
+      {
+        "contract": "Initializable",
+        "label": "_initializing",
+        "type": "t_bool",
+        "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+      },
+      {
+        "contract": "ContextUpgradeable",
+        "label": "__gap",
+        "type": "t_array(t_uint256)50_storage",
+        "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:31"
+      },
+      {
+        "contract": "OwnableUpgradeable",
+        "label": "_owner",
+        "type": "t_address",
+        "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+      },
+      {
+        "contract": "OwnableUpgradeable",
+        "label": "__gap",
+        "type": "t_array(t_uint256)49_storage",
+        "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:82"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "claimedPositionUnits",
+        "type": "t_mapping(t_address,t_mapping(t_uint32,t_uint256))",
+        "src": "contracts/PositionRewards.sol:16"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "maxClaimPeriod",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:18"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "maxRewardTime",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:19"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "maxRewardTimePercentageGain",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:20"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "maxDailyReward",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:22"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "maxSingleReward",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:24"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "rewardMaxLinearPositionUnits",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:25"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "rewardMaxLinearGOVI",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:26"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "rewardFactor",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:28"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "lastMaxSingleReward",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:30"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "lastRewardMaxLinearPositionUnits",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:31"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "lastRewardMaxLinearGOVI",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:32"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "rewardCalculationValidTimestamp",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:34"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "todayClaimedRewards",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:36"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "lastClaimedDay",
+        "type": "t_uint256",
+        "src": "contracts/PositionRewards.sol:37"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "cviToken",
+        "type": "t_contract(IERC20Upgradeable)927",
+        "src": "contracts/PositionRewards.sol:39"
+      },
+      {
+        "contract": "PositionRewards",
+        "label": "platform",
+        "type": "t_contract(IPlatform)15528",
+        "src": "contracts/PositionRewards.sol:41"
+      }
+    ],
+    "types": {
+      "t_mapping(t_address,t_mapping(t_uint32,t_uint256))": {
+        "label": "mapping(address => mapping(uint32 => uint256))"
+      },
+      "t_address": {
+        "label": "address"
+      },
+      "t_mapping(t_uint32,t_uint256)": {
+        "label": "mapping(uint32 => uint256)"
+      },
+      "t_uint32": {
+        "label": "uint32"
+      },
+      "t_uint256": {
+        "label": "uint256"
+      },
+      "t_contract(IERC20Upgradeable)927": {
+        "label": "contract IERC20Upgradeable"
+      },
+      "t_contract(IPlatform)15528": {
+        "label": "contract IPlatform"
+      },
+      "t_array(t_uint256)49_storage": {
+        "label": "uint256[49]"
+      },
+      "t_array(t_uint256)50_storage": {
+        "label": "uint256[50]"
+      },
+      "t_bool": {
+        "label": "bool"
+      }
+    }
+  }
+}

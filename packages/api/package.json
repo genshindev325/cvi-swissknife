@@ -1,0 +1,36 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev src/index.ts",
+    "start": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coti-cvi/cvi-sdk": "0.2.26",
+    "@cspotcode/source-map-support": "0.6.1",
+    "async": "^3.2.4",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cache-manager": "5.1.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-cache-middleware": "^1.0.1",
+    "express-rate-limit": "^6.4.0",
+    "geoip-lite": "^1.4.5",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "lodash": "^4.17.21",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.21.0",
+    "web3": "^1.6.0",
+    "winston": "^3.7.2"
+  }
+}

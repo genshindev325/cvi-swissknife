@@ -1,0 +1,12 @@
+{
+  "name": "chatgpt-server",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "Python code that Chatgpt",
+  "license": "MIT",
+  "scripts": {
+    "setup": "pip3 install -r requirements.txt",
+    "start:dev": "python3 -m uvicorn main:app --reload --port 8003",
+    "test": "pytest"
+  }
+}

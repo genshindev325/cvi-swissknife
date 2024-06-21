@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app: cvi-oracle-events-backend-polygon-mainnet
+  name: cvi-oracle-events-backend-polygon-mainnet
+  namespace: default
+spec:
+  endpoints:
+  - interval: 1m
+    path: /metrics
+    port: tcpport01
+    targetPort: 80
+  jobLabel: cvi-oracle-events-backend-polygon-mainnet
+  namespaceSelector:
+    matchNames:
+    - default
+  selector:
+    matchLabels:
+      app: cvi-oracle-events-backend-polygon-mainnet

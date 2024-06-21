@@ -1,0 +1,33 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+
+phases:
+  install:
+    commands:
+      - export
+      - echo Installing NodeJS 16.18.0
+      - curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.fnm" --skip-shell
+      - export PATH=/root/.fnm:$PATH
+      - eval "`fnm env`"
+      - fnm install 16.18.0 && fnm default 16.18.0 && fnm use 16.18.0
+      - node --version
+      - echo Installed NodeJS 16.18.0
+      - echo Yarn Install
+      - echo "//registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}" > ~/.npmrc
+      - yarn install
+      - pip3 install -r packages/py-parabola-coefficients/requirements.txt
+      - pip3 install -r packages/chatgpt-server/requirements.txt
+      - wget -q https://github.com/joshdk/docker-retag/releases/download/0.0.2/docker-retag
+      - install docker-retag /usr/bin
+
+
+  build:
+    commands:
+      - yarn ts-node aws-code-build.ts
+
+cache:
+  paths:
+    - 'eslint-cache'
+    - 'dist'

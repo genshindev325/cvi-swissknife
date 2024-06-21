@@ -1,0 +1,10 @@
+<svg data-name="ethereum coin" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <circle data-name="Ellipse 53" cx="32" cy="32" r="32" style="fill:#627eea"/>
+    <g data-name="Group 5661">
+        <path data-name="Path 3816" d="M34.649 17.4a40.557 40.557 0 0 1-2.6 3.6c-3.2 4.4-9.4 13.2-9.8 13.6-.4-.6-1-1.2-1.4-1.8l-3-4.2a30.516 30.516 0 0 1-2.2-3.2l-3-4.2c-.8-1.2-1.6-2.2-2.4-3.4 0-.2-.2-.2-.2-.4.2 0 .4.2.6.2 1.2.8 2.6 1.4 3.8 2.2 1 .6 2 1.2 3.2 1.8 1.4.8 2.6 1.6 4 2.4.2.2.8.4 1 .6.2-.2 7.4-4.4 11-6.4a2 2 0 0 1 1-.8z" transform="translate(10.05 17.4)" style="fill:#fff;opacity:.8"/>
+        <path data-name="Path 3817" d="m28.5 26.4-12.2 7.4L16.2 6s8.9 14.8 12.3 20.4z" transform="translate(16.2 6)" style="opacity:.1"/>
+        <path data-name="Path 3818" d="m9.651 26.6 13.2 7.2L22.747 6S13.051 21 9.651 26.6z" transform="translate(9.652 6)" style="fill:#fff;opacity:.8"/>
+        <path data-name="Path 3819" d="M35.047 19.25c-.424.318-12 7.4-12.2 7.4-.2-.2-13.2-7.2-13.2-7.2l13.2-6.3z" transform="translate(9.652 13.15)" style="opacity:.1"/>
+        <path data-name="Path 3820" d="m28.549 17.4-12.4 7.108V34.6z" transform="translate(16.15 17.4)" style="opacity:.1"/>
+    </g>
+</svg>

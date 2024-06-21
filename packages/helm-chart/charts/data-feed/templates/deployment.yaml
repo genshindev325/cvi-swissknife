@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-data-feed
+    app: data-feed
+  name: data-feed
+  namespace: {{ .Release.Namespace }}
+spec:
+  progressDeadlineSeconds: 100
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-data-feed
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-data-feed
+    spec:
+      containers:
+        - args:
+            - node
+            - packages/data-feed/dist/index.js
+          env:
+          - name: APP_ENV
+            value: k8s
+          image: {{ .Values.global.backend_image }}
+          imagePullPolicy: Always
+          name: data-feed
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 2
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readiness      
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 2
+            successThreshold: 2
+            timeoutSeconds: 10
+          ports:
+            - containerPort: 80
+              name: tcpport01
+              protocol: TCP
+          resources:
+            requests: # min
+              cpu: 250m
+              memory: 1000Mi
+            limits: # max
+              cpu: 250m
+              memory: 1000Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

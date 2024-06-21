@@ -1,0 +1,398 @@
+{
+  "address": "0x1d752C16AB0e242D9e5c8468422F4a551b18ce4B",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_latestOracleRoundId",
+          "type": "uint80"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_latestSnapshotTimestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "latestSnapshot",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IFeesModel",
+          "name": "_feesModelProxy",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IFeesCalculatorV2",
+          "name": "_feesCalculator",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ICVIOracleV2",
+          "name": "_cviOracle",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event",
+      "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+    },
+    {
+      "inputs": [],
+      "name": "PRECISION_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x60ebfee6"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "cviSnapshots",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x8202c681"
+    },
+    {
+      "inputs": [],
+      "name": "latestOracleRoundId",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x7b04bc06"
+    },
+    {
+      "inputs": [],
+      "name": "latestSnapshotTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x6185aa3a"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x8da5cb5b"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x715018a6"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xf2fde38b"
+    },
+    {
+      "inputs": [],
+      "name": "updateSnapshots",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "singleUnitFundingFee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x44397eb4"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICVIOracle",
+          "name": "_newOracle",
+          "type": "address"
+        }
+      ],
+      "name": "setCVIOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x1a8dd8f7"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICVIOracleV2",
+          "name": "_newOracleV2",
+          "type": "address"
+        }
+      ],
+      "name": "setCVIOracleV2",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xb4b4c3e0"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesCalculator",
+          "name": "_newCalculator",
+          "type": "address"
+        }
+      ],
+      "name": "setFeesCalculator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x6c715641"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesCalculatorV2",
+          "name": "_newCalculatorV2",
+          "type": "address"
+        }
+      ],
+      "name": "setFeesCalculatorV2",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x403f65ba"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_newOracleRoundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "setLatestOracleRoundId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x48607250"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_newMaxOracleValuesUsed",
+          "type": "uint80"
+        }
+      ],
+      "name": "setMaxOracleValuesUsed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xd451f47e"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFeesModel",
+          "name": "_newFeesModelProxy",
+          "type": "address"
+        }
+      ],
+      "name": "setFeesModelProxy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xc0771fed"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "positionUnitsAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateFundingFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x89518c87"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "positionUnitsAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateFundingFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x124e3845"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionUnitsAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateFundingFeesAddendum",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0xba08ea82"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "positionUnitsAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateLatestFundingFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x8c8d02fa"
+    },
+    {
+      "inputs": [],
+      "name": "calculateLatestTurbulenceIndicatorPercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x6162129b"
+    }
+  ],
+  "transactionHash": "0x8868a06f8717f19b724d2ac8971b5482d299cca96b51579fe4fdf63175918c2e",
+  "numDeployments": 1
+}

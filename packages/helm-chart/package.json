@@ -1,0 +1,12 @@
+{
+  "name": "helm-chart",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "reset-cvi-k8s-resources:prod": "(yarn uninstall-all-cvi-k8s-resources:prod || exit 0) && yarn install-all-cvi-k8s-resources:prod",
+    "uninstall-all-cvi-k8s-resources:prod": "helm uninstall coti-cvi",
+    "install-all-cvi-k8s-resources:prod": "helm upgrade coti-cvi --install --wait --timeout 5m --debug --set global.backend_image=coticvi/swissknife-backend:$(git rev-parse head) --namespace default ."
+  }
+}

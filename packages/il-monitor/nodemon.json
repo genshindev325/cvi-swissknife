@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "../common-be/src", "../lw-sdk/src"],
+  "ext": "ts",
+  "signal": "SIGTERM",
+  "exec": "ts-node  --swc -r tsconfig-paths/register src/index.ts"
+}

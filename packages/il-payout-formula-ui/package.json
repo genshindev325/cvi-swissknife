@@ -1,0 +1,43 @@
+{
+  "name": "il-payout-formula-ui",
+  "private": true,
+  "version": "1.0.0",
+  "ui": true,
+  "scripts": {
+    "start:dev": "vite",
+    "bundle": "rm -rf ui-dist && cross-env NODE_OPTIONS=--max_old_space_size=10240 vite build && rimraf ui-dist/**/*.js.map",
+    "serve": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "react-apexcharts": "^1.4.0",
+    "buffer": "^6.0.3",
+    "javascript-time-ago": "^2.5.4",
+    "react-equation": "^1.0.0-rc.1",
+    "lodash": "^4.17.21",
+    "react-use-promise": "^0.5.0",
+    "@reach/combobox": "0.17.0",
+    "@coti-cvi/auto-generated-code": "1.0.0",
+    "@coti-cvi/lw-sdk": "1.0.0",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@headlessui/react": "^0.0.0-insiders.1d53ac3",
+    "@heroicons/react": "^1.0.6",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.4",
+    "@mui/styled-engine-sc": "^5.8.0",
+    "@reduxjs/toolkit": "^1.8.2",
+    "react-redux": "^8.0.2",
+    "@sentry/browser": "7.4.1",
+    "@sentry/react": "7.4.1",
+    "classnames": "^2.3.1",
+    "ethers": "5.6.9",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-notifications-component": "^4.0.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5",
+    "tailwindcss": "^3.0.24"
+  }
+}

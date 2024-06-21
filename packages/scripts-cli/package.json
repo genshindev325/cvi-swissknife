@@ -1,0 +1,38 @@
+{
+  "name": "scripts-cli",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "ts-node --swc -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon --no-stdin"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.8.0",
+    "@changesets/types": "^4.0.2",
+    "@coti-cvi/contracts-il": "1.0.0",
+    "@coti-cvi/lw-sdk": "1.0.0",
+    "@coti-cvi/common-be": "1.0.0",
+    "@era-ci/image-registry-client": "2.0.29",
+    "@manypkg/get-packages": "^1.1.3",
+    "async": "^3.2.4",
+    "axios": "^0.27.2",
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.0.1",
+    "execa": "5.1.1",
+    "find-up": "5.0.0",
+    "folder-hash": "^4.0.2",
+    "glob": "^8.0.3",
+    "hardhat-deploy": "^0.11.4",
+    "ink": "^3.2.0",
+    "lodash": "^4.17.21",
+    "octokit": "^1.7.1",
+    "openapi-typescript-codegen": "0.23.0",
+    "react": "18.0.0",
+    "replace-in-file": "^6.3.2",
+    "semver": "^7.3.5",
+    "typechain": "^8.0.0",
+    "yargs": "^17.4.1"
+  }
+}

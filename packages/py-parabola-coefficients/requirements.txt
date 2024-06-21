@@ -1,0 +1,10 @@
+fastapi
+requests
+numpy
+pandas
+pytest
+cachetools
+uvicorn
+simplejson
+pydantic
+prometheus_fastapi_instrumentator
